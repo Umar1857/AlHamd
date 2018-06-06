@@ -8,3 +8,9 @@
 .deleteForm{
     display: inline-block;
 }
+.logoText{
+    color: #ffffff;
+}
+.addNewService {
+    margin-bottom: 10px;
+}

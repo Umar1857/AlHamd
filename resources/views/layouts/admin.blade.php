@@ -8,31 +8,35 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="/css/admin/bootstrap.min.css">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="/css/admin/bootstrap-datepicker.min.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="/css/admin/bootstrap3-wysihtml5.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="/css/admin/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="/css/admin/ionicons.min.css">
+    <!-- bootstrap Data Tables -->
+    <link rel="stylesheet" href="/css/admin/dataTables.bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/css/admin/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
+    folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="/css/admin/_all-skins.min.css">
     <!-- Morris chart -->
     <link rel="stylesheet" href="/css/admin/morris.css">
     <!-- jvectormap -->
     <link rel="stylesheet" href="/css/admin/jquery-jvectormap.css">
-    <!-- Date Picker -->
-    <link rel="stylesheet" href="/css/admin/bootstrap-datepicker.min.css">
-    <!-- Daterange picker -->
+{{--Custom Admin Panel Stylesheet--}}
+<!-- Daterange picker -->
     <link rel="stylesheet" href="/css/admin/daterangepicker.css">
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="/css/admin/bootstrap3-wysihtml5.min.css">
-    {{--Custom Admin Panel Stylesheet--}}
     <link rel="stylesheet" href="/css/admin/custom.css">
+    {{--<script  src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>--}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
-    @yield('styles')
+@yield('styles')
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -49,10 +53,11 @@
         <!-- Logo -->
         <a href="/admin/dashboard" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>H</b>BS</span>
+            <span class="logo-mini"><b>AL</b>HAMD</span>
             <!-- logo for regular state and mobile devices -->
             {{--<span class="logo-lg"><b>Admin</b>LTE</span>--}}
-            <span class="logo-lg"><img src="{{URL::to('images/logo.png')}}" width="200px"></span>
+            {{--<span class="logo-lg"><img src="{{URL::to('images/logo.png')}}" width="200px"></span>--}}
+            <span class="logo-lg logoText"><b>ALHAMD MOVERS</b></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -263,7 +268,7 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="/images/admin/user2-160x160.jpg" class="user-image" alt="User Image">
+                            {{--<img src="/images/admin/user2-160x160.jpg" class="user-image" alt="User Image">--}}
                             <span class="hidden-xs">
                                 @if(Auth::guest())
                                     Alexander Pierce
@@ -275,7 +280,7 @@
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="/images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                {{--<img src="/images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">--}}
 
                                 <p>
                                     @if(Auth::guest())
@@ -324,9 +329,9 @@
                         </ul>
                     </li>
                     <!-- Control Sidebar Toggle Button -->
-                    <li>
+                    {{--<li>
                         <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                    </li>
+                    </li>--}}
                 </ul>
             </div>
         </nav>
@@ -351,28 +356,18 @@
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
-            <!-- search form -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
-                    <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-                </div>
-            </form>
-            <!-- /.search form -->
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
-                <li class="active treeview">
+                <li class="active">
                     <a href="{{route('dashboard')}}">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
-                    {{--<ul class="treeview-menu">--}}
-                    {{--<li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>--}}
-                    {{--<li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>--}}
-                    {{--</ul>--}}
+                </li>
+                <li>
+                    <a href="/admin/profile/create">
+                        <i class="fa fa-user"></i> <span>Profile</span>
+                    </a>
                 </li>
 
                 <li class="treeview">
@@ -399,35 +394,51 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-th"></i> <span>Events</span>
-                        <span class="pull-right-container">
-                            <small class="label pull-right bg-green">new</small>
-                        </span>
+                    <a href="{{route('dashboard')}}">
+                        <i class="fa fa-question"></i> <span>Quotes</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-th"></i> <span>Weddings</span>
-                        <span class="pull-right-container">
-                            <small class="label pull-right bg-green">new</small>
-                        </span>
+                    <a href="{{route('dashboard')}}">
+                        <i class="fa fa-book"></i> <span>Bookings</span>
                     </a>
                 </li>
                 <li>
+                    <a href="{{route('dashboard')}}">
+                        <i class="fa fa-envelope-square"></i> <span>Contact Mails</span>
+                    </a>
+                </li>
+                <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-th"></i> <span>Wellness</span>
+                        <i class="fa fa-user"></i>
+                        <span>Projects</span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/admin/project/create"><i class="fa fa-circle-o"></i>Create New Project</a></li>
+                        <li><a href="/admin/project"><i class="fa fa-circle-o"></i>View Projects</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-file"></i>
+                        <span>Blog Posts</span>
                         <span class="pull-right-container">
-                            <small class="label pull-right bg-green">new</small>
+                          <span class="label label-primary pull-right">4</span>
                         </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/admin/post/create"><i class="fa fa-circle-o"></i>Create New Post</a></li>
+                        <li><a href="/admin/post/"><i class="fa fa-circle-o"></i>View Posts</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/admin/service">
+                        <i class="fa fa-newspaper-o"></i><span>Services</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-th"></i> <span>Vacancies</span>
-                        <span class="pull-right-container">
-                            <small class="label pull-right bg-green">new</small>
-                        </span>
+                    <a href="{{route('dashboard')}}">
+                        <i class="fa fa-newspaper-o"></i><span>Notifications</span>
                     </a>
                 </li>
 
@@ -444,30 +455,18 @@
                         <li><a href="#"><i class="fa fa-circle-o"></i>View Galleries</a></li>
                     </ul>
                 </li>
-
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-gift"></i>
-                        <span>Gift Cards</span>
+                        <i class="fa fa-question"></i>
+                        <span>FAQs</span>
                         <span class="pull-right-container">
                           <span class="label label-primary pull-right">4</span>
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i>Create New Gift Card</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>View Gift Cards</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>Create New FAQ</a></li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i>View FAQs</a></li>
                     </ul>
-                </li>
-
-                <li>
-                    <a href="">
-                        <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                        <span class="pull-right-container">
-                          <small class="label pull-right bg-yellow">12</small>
-                          <small class="label pull-right bg-green">16</small>
-                          <small class="label pull-right bg-red">5</small>
-                        </span>
-                    </a>
                 </li>
             </ul>
         </section>
@@ -486,201 +485,8 @@
         <div class="pull-right hidden-xs">
             <b>Version</b> 1.0
         </div>
-        <strong>Copyright &copy; 2017-2018 Hotel By Sheetz.</strong> All rights Reserved .
+        <strong>Copyright &copy; 2018-2019 ALHAMD MOVERS.</strong> All rights Reserved .
     </footer>
-
-    <!-- Control Sidebar -->
-    {{--<aside class="control-sidebar control-sidebar-dark">
-        <!-- Create the tabs -->
-        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-            <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <!-- Home tab content -->
-            <div class="tab-pane" id="control-sidebar-home-tab">
-                <h3 class="control-sidebar-heading">Recent Activity</h3>
-                <ul class="control-sidebar-menu">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                                <p>Will be 23 on April 24th</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="menu-icon fa fa-user bg-yellow"></i>
-
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-
-                                <p>New phone +1(800)555-1234</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                                <p>nora@example.com</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                                <p>Execution time 5 seconds</p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.control-sidebar-menu -->
-
-                <h3 class="control-sidebar-heading">Tasks Progress</h3>
-                <ul class="control-sidebar-menu">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <h4 class="control-sidebar-subheading">
-                                Custom Template Design
-                                <span class="label label-danger pull-right">70%</span>
-                            </h4>
-
-                            <div class="progress progress-xxs">
-                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <h4 class="control-sidebar-subheading">
-                                Update Resume
-                                <span class="label label-success pull-right">95%</span>
-                            </h4>
-
-                            <div class="progress progress-xxs">
-                                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <h4 class="control-sidebar-subheading">
-                                Laravel Integration
-                                <span class="label label-warning pull-right">50%</span>
-                            </h4>
-
-                            <div class="progress progress-xxs">
-                                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <h4 class="control-sidebar-subheading">
-                                Back End Framework
-                                <span class="label label-primary pull-right">68%</span>
-                            </h4>
-
-                            <div class="progress progress-xxs">
-                                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.control-sidebar-menu -->
-
-            </div>
-            <!-- /.tab-pane -->
-            <!-- Stats tab content -->
-            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-            <!-- /.tab-pane -->
-            <!-- Settings tab content -->
-            <div class="tab-pane" id="control-sidebar-settings-tab">
-                <form method="post">
-                    <h3 class="control-sidebar-heading">General Settings</h3>
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Report panel usage
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-
-                        <p>
-                            Some information about this general settings option
-                        </p>
-                    </div>
-                    <!-- /.form-group -->
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Allow mail redirect
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-
-                        <p>
-                            Other sets of options are available
-                        </p>
-                    </div>
-                    <!-- /.form-group -->
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Expose author name in posts
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-
-                        <p>
-                            Allow the user to show his name in blog posts
-                        </p>
-                    </div>
-                    <!-- /.form-group -->
-
-                    <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Show me as online
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-                    </div>
-                    <!-- /.form-group -->
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Turn off notifications
-                            <input type="checkbox" class="pull-right">
-                        </label>
-                    </div>
-                    <!-- /.form-group -->
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Delete chat history
-                            <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-                        </label>
-                    </div>
-                    <!-- /.form-group -->
-                </form>
-            </div>
-            <!-- /.tab-pane -->
-        </div>
-    </aside>--}}
-    <!-- /.control-sidebar -->
-    <!-- Add the sidebar's background. This div must be placed
-         immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
@@ -712,6 +518,9 @@
 <script src="/js/admin/bootstrap-datepicker.min.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="/js/admin/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- AdminLTE Data tables -->
+<script src="/js/admin/jquery.dataTables.min.js"></script>
+<script src="/js/admin/dataTables.bootstrap.min.js"></script>
 <!-- Slimscroll -->
 <script src="/js/admin/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
@@ -722,6 +531,14 @@
 <script src="/js/admin/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/js/admin/demo.js"></script>
+<script src="/js/admin/custom.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#posts').DataTable();
+        $('#projects').DataTable();
+    });
+</script>
 
 @yield('scripts')
 

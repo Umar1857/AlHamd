@@ -108,6 +108,18 @@ Route::prefix('/admin')->group(function (){
 
             // Resource Route For Admins
             Route::resource('/administrators', 'AdminController');
+
+            // Resource Route For Post
+            Route::resource('/post', 'PostController');
+
+            // Resource Route For Project
+            Route::resource('/project', 'ProjectController');
+
+            // Resource Route For Profile
+            Route::resource('/profile', 'ProfileController');
+
+            // Resource Route For Service
+            Route::resource('/service', 'ServiceController');
         });
 
         //Admin Login Routes
