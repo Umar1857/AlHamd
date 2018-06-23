@@ -35,7 +35,7 @@
                     <div class="top_nav clearfix">
                         <ul>
                             <li>
-                                <a href="/gifts">Vouchers</a>
+                                <a href="/gifts">Testimonials</a>
                             </li>
                             <li>
                                 <a href="/aboutus">About us</a>
@@ -45,49 +45,8 @@
                             </li>
                         </ul>
                         <div class="lang_list pull-right">
-                            <ul>
-                                <li class="dropdown">
-                                @if (Auth::guest())
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/images/user.png"></a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="/login" class=""><span>sign in</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="/register" class=""><span>sign up</span></a>
-                                        </li>
-                                    </ul>
-                                @else
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/images/user.png"><span>{{ str_limit(strtoupper(Auth::guard('web')->user()->fname), 10)}}</span></a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="/account" class=""><span>Profile</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();"><span>Log out</span></a>
-
-                                            <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: block;">
-                                                {{ csrf_field() }}
-                                            </form>
-                                        </li>
-                                    </ul>
-                                @endif
-
-
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/images/flag.png"> <span>English</span><img src="/images/icon9.png"></a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="#"><img src="/images/flag.png"> <span>US</span></a>
-                                        </li>
-                                        <li>
-                                            <a href="#"><img src="/images/flag.png"> <span>US</span></a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <span><i class="fa fa-envelope-square"></i> <a href="mailto:abc@gmail.com">abc@gmail.com </a></span>
+                            <span><i class="fa fa-phone-square"></i><a href="tel:971503026866"> +971 50 3026866</a></span>
                         </div>
                     </div>
 
@@ -113,12 +72,12 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav main_custom_nav">
 
-                            <li><a href="/hotel" class="hvr-overline-from-center">HOTELS</a></li>
-                            <li><a href="/packages" class="hvr-overline-from-center">PACKAGES</a></li>
-                            <li><a href="/meetings" class="hvr-overline-from-center">MEETINGS</a></li>
-                            <li><a href="/events" class="hvr-overline-from-center">EVENTS</a></li>
-                            <li><a href="/wellness" class="hvr-overline-from-center">WELLNESS</a></li>
-                            <li><a href="/weddings" class="hvr-overline-from-center">WEDDINGS</a></li>
+                            <li><a href="/hotel" class="hvr-overline-from-center">HOME</a></li>
+                            <li><a href="/packages" class="hvr-overline-from-center">SERVICES</a></li>
+                            <li><a href="/meetings" class="hvr-overline-from-center">GALLERY</a></li>
+                            <li><a href="/events" class="hvr-overline-from-center">PROJECTS</a></li>
+                            <li><a href="/wellness" class="hvr-overline-from-center">BOOKING</a></li>
+                            <li><a href="/weddings" class="hvr-overline-from-center">BLOG</a></li>
 
                         </ul>
 
@@ -128,7 +87,7 @@
                         <li>
 
                             @if (Auth::guest())
-                                <a href="/login" class="hvr-sweep-to-right"><img src="/images/user.png"><span>sign in</span></a>
+                                <a href="/login" class="hvr-sweep-to-right"><img src="/images/user.png"><span>GET A FREE QUOTE</span></a>
                             @else
                                 <a href="/account#orders" class="reservations_btn hvr-sweep-to-right"><img src="/images/user.png"><span> My RESERVATIONS</span></a>
                             @endif

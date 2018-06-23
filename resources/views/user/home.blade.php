@@ -10,7 +10,7 @@
 
         </div>
     </div>
-    <div class="hotel_filter">
+    {{--<div class="hotel_filter">
         <ul>
             <div class="filter_inner clearfix">
                 <li class="dropdown">
@@ -38,15 +38,13 @@
             </div>
             <a href="#" class="hvr-trim filter_search"><img src="images/megnify.png"><span class="visible-xs">Find rooms!</span></a>
         </ul>
-
-
-    </div>
+    </div>--}}
 </div>
 <div class="main_content">
-    <h1 class="main_hd text-center text-uppercase"><span>our hotels</span></h1>
+    <h1 class="main_hd text-center text-uppercase"><span>our services</span></h1>
 </div>
 
-@include('includes/hotel_slider')
+@include('includes/services_slider')
 
 <div class="packages text-center">
     <p class="view_popular">

@@ -14,7 +14,7 @@
 @include('includes/availability')
 <div class="our_hotels_content text-center">
     <h1><span>choose a hotel</span></h1>
-    @include('includes/hotel_slider')
+    @include('includes.services_slider')
 </div>
 <!---->
 @endsection
