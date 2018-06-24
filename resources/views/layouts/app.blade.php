@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Sheetz | Hotel</title>
+    <title>AlHamd | Movers And Packers</title>
 
     <!-- Main.css is the file that contain all Merged & Minified css -->
 
+    <link href="/css/custom.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet">
     <!--    -->
     @yield('styles')
@@ -33,20 +34,25 @@
             <div class="container-fluid">
                 <div class="main_row">
                     <div class="top_nav clearfix">
+                        <div class="social-icons pull-left">
+                            <span><a href="#"><i class="fa fa-facebook"></i></a></span>
+                            <span><a href="#"><i class="fa fa-instagram"></i></a></span>
+                            <span><a href="#"><i class="fa fa-twitter"></i></a></span>
+                        </div>
                         <ul>
                             <li>
                                 <a href="/gifts">Testimonials</a>
                             </li>
                             <li>
-                                <a href="/aboutus">About us</a>
+                                <a href="/about">About Us</a>
                             </li>
                             <li>
-                                <a href="#">Contact</a>
+                                <a href="/contact">Contact Us</a>
                             </li>
                         </ul>
                         <div class="lang_list pull-right">
-                            <span><i class="fa fa-envelope-square"></i> <a href="mailto:abc@gmail.com">abc@gmail.com </a></span>
-                            <span><i class="fa fa-phone-square"></i><a href="tel:971503026866"> +971 50 3026866</a></span>
+                            <span class="emailID"><i class="fa fa-envelope-square"></i> <a href="mailto:abc@gmail.com">abc@gmail.com </a></span>
+                            <span class="phoneNo"><i class="fa fa-phone-square"></i><a href="tel:971522049342"> +97152 2049342</a></span>
                         </div>
                     </div>
 
@@ -87,7 +93,7 @@
                         <li>
 
                             @if (Auth::guest())
-                                <a href="/login" class="hvr-sweep-to-right"><img src="/images/user.png"><span>GET A FREE QUOTE</span></a>
+                                <a href="/quote" class="hvr-sweep-to-right"><img src="/images/user.png"><span>GET A FREE QUOTE</span></a>
                             @else
                                 <a href="/account#orders" class="reservations_btn hvr-sweep-to-right"><img src="/images/user.png"><span> My RESERVATIONS</span></a>
                             @endif
@@ -115,7 +121,7 @@ page it will render here dynamically... -->
             <div class="row">
                 <div class="col-sm-2 col-xs-12">
                     <a href="#" class="footer_logo"><img src="/images/footer_logo.png"></a>
-                    <p class="footer_desc">In 2015, Hotels by Sheetz founded as a joint commercial, sales and marketing area. </p>
+                    <p class="footer_desc">AlHamd movers is a group of Professionals who makes relocation alot easier and Cheaper.</p>
                     <ul class="footer_social hidden-xs">
                         <li><a href="#" class="hvr-grow"><i class="fa fa-instagram"></i></a></li>
                         <li><a href="#" class="hvr-grow"><i class="fa fa-facebook-f"></i></a></li>
@@ -124,53 +130,55 @@ page it will render here dynamically... -->
                     </ul>
                 </div>
                 <div class="col-sm-2 hidden-xs">
-                    <h4>Hotels</h4>
+                    <h4>Quicklinks</h4>
                     <ul class="footer_links">
-                        <li><a href="#">Bad Boekelos</a></li>
-                        <li><a href="#">Venti Hotel Luxury</a></li>
-                        <li><a href="#">Hotel Oosterhout</a></li>
-                        <li><a href="#">Grand Hotel Ter Duin</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Get A Quote</a></li>
+                        <li><a href="#">Sitemap</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2 hidden-xs">
-                    <h4>PACKAGES</h4>
+                    <h4>Services</h4>
                     <ul class="footer_links">
-                        <li><a href="/packages">Business packages</a></li>
-                        <li><a href="/packages">VIP package</a></li>
-                        <li><a href="/packages">Premium package</a></li>
+                        <li><a href="#">OFFICE RELOCATION</a></li>
+                        <li><a href="#">HOUSE RELOCATION</a></li>
+                        <li><a href="#">VILLA RELOCATION</a></li>
+                        <li><a href="#">STORAGE</a></li>
+                        <li><a href="#">PACKING & UNPACKING</a></li>
+                        <li><a href="#">FURNITURE ASSEMBLING / DISMANTLING​</a></li>
+                        <li><a href="#">LOADING & UNLOADING​</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2 hidden-xs">
-                    <h4>Start planning</h4>
+                    <h4>Office Address</h4>
                     <ul class="footer_links">
-                        <li><a href="/events">Events</a></li>
-                        <li><a href="/weddings">Weddings</a></li>
-                        <li><a href="/conference">Conferences</a></li>
-                        <li><a href="/meetings">Meetings</a></li>
+                        <p><i class="fa fa-map-marker"></i> 512-A Habibi Road, Dubai</p>
                     </ul>
                 </div>
                 <div class="col-sm-2 hidden-xs">
-                    <h4>EXPLORE</h4>
+                    <h4>Contact</h4>
                     <ul class="footer_links">
-                        <li><a href="/our_hotels">Featured Destinations</a></li>
-                        <li><a href="#">All Inclusive Services</a></li>
-                        <li><a href="/packages">Travel Packages</a></li>
-                        <li><a href="/gifts">Gift Cards</a></li>
+                        <li><a href="mailto:abc@gmail.com"><i class="fa fa-envelope-square"></i>  abc@gmail.com </a></li>
+                        <li><a href="mailto:abc@gmail.com"><i class="fa fa-envelope-square"></i> abc@gmail.com </a></li>
+                        <li><a href="tel:971522049342"><i class="fa fa-phone-square"></i> +97152 2049342</a></li>
+                        <li><a href="tel:971551040849"><i class="fa fa-phone-square"></i> +97155 1040849</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2 hidden-xs">
-                    <h4>INFORMAtION</h4>
+                    <h4>Working Hours</h4>
                     <ul class="footer_links">
-                        <li><a href="/aboutus">About us</a></li>
-                        <li><a href="#">Terms and conditions</a></li>
-                        <li><a href="#">Privacy and cookies</a></li>
-                        <li><a href="/vacancies">Vacancies</a></li>
+                        <li class="text-center"><b>Saturday-Thursday</b></li>
+                        <li class="text-center">8am to 10pm</li><br>
+                        <li class="text-center"><b>Friday</b></li>
+                        <li class="text-center">2pm to 10pm</li>
                     </ul>
                 </div>
             </div>
             <div class="main_row">
                 <div class="copyrights text-center">
-                    <span>2017© Sheetz hotels. All rights reserved.</span>
+                    <span>2018© AlHamd Movers. All rights reserved.</span>
                 </div>
             </div>
         </div>

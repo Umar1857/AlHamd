@@ -4,42 +4,37 @@
 <div class="intro home_content">
     <div class="main_banner">
         <div class="hotel_description text-center">
-            <h1>Savor</h1>
-            <h2>summer nights</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+            <h1>Welcome to AlHamd</h1>
+            <h2>Packers And Movers In Dubai</h2>
+            <p>We Move you Safely and Peacefully without any stress. </p>
 
         </div>
     </div>
-    {{--<div class="hotel_filter">
-        <ul>
-            <div class="filter_inner clearfix">
-                <li class="dropdown">
-                    <img src="images/icon1.png">
-                    <select class="selectpicker">
-                    <option><span>Select Hotel</span></option>
-                    <option><span>aaa</span></option>
-                </select>
-                </li>
-                <li class="dropdown">
-                    <img src="images/icon2.png">
-                    <input type="text" class="form-control datepicker" placeholder="Check In">
-                </li>
-                <li class="dropdown">
-                    <img src="images/icon3.png">
-                    <input type="text" class="form-control datepicker" placeholder="Check Out">
-                </li>
-                <li class="dropdown">
-                    <img src="images/icon4.png">
-                    <select class="selectpicker">
-                    <option><span>Room Type</span></option>
-                    <option><span>aaa</span></option>
-                </select>
-                </li>
-            </div>
-            <a href="#" class="hvr-trim filter_search"><img src="images/megnify.png"><span class="visible-xs">Find rooms!</span></a>
-        </ul>
-    </div>--}}
 </div>
+
+<div class="join_sheets">
+    <div class="container">
+        <div class="row">
+            <h2 class="visible-xs text-center text-uppercase">Welcome To AlHamd Packers and Movers</h2>
+            <div class="col-sm-6 icon_set">
+                <span><img src="images/MainPage_72.png"></span>
+                <span><img src="images/MainPage_67.png"></span>
+                <span><img src="images/MainPage_69.png"></span>
+                <span><img src="images/MainPage_77.png"></span>
+                <span><img src="images/MainPage_78.png"></span>
+                <span><img src="images/MainPage_79.png"></span>
+                <span><img src="images/MainPage_83.png"></span>
+                <span><img src="images/MainPage_84.png"></span>
+                <span><img src="images/MainPage_86.png"></span>
+            </div>
+            <div class="col-sm-6 join_content">
+                <h3 class="hidden-xs text-uppercase">Welcome To AlHamd</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="main_content">
     <h1 class="main_hd text-center text-uppercase"><span>our services</span></h1>
 </div>
@@ -149,38 +144,5 @@
         <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
     </ul>
-</div>
-<div class="join_sheets">
-    <div class="container">
-        <div class="row">
-            <h2 class="visible-xs text-center text-uppercase">join sheetz</h2>
-            <div class="col-sm-6 icon_set">
-                <span><img src="images/MainPage_72.png"></span>
-                <span><img src="images/MainPage_67.png"></span>
-                <span><img src="images/MainPage_69.png"></span>
-                <span><img src="images/MainPage_77.png"></span>
-                <span><img src="images/MainPage_78.png"></span>
-                <span><img src="images/MainPage_79.png"></span>
-                <span><img src="images/MainPage_83.png"></span>
-                <span><img src="images/MainPage_84.png"></span>
-                <span><img src="images/MainPage_86.png"></span>
-            </div>
-            <div class="col-sm-6 join_content">
-                <h2 class="hidden-xs text-uppercase">join sheetz</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <form>
-                    <div class="form-group">
-                        <label class="control-label">subscribe to our news</label>
-                        <input type="email" class="form-control" placeholder="Enter your email">
-                        <button type="submit" class="hvr-sweep-to-right btn btn_custom"><img class="visible-xs" src="images/tick.png"><span class="hidden-xs">subscribe</span></button>
-                    </div>
-                </form>
-                <div class="join_community">
-                    <label class="control-lable">join our community</label>
-                    <a href="#" class="hvr-sweep-to-right">create account</a>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 @endsection

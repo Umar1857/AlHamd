@@ -279,6 +279,9 @@ header .main_nav {
     top: 10px;
     z-index: 99999;
 }
+.lang_list .emailID {
+    margin-right: 10px !important;
+}
 
 .lang_list > ul > li {
     display: inline-block;
@@ -1014,7 +1017,7 @@ header .main_nav {
 }
 
 .join_sheets {
-    padding: 30px 0 80px;
+    padding: 60px 0 40px;
 }
 
 .icon_set {
@@ -1083,8 +1086,9 @@ header .main_nav {
     padding-left: 80px;
 }
 
-.join_sheets h2 {
-    font-size: 48px;
+.join_sheets h3 {
+    font-size: 34px;
+    margin-top: 20px;
     margin-bottom: 50px;
     letter-spacing: 3px;
 }
@@ -3247,4 +3251,40 @@ footer h4 {
 .help-block{
     font-size: 12px;
     text-align: left;
+}
+/*///////////////////////////////////////////////////////////////////////*/
+.social-icons{
+    margin: 10px 10px 10px 40px;
+}
+.social-icons span{
+    margin-right: 5px;
+}
+.social-icons a .fa{
+ font-size: 18px !important;
+}
+/*
+.text-logo{
+    font-size: 32px;
+}*/
+.contact-form form{
+    margin-top: 20px;
+}
+
+.contact-form .fields {
+     border-radius: 5px;
+     border: 1px solid #333333;
+    font-family: 'Proxima Nova';
+    height: 50px;
+    padding: 0 10px;
+    line-height: 50px;
+    -webkit-box-shadow: none;
+}
+.contact-form textarea{
+    border-radius: 3px;
+    border: 1px solid #333333;
+    font-family: 'Proxima Nova';
+    padding: 0 10px;
+    -webkit-box-shadow: none;}
+.contact-form button {
+    margin: 20px 0px;
 }

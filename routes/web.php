@@ -17,8 +17,16 @@ Route::get('/', function () {
     return view('user/home');
 });
 
-Route::get('/aboutus', function () {
+Route::get('/about', function () {
     return view('user/aboutus');
+});
+
+Route::get('/contact', function () {
+    return view('user/contactus');
+});
+
+Route::get('/quote', function () {
+    return view('user/quote');
 });
 
 Route::get('/our_hotels', function () {
