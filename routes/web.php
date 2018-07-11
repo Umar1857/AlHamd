@@ -17,9 +17,26 @@ Route::get('/', function () {
     return view('user/home');
 });
 
-Route::get('/aboutus', function () {
+Route::get('/about', function () {
     return view('user/aboutus');
 });
+
+Route::get('/contact', function () {
+    return view('user/contactus');
+});
+
+Route::post('/contact', 'ContactController@create')->name('contact.submit');
+
+Route::get('/quote', 'QuoteController@index')->name('quote.index');
+Route::post('/quote', 'QuoteController@create')->name('quote.submit');
+
+Route::get('/booking', 'BookingController@index')->name('booking.index');
+Route::post('/booking', 'BookingController@create')->name('booking.submit');
+
+Route::get('/blog', 'PostController@blog')->name('blog.index');
+Route::get('/blog/{id}', 'PostController@singlePost')->name('blog.post');
+
+Route::get('/projects', 'ProjectController@projects')->name('projects.index');
 
 Route::get('/our_hotels', function () {
     return view('user/our_hotels');
@@ -37,8 +54,8 @@ Route::get('/package_card', function () {
     return view('user/package_card');
 });
 
-Route::get('/packages', function () {
-    return view('user/packages');
+Route::get('/services', function () {
+    return view('user/services');
 });
 
 Route::get('/wellness', function () {
@@ -120,6 +137,22 @@ Route::prefix('/admin')->group(function (){
 
             // Resource Route For Service
             Route::resource('/service', 'ServiceController');
+
+            Route::get('/booking', 'BookingController@bookings')->name('bookings');
+            Route::get('/booking/{id}', 'BookingController@show')->name('bookings.view');
+            Route::post('/booking/reply', 'BookingController@sendReply')->name('booking.reply');
+
+            Route::get('/quote', 'QuoteController@quotes')->name('quotes');
+            Route::get('/quote/{id}', 'QuoteController@show')->name('quotes.view');
+            Route::post('/quote/reply', 'QuoteController@sendReply')->name('quote.reply');
+
+            Route::get('/contact', 'ContactController@index')->name('contacts');
+            Route::get('/contact/{id}', 'ContactController@show')->name('contacts.view');
+            Route::post('/contact/reply', 'ContactController@sendReply')->name('contact.reply');
+
+            Route::get('/notification','NotificationController@index')->name('notification');
+
+            Route::get('/notifications/markasread', 'NotificationController@markasread')->name('markasread');
         });
 
         //Admin Login Routes
