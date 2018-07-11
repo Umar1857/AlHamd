@@ -10,8 +10,24 @@
 
     <!-- Main.css is the file that contain all Merged & Minified css -->
 
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/hover.css" rel="stylesheet">
+    <link href="/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="/css/mansory.css" rel="stylesheet">
+    <link href="/css/slick.css" rel="stylesheet">
+    <link href="/css/slick-theme.css" rel="stylesheet">
+    <link href="/css/rateit.css" rel="stylesheet">
+    <link href="/css/slick-theme.css" rel="stylesheet">
+    <link href="/css/slick-theme.css" rel="stylesheet">
+    <link href="/css/chosen.min.css" rel="stylesheet">
     <link href="/css/custom.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+
+    {{--<link href="/css/main.css" rel="stylesheet">--}}
     <!--    -->
     @yield('styles')
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
@@ -29,7 +45,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="head">
         <div class="top_header hidden-xs hidden-sm">
             <div class="container-fluid">
                 <div class="main_row">
@@ -38,6 +54,9 @@
                             <span><a href="#"><i class="fa fa-facebook"></i></a></span>
                             <span><a href="#"><i class="fa fa-instagram"></i></a></span>
                             <span><a href="#"><i class="fa fa-twitter"></i></a></span>
+                            <span><a href="#"><i class="fa fa-linkedin-square"></i></a></span>
+                            <span><a href="#"><i class="fa fa-whatsapp"></i></a></span>
+                            <span><a href="#"><i class="fa fa-pinterest-square"></i></a></span>
                         </div>
                         <ul>
                             <li>
@@ -70,24 +89,22 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand hidden-xs" href="/"><img src="/images/logo.png"></a>
-                        <a class="navbar-brand visible-xs" href="/"><img src="/images/logo_mobile.png"></a>
+                        {{--<a class="navbar-brand hidden-xs" href="/"><img src="/images/logo.png"></a>
+                        <a class="navbar-brand visible-xs" href="/"><img src="/images/logo_mobile.png"></a>--}}
+
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav main_custom_nav">
 
-                            <li><a href="/hotel" class="hvr-overline-from-center">HOME</a></li>
-                            <li><a href="/packages" class="hvr-overline-from-center">SERVICES</a></li>
+                            <li><a href="/" class="hvr-overline-from-center">HOME</a></li>
+                            <li><a href="/services" class="hvr-overline-from-center">SERVICES</a></li>
                             <li><a href="/meetings" class="hvr-overline-from-center">GALLERY</a></li>
-                            <li><a href="/events" class="hvr-overline-from-center">PROJECTS</a></li>
-                            <li><a href="/wellness" class="hvr-overline-from-center">BOOKING</a></li>
-                            <li><a href="/weddings" class="hvr-overline-from-center">BLOG</a></li>
-
+                            <li><a href="/projects" class="hvr-overline-from-center">PROJECTS</a></li>
+                            <li><a href="/booking" class="hvr-overline-from-center">BOOKING</a></li>
+                            <li><a href="/blog" class="hvr-overline-from-center">BLOG</a></li>
                         </ul>
-
-
                     </div>
                     <ul class="nav navbar-nav navbar-right myreservations">
                         <li>
@@ -120,7 +137,7 @@ page it will render here dynamically... -->
         <div class="clearfix container-fluid">
             <div class="row">
                 <div class="col-sm-2 col-xs-12">
-                    <a href="#" class="footer_logo"><img src="/images/footer_logo.png"></a>
+                    {{--<a href="#" class="footer_logo"><img src="/images/footer_logo.png"></a>--}}
                     <p class="footer_desc">AlHamd movers is a group of Professionals who makes relocation alot easier and Cheaper.</p>
                     <ul class="footer_social hidden-xs">
                         <li><a href="#" class="hvr-grow"><i class="fa fa-instagram"></i></a></li>
@@ -186,6 +203,7 @@ page it will render here dynamically... -->
 
     <!-- Main.js is the file that contain all Merged & Minified Js -->
     <script src="/js/main.js"></script>
+    <script src="/js/chosen.jquery.min.js"></script>
 
     <!--    -->
     @yield('scripts')
@@ -204,6 +222,8 @@ page it will render here dynamically... -->
                 $('.reservations_btn').click(function () {
                     location.reload();
                 });
+
+                $("#services").chosen(".chosen-select");
             });
 
             function activeOrdersTab() {

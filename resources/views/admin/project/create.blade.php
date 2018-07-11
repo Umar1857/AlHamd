@@ -17,7 +17,7 @@
             <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Create New Post</h3>
+                        <h3 class="box-title">Create New Project</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
@@ -36,19 +36,46 @@
                                             </span>
                                         @endif
                                     </div>
-                                    <div class="form-group {{ $errors->has('city') ? ' has-error' : '' }}">
-                                        <label>Project City</label>
-                                        <select name="city">
-                                            <option>Select A City</option>
-                                            <option value="dera ismail khan">Dera Ismail Khan</option>
-                                            <option value="peshawar">Peshawar</option>
-                                            <option value="multan">Multan</option>
-                                            <option value="islamabad">Islamabad</option>
+
+                                    <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
+                                        <label>Project Description</label>
+                                        <textarea name="description" rows="12" cols="12" class="form-control" placeholder="Enter Project Description Here">{{ old('description') }}</textarea>
+
+                                        @if ($errors->has('description'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('description') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group {{ $errors->has('moved_from') ? ' has-error' : '' }}">
+                                        <label>Moved From</label>
+                                        <select class="form-control" name="moved_from">
+                                            <option value="">Select A City</option>
+                                            @foreach($cities as $city)
+                                                <option value="{{$city->id}}" {{ old("moved_from") == $city->id ? "selected":""}}>{{ $city->name }}</option>
+                                            @endforeach
                                         </select>
 
-                                        @if ($errors->has('city'))
+                                        @if ($errors->has('moved_from'))
                                             <span class="help-block">
-                                                <strong>{{ $errors->first('city') }}</strong>
+                                                <strong>{{ $errors->first('moved_from') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group {{ $errors->has('moved_to') ? ' has-error' : '' }}">
+                                        <label>Moved To</label>
+                                        <select class="form-control" name="moved_to">
+                                            <option value="">Select A City</option>
+                                            @foreach($cities as $city)
+                                                <option value="{{$city->id}}" {{ old("moved_to") == $city->id ? "selected":""}}>{{ $city->name }}</option>
+                                            @endforeach
+                                        </select>
+
+                                        @if ($errors->has('moved_to'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('moved_to') }}</strong>
                                             </span>
                                         @endif
                                     </div>

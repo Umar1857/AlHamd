@@ -34,6 +34,13 @@
     {{--<script  src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>--}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
 
+    {{--Tiny MCE Editor--}}
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>tinymce.init({
+            selector:'textarea#PostBody',
+            plugins: "lists link wordcount textcolor searchreplace",
+        });</script>
+
 @yield('styles')
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -149,42 +156,64 @@
                     <li class="dropdown notifications-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-bell-o"></i>
-                            <span class="label label-warning">10</span>
+                                @if(Auth::check() && count(Auth::user()->unreadNotifications))
+                                    <span class="label label-warning">
+                                        {{count(Auth::user()->unreadNotifications)}}
+                                    </span>
+                                @endif
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="header">You have 10 notifications</li>
+                                @if(Auth::check() && count(Auth::user()->unreadNotifications))
+                                    <li class="header">You have
+                                        {{count(Auth::user()->unreadNotifications)}}
+                                        notifications
+                                    </li>
+                                @endif
+
+                                @if(Auth::check() && count(Auth::user()->unreadNotifications) == 0)
+                                    <li class="header">You have no new notification.</li>
+                                @endif
                             <li>
                                 <!-- inner menu: contains the actual data -->
                                 <ul class="menu">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
-                                            page and may cause design problems
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-users text-red"></i> 5 new members joined
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-user text-red"></i> You changed your username
-                                        </a>
-                                    </li>
+                                    @if(Auth::check() && count(Auth::user()->unreadNotifications))
+                                        @foreach(Auth::user()->unreadNotifications as $key => $notification)
+                                            <li>
+                                                <a class="notification_links clearfix" notif-id="{{$notification->id}}"
+                                                    @if(snake_case(class_basename($notification->type )) == 'contact_query')
+                                                        href="/admin/contact"
+                                                    @elseif(snake_case(class_basename($notification->type )) == 'quote_query')
+                                                        href="/admin/quote"
+                                                    @else
+                                                        href="/admin/booking"
+                                                    @endif>
+                                                    <div class="notification_image">
+                                                        @if(snake_case(class_basename($notification->type )) == 'contact_query')
+                                                            {{--<i class="fa fa-users text-aqua fa-2x"></i>--}}
+                                                            <img src="{{URL::to('/images/admin/envelope.png')}}">
+                                                        @elseif(snake_case(class_basename($notification->type )) == 'quote_query')
+                                                            {{--<i class="fa fa-users text-aqua fa-2x"></i>--}}
+                                                            <img src="{{URL::to('/images/admin/quotation.png')}}">
+                                                        @else
+                                                            <i class="fa fa-users text-aqua fa-2x"></i>
+                                                        @endif
+                                                    </div>
+                                                    <div class="notification_text">
+                                                        <div class="notification_msg">
+                                                            {{str_limit($notification -> data['message'], 30)}}
+                                                        </div>
+                                                        <div class=" float-left notification_date">
+                                                            {{$notification->created_at->format('d-m-Y h:i')}}
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    @endif
+
                                 </ul>
                             </li>
-                            <li class="footer"><a href="#">View all</a></li>
+                            <li class="footer"><a href="{{route('notification')}}">View all</a></li>
                         </ul>
                     </li>
                     <!-- Tasks: style can be found in dropdown.less -->
@@ -394,17 +423,17 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="{{route('dashboard')}}">
+                    <a href="{{route('quotes')}}">
                         <i class="fa fa-question"></i> <span>Quotes</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('dashboard')}}">
+                    <a href="{{route('bookings')}}">
                         <i class="fa fa-book"></i> <span>Bookings</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('dashboard')}}">
+                    <a href="{{route('contacts')}}">
                         <i class="fa fa-envelope-square"></i> <span>Contact Mails</span>
                     </a>
                 </li>
@@ -437,7 +466,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('dashboard')}}">
+                    <a href="{{route('notification')}}">
                         <i class="fa fa-newspaper-o"></i><span>Notifications</span>
                     </a>
                 </li>
@@ -537,6 +566,10 @@
     $(document).ready(function() {
         $('#posts').DataTable();
         $('#projects').DataTable();
+        $('#contacts').DataTable();
+        $('#quotes').DataTable();
+        $('#notifications').DataTable();
+        $('#booking').DataTable();
     });
 </script>
 

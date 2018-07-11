@@ -3782,9 +3782,9 @@ $(document).ready(function () {
 
     $('.selectpicker').selectpicker();
 
-    var navOffset = $(".main_nav").offset().top;
-    $(".main_nav").wrap('<div class="placeholder"></div>');
-    $("div.placeholder").height($(".main_nav").innerHeight());
+    var navOffset = $("header").offset().top;
+    $("header").wrap('<div class="placeholder"></div>');
+    $("div.placeholder").height($("header").innerHeight());
 
 
     $(window).scroll(function () {
@@ -3793,11 +3793,11 @@ $(document).ready(function () {
 
         if (scrollPos >= navOffset) {
 
-            $(".main_nav").addClass("fixed_menu");
+            $("header").addClass("fixed_menu");
             //$(".sidebar").addClass("sidebarFixed");
 
         } else {
-            $(".main_nav").removeClass("fixed_menu");
+            $("header").removeClass("fixed_menu");
             //$(".sidebar").removeClass("sidebarFixed");
         }
     });
@@ -4068,3 +4068,10 @@ $(document).ready(function () {
 $(document).load(function () {
     $(window).trigger("#freewall_new,#freewall");
 });
+
+function selectedService() {
+    alert('Changed');
+    var services = $("#services").chosen().val();
+    alert('Values: ', services);
+    console.log(services);
+}

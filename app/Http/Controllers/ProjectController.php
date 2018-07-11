@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\City;
 use App\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -30,7 +31,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin/project/create');
+        $cities = City::all();
+        return view('admin/project/create', compact('cities'));
     }
 
     /**
@@ -43,8 +45,10 @@ class ProjectController extends Controller
     {
         // Validate Form DATA
         $rules = array(
-            'title' => 'required|string',
-            'city' => 'required',
+            'title'            => 'required|string',
+            'description'      => 'required|string',
+            'moved_from'       => 'required',
+            'moved_to'         => 'required',
         );
 
         $validator = Validator::make(Input::all(), $rules);
@@ -59,7 +63,9 @@ class ProjectController extends Controller
         else{
             $project = new Project();
             $project->title = $request->title;
-            $project->city = $request->city;
+            $project->description = $request->description;
+            $project->from = $request->moved_from;
+            $project->to = $request->moved_to;
             $project->save();
 
             // redirect
@@ -89,8 +95,9 @@ class ProjectController extends Controller
     public function edit($id)
     {
         $project = Project::find($id);
+        $cities = City::all();
 
-        return view('project/edit', ['project' => $project]);
+        return view('admin/project/edit', ['project' => $project, 'cities' => $cities]);
     }
 
     /**
@@ -102,26 +109,30 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         // Validate Form DATA
         $rules = array(
-            'title' => 'required|string',
-            'city' => 'required',
+            'title'            => 'required|string',
+            'description'      => 'required|string',
+            'moved_from'       => 'required',
+            'moved_to'         => 'required',
         );
 
         $validator = Validator::make(Input::all(), $rules);
 
         if ($validator->fails()) {
 
-            return redirect('/admin/project/create')
+            return redirect('/admin/project/'.$id.'/edit')
                 ->withErrors($validator)
                 ->withInput();
         }
 
         else{
+
             $project = Project::find($id);
             $project->title = $request->title;
-            $project->city = $request->city;
+            $project->description = $request->description;
+            $project->from = $request->moved_from;
+            $project->to = $request->moved_to;
             $project->update();
 
             // redirect
@@ -145,5 +156,10 @@ class ProjectController extends Controller
         Session::flash('message', 'Project has been Successfully Deleted!');
         Session::flash('alert-class', 'alert-success');
         return Redirect::to('/admin/project');
+    }
+
+    public function projects() {
+        $projects = Project::all();
+        return view('user.project', ['projects' => $projects]);
     }
 }

@@ -56,6 +56,7 @@ class PostController extends Controller
         }
 
         else{
+            dd($request);
             $post = new Post();
             $post->title = $request->title;
             $post->slug = str_slug($request->title);
@@ -67,6 +68,8 @@ class PostController extends Controller
             Session::flash('message', 'A Post Has Been Successfully Created!');
             Session::flash('alert-class', 'alert-success');
             return redirect('/admin/post/create');
+
+            //OUTPUT IT WITH {!!html_entity_decode($text)!!}
         }
     }
 
@@ -78,7 +81,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        return view('user/blog-detail', compact('post'));
     }
 
     /**
@@ -147,5 +151,15 @@ class PostController extends Controller
         Session::flash('message', 'Post has been Successfully Deleted!');
         Session::flash('alert-class', 'alert-success');
         return Redirect::to('/admin/post');
+    }
+
+    public function blog() {
+        return view('user/blog');
+    }
+
+    public function singlePost($id)
+    {
+        $post = Post::find($id);
+        return view('user/blog-detail', ['post' => $post]);
     }
 }

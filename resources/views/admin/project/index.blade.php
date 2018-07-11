@@ -20,6 +20,7 @@
                             <tr>
                                 <th>Title</th>
                                 <th>City</th>
+                                <th>Description</th>
                                 <th>Created At</th>
                                 <th>Actions</th>
                             </tr>
@@ -28,7 +29,11 @@
                             @foreach($projects as $project)
                             <tr>
                                 <td>{{$project->title}}</td>
-                                <td>{{$project->city}}</td>
+                                <td class="text-center">
+                                    <div><strong>From: </strong> {{$project->movedFrom->name}} </div>
+                                    <div><strong>To: </strong> {{$project->movedTo->name}} </div>
+                                </td>
+                                <td>{{str_limit($project->description, 60)}}</td>
                                 <td>{{$project->created_at->format('d-m-Y')}}</td>
                                 <td class="text-center">
                                     <span><a class="btn btn-sm btn-primary deleteForm" href="/admin/project/{{$project->id}}/edit">Edit</a></span>
