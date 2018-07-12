@@ -11,24 +11,38 @@
                     <div class="alert alert-success alert-notification">
                         {{ session('message') }}
                     </div>
-                @endif
-                {{--Session Alert Ends--}}
+            @endif
+            {{--Session Alert Ends--}}
 
-                <!-- general form elements -->
+            <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Create New Service</h3>
+                        <h3 class="box-title">Update Item</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
 
                     <div class="row">
                         <div class="col-md-12">
-                            <form role="form" action="/admin/service" method="POST">
+                            <form role="form" action="/admin/item/{{$item->id}}" method="POST">
                                 <div class="box-body">
-                                    <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
+                                    <div class="form-group {{ $errors->has('service') ? ' has-error' : '' }}">
                                         <label>Service Name</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Enter Service Name Here" value="{{ old('name') }}" required autofocus>
+                                        <select name="service" class="form-control">
+                                            <option value="">Select A Service</option>
+                                            @foreach($services as $service)
+                                                <option value="{{$service->id}}" {{$service->id ==$item->service_id ? 'selected' :''}}>{{$service->name}}</option>
+                                            @endforeach
+                                        </select>
+                                        @if ($errors->has('service'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('service') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                                    <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
+                                        <label>Item Name</label>
+                                        <input type="text" name="name" class="form-control" placeholder="Enter Service Name Here" value="{{ $item->name }}" required>
 
                                         @if ($errors->has('name'))
                                             <span class="help-block">
@@ -36,31 +50,11 @@
                                             </span>
                                         @endif
                                     </div>
-                                    <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
-                                        <label>Service Image</label>
-                                        <input type="file" name="image" value="{{ old('image') }}">
-
-                                        @if ($errors->has('image'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('image') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-                                    <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
-                                        <label>Service Description</label>
-                                        <textarea name="description" rows="15" class="form-control" placeholder="Enter Service Description Here" required>{{ old('description') }}</textarea>
-
-                                        @if ($errors->has('description'))
-                                            <span class="help-block">
-                                                <strong>{{ $errors->first('description') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-
                                 </div>
                                 <!-- /.box-body -->
 
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="hidden" name="_method" value="PUT">
 
                                 <div class="box-footer">
                                     <button type="submit" class="btn btn-lg btn-primary pull-right">Submit</button>

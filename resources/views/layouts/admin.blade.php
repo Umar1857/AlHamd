@@ -460,10 +460,31 @@
                         <li><a href="/admin/post/"><i class="fa fa-circle-o"></i>View Posts</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="/admin/service">
-                        <i class="fa fa-newspaper-o"></i><span>Services</span>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-newspaper-o"></i>
+                        <span>Services</span>
+                        <span class="pull-right-container">
+                          <span class="label label-primary pull-right">4</span>
+                        </span>
                     </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/admin/service/create"><i class="fa fa-circle-o"></i>Create New Service</a></li>
+                        <li><a href="/admin/service/"><i class="fa fa-circle-o"></i>View Service</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-newspaper-o"></i>
+                        <span>Service Items</span>
+                        <span class="pull-right-container">
+                          <span class="label label-primary pull-right">4</span>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/admin/item/create"><i class="fa fa-circle-o"></i>Create New Item</a></li>
+                        <li><a href="/admin/item/"><i class="fa fa-circle-o"></i>View Items</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="{{route('notification')}}">
@@ -566,6 +587,7 @@
     $(document).ready(function() {
         $('#posts').DataTable();
         $('#projects').DataTable();
+        $('#services').DataTable();
         $('#contacts').DataTable();
         $('#quotes').DataTable();
         $('#notifications').DataTable();

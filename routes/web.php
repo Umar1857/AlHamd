@@ -138,6 +138,9 @@ Route::prefix('/admin')->group(function (){
             // Resource Route For Service
             Route::resource('/service', 'ServiceController');
 
+            // Resource Route For Item
+            Route::resource('/item', 'ItemController');
+
             Route::get('/booking', 'BookingController@bookings')->name('bookings');
             Route::get('/booking/{id}', 'BookingController@show')->name('bookings.view');
             Route::post('/booking/reply', 'BookingController@sendReply')->name('booking.reply');

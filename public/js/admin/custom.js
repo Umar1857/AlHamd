@@ -1,5 +1,4 @@
 $('#deleteForm').submit( function(event) {
-    alert('Hii');
     var form = this; // storing the form
     event.preventDefault(); // prevent form submit
 
@@ -12,7 +11,7 @@ $('#deleteForm').submit( function(event) {
     })
         .then((willDelete) => {
         if (willDelete) {
-            alert(form);
+            // alert(form);
             form.submit();
         } else {
         }

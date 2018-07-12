@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Item;
 use App\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -9,7 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
-class ServiceController extends Controller
+class ItemController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +19,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::all();
-        return view('admin/services/index', compact('services'));
+        $items = Item::with('service')->get();
+        return view('admin/items/index', compact('items'));
     }
 
     /**
@@ -29,7 +30,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('admin/services/create');
+        $services = Service::all();
+        return view('admin/items/create',compact('services'));
     }
 
     /**
@@ -42,34 +44,29 @@ class ServiceController extends Controller
     {
         // Validate Form DATA
         $rules = array(
-            'name' => 'required|string',
-            'image' => 'required',
-            'description' => 'required|string',
+            'service'   => 'required',
+            'name'      => 'required|string',
         );
 
         $validator = Validator::make(Input::all(), $rules);
 
         if ($validator->fails()) {
 
-            return redirect('/admin/service/create')
+            return redirect('/admin/item/create')
                 ->withErrors($validator)
                 ->withInput();
-        }
+        } else {
 
-        else{
-            
-            $service = new Service();
-            $service->name = $request->name;
-            $service->description = $request->description;
-            $service->image = $request->image;
-            $service->save();
+            $item = new Item();
+            $item->name         = $request->name;
+            $item->service_id   = $request->service;
+            $item->save();
 
             // redirect
-            Session::flash('message', 'A Service Has Been Successfully Created!');
+            Session::flash('message', 'An Item Has Been Successfully Created!');
             Session::flash('alert-class', 'alert-success');
-            return redirect('/admin/service/create');
+            return redirect('/admin/item/create');
 
-            //OUTPUT IT WITH {!!html_entity_decode($text)!!}
         }
     }
 
@@ -81,8 +78,7 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        $service = Service::with('items')->find($id);
-        return view('admin/services/show', compact('service'));
+        //
     }
 
     /**
@@ -93,8 +89,9 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        $service = Service::find($id);
-        return view('admin/services/edit', compact('service'));
+        $item = Item::find($id);
+        $services = Service::all();
+        return view('admin/items/edit', compact('item','services'));
     }
 
     /**
@@ -108,33 +105,28 @@ class ServiceController extends Controller
     {
         // Validate Form DATA
         $rules = array(
-            'name' => 'required|string',
-            'description' => 'required|string',
+            'service'   => 'required',
+            'name'      => 'required|string',
         );
 
         $validator = Validator::make(Input::all(), $rules);
 
         if ($validator->fails()) {
 
-            return redirect('/admin/service/'.$id.'/edit')
+            return redirect('/admin/item/'.$id.'/edit')
                 ->withErrors($validator)
                 ->withInput();
-        }
+        } else {
 
-        else{
-            //dd($request);
-            $service = Service::find($id);
-            $service->name = $request->name;
-            $service->description = $request->description;
-            if ($request->image) {
-                $service->image = $request->image;
-            }
-            $service->update();
+            $item = Item::find($id);
+            $item->name         = $request->name;
+            $item->service_id   = $request->service;
+            $item->update();
 
             // redirect
-            Session::flash('message', 'A Service Has Been Successfully Updated!');
+            Session::flash('message', 'An Item Has Been Successfully Updated!');
             Session::flash('alert-class', 'alert-success');
-            return redirect('/admin/service');
+            return redirect('/admin/item/');
         }
     }
 
@@ -146,11 +138,11 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        $service = Service::find($id);
-        $service->delete();
+        $item = Item::find($id);
+        $item->delete();
         // redirect
-        Session::flash('message', 'Service has been Successfully Deleted!');
+        Session::flash('message', 'Item has been Successfully Deleted!');
         Session::flash('alert-class', 'alert-success');
-        return Redirect::to('/admin/service');
+        return Redirect::to('/admin/item');
     }
 }

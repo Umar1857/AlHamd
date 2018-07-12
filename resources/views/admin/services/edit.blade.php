@@ -7,37 +7,42 @@
             <!-- left column -->
             <div class="col-md-12">
                 <!-- general form elements -->
+
+                <!-- /.box-header -->
+                <!-- form start -->
+
+                {{--Session Alert Starts--}}
+                @if (session('message'))
+                    <div class="alert alert-success alert-notification">
+                        {{ session('message') }}
+                    </div>
+                @endif
+                {{--Session Alert Ends--}}
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Edit Post</h3>
+                        <h3 class="box-title">Edit Service</h3>
                     </div>
-                    <!-- /.box-header -->
-                    <!-- form start -->
-
-                    {{--Session Alert Starts--}}
-                    @if (session('message'))
-                        <div class="alert alert-success alert-notification">
-                            {{ session('message') }}
-                        </div>
-                    @endif
-                    {{--Session Alert Ends--}}
                     <div class="row">
                         <div class="col-md-12">
-                            <form role="form" action="/admin/post/{{$post->id}}" method="PUT">
+                            <form role="form" action="/admin/service/{{$service->id}}" method="post">
                                 <div class="box-body">
-                                    <div class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
-                                        <label>Post Title</label>
-                                        <input type="text" name="title" class="form-control" placeholder="Enter Post Title Here" value="{{$post->title}}" required autofocus>
+                                    <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
+                                        <label>Service Name</label>
+                                        <input type="text" name="name" class="form-control" placeholder="Enter Service Title Here" value="{{$service->name}}" required autofocus>
 
-                                        @if ($errors->has('title'))
+                                        @if ($errors->has('name'))
                                             <span class="help-block">
-                                                <strong>{{ $errors->first('title') }}</strong>
+                                                <strong>{{ $errors->first('name') }}</strong>
                                             </span>
                                         @endif
                                     </div>
                                     <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
-                                        <label>Post Image</label>
-                                        <input type="file" name="image" value="{{$post->image}}" required>
+                                        <label>Previously Selected Image</label>
+                                        <img src="" class="service_image">
+                                    </div>
+                                    <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
+                                        <label>Service Image</label>
+                                        <input type="file" name="image" value="{{$service->image}}">
 
                                         @if ($errors->has('image'))
                                             <span class="help-block">
@@ -45,15 +50,13 @@
                                             </span>
                                         @endif
                                     </div>
-                                    <div class="form-group {{ $errors->has('body') ? ' has-error' : '' }}">
-                                        <label>Post Body</label>
-                                        <textarea name="body" rows="20" class="form-control" id="PostBody" placeholder="Post Body" required>
-                                            {{$post->body}}
-                                        </textarea>
+                                    <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
+                                        <label>Service Description</label>
+                                        <textarea name="description" rows="15" class="form-control" placeholder="Enter Service Description Here" required>{{$service->description}}</textarea>
 
-                                        @if ($errors->has('body'))
+                                        @if ($errors->has('description'))
                                             <span class="help-block">
-                                                <strong>{{ $errors->first('body') }}</strong>
+                                                <strong>{{ $errors->first('description') }}</strong>
                                             </span>
                                         @endif
                                     </div>
