@@ -37,7 +37,7 @@
                     <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="#" class="google"><i class="fa fa-google-plus"></i></a></li>
                 </ul>
-                <p>If you don`t have an account, you can <a href="/register"><strong>create new</strong></a></p>
+                {{--<p>If you don`t have an account, you can <a href="/register"><strong>create new</strong></a></p>--}}
             </div>
         </div>
     </div>

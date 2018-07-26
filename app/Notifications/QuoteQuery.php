@@ -44,7 +44,7 @@ class QuoteQuery extends Notification implements ShouldQueue
     {
         return (new MailMessage)
             ->subject('You have Got a New Quote Query.')
-            ->view('emails.adminNotifyEmail', ['quote' => $this->quote, 'contact' => null]);
+            ->view('emails.adminNotifyEmail', ['quote' => $this->quote, 'contact' => null, 'booking' => null]);
     }
 
 

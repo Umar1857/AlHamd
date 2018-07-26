@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Booking;
 use App\City;
+use App\Events\BookingEvent;
+use App\Events\ThankyouEvent;
+use App\Service;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
@@ -13,18 +17,26 @@ class BookingController extends Controller
 {
     public function index() {
         $cities = City::all();
-        return view('user/booking', compact('cities'));
+        $services = Service::all();
+        return view('user/booking', compact('cities','services'));
     }
 
     public function create(Request $request){
-
+        $now = Carbon::now();
+        //dd($request);
         $rules = array(
-            'username' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255',
-            'phone' => 'required|string|regex:/(0)[0-9]{10}/',
-            'from' => 'required|string',
-            'to' => 'required|string',
-            'message' => 'required|string'
+            'services'              => 'required|integer',
+            'item'                  => 'required|integer',
+            'from'                  => 'required|integer',
+            'to'                    => 'required|integer',
+            'from_address'          => 'required|string',
+            'to_address'            => 'required|string',
+            'moving_date'           => 'required|string|after:'.$now,
+            'message'               => 'required|string',
+            'fname'                 => 'required|string|max:255',
+            'lname'                 => 'required|string|max:255',
+            'email'                 => 'required|string|email|max:255',
+            'phone'                 => 'required|string',
         );
 
         $validator = Validator::make(Input::all(), $rules);
@@ -37,26 +49,57 @@ class BookingController extends Controller
         }
 
         else {
+            //dd($request);
             $booking = new Booking();
-            $booking->name = $request->username;
+
+            // Personal Details
+            $booking->fname = $request->fname;
+            $booking->lname = $request->lname;
             $booking->email = $request->email;
-            $booking->contact_no = $request->phone;
+            $booking->number = $request->phone;
+
+            // Delivery Details
+            $booking->service = $request->services;
+            $booking->item = $request->item;
             $booking->moving_from = $request->from;
             $booking->moving_to = $request->to;
-            $booking->message = $request->message;
+            $booking->moving_from_address = $request->from_address;
+            $booking->moving_to_address = $request->to_address;
+            $booking->moving_date = Carbon::parse($request->moving_date)->format('Y-m-d');
+//            $booking->moving_date = Carbon::now();
+            //$booking->moving_time = $request->moving_time;
+            $booking->moving_time = Carbon::parse($request->moving_date)->format('H:i:s');
+            $booking->description = $request->message;
+            $booking->status = 'Pending';
             $booking->save();
 
+            //Fire An Event to Notify Admins
+            event(new BookingEvent($booking));
+
+            //Fire An Event to Thankyou Customer
+            event(new ThankyouEvent($booking));
+
             // redirect
-            Session::flash('message', 'Booking Request Has Been Sent Successfully!');
+            Session::flash('message', 'Booking Request Has Been Sent Successfully, our representative will contact you shortly!');
             Session::flash('alert-class', 'alert-success');
             return redirect('/booking');
         }
     }
 
-    public function bookings() {
-        $bookings = Booking::all();
-
-        return view('/admin/booking/index', compact('bookings'));
+    public function pendingBookings() {
+        $bookings = Booking::where('status','=','Pending')->get();
+        $status = 'Pending';
+        return view('/admin/booking/index', compact('bookings','status'));
+    }
+    public function completedBookings() {
+        $bookings = Booking::where('status','=','Completed')->get();
+        $status = 'Completed';
+        return view('/admin/booking/index', compact('bookings','status'));
+    }
+    public function confirmedBookings() {
+        $bookings = Booking::where('status','=','Confirmed')->get();
+        $status = 'Confirmed';
+        return view('/admin/booking/index', compact('bookings','status'));
     }
 
     public function show($id) {
@@ -67,5 +110,31 @@ class BookingController extends Controller
 
     public function sendReply() {
 
+    }
+
+    public function updateStatus(Request $request) {
+        $rules = array(
+            'status'    => 'required|string',
+        );
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->fails()) {
+
+            return redirect('/admin/booking/'.$request->id)
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        else {
+            $booking = Booking::find($request->id);
+            $booking->status = $request->status;
+            $booking->update();
+
+            // redirect
+            Session::flash('message', 'Booking Status Has Been Updated');
+            Session::flash('alert-class', 'alert-success');
+            return redirect('/admin/booking/'.lcfirst($request->status));
+        }
     }
 }

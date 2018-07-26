@@ -424,8 +424,8 @@ header{
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 20, 20, .5)), to(rgba(20, 20, 20, .5))), url(../images/home_banner.jpg) no-repeat center center/cover;
-    background: linear-gradient(rgba(20, 20, 20, .5), rgba(20, 20, 20, .5)), url(../images/home_banner.jpg) no-repeat center center/cover;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 20, 20, .5)), to(rgba(20, 20, 20, .5))), url(../images/Main-Banner1.jpeg) no-repeat center center/cover;
+    background: linear-gradient(rgba(20, 20, 20, .5), rgba(20, 20, 20, .5)), url(../images/Main-Banner1.jpeg) no-repeat center center/cover;
 }
 
 .home_content h1 {
@@ -1109,7 +1109,7 @@ header{
     margin-bottom: 5px;
 }
 .published_at{
-    font-size: 12px;
+    font-size: 14px;
     color: #333333;
     font-weight: bold;
 }
@@ -3364,7 +3364,6 @@ footer h4 {
     padding-bottom: 60px !important;
 }
 .project_head{
-    min-height: 50px;
     line-height: 25px;
 }
 .project_city{

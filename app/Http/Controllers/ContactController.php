@@ -19,7 +19,7 @@ class ContactController extends Controller
         $rules = array(
             'username' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',
-            'phone' => 'required|string|regex:/(0)[0-9]{10}/',
+            'phone' => 'required|string',
             'message' => 'required|string'
         );
 

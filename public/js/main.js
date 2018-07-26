@@ -4070,8 +4070,20 @@ $(document).load(function () {
 });
 
 function selectedService() {
-    alert('Changed');
-    var services = $("#services").chosen().val();
-    alert('Values: ', services);
+    var services = $("#services").val();
+    for (var i = 0; i<services.length; i++) {
+        var unique_id = $( "#item_"+services[i]);
+        if (unique_id.length <1) {
+            $.ajax({
+               url: '/getServiceItems',
+               data: {serviceID: services[i]},
+                success: function (data) {
+                   if (data.length> 0){
+                       $('#itemsDiv').html(data)
+                   }
+                }
+            });
+        }
+    }
     console.log(services);
 }

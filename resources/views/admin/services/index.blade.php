@@ -8,7 +8,7 @@
             <div class="col-md-12">
                 <!-- general form elements -->
                 <div>
-                    <a class="btn btn-md btn-primary addNewService">Add New Service</a>
+                    <a href="/admin/service/create" class="btn btn-md btn-primary addNewService">Add New Service</a>
                 </div>
                 <div class="box">
                     <div class="box-header">
@@ -16,38 +16,39 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <table id="projects" class="table table-striped table-bordered" style="width:100%">
+                        <table id="services" class="table table-striped table-bordered" style="width:100%">
                             <thead>
                             <tr>
                                 <th>Image</th>
-                                <th>Title</th>
-                                <th>Created At</th>
+                                <th>Name</th>
+                                <th>Description</th>
                                 <th>Actions</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {{--@foreach($projects as $project)
+                            @foreach($services as $service)
                             <tr>
-                                <td>{{$project->title}}</td>
-                                <td>{{$project->city}}</td>
-                                <td>{{$project->created_at->format('d-m-Y')}}</td>
+                                <td></td>
+                                <td>{{$service->name}}</td>
+                                <td>{{str_limit($service->description, 70)}}</td>
                                 <td class="text-center">
-                                    <span><a class="btn btn-sm btn-primary deleteForm" href="/admin/project/{{$project->id}}/edit">Edit</a></span>
+                                    <span><a class="btn btn-sm btn-default deleteForm" href="/admin/service/{{$service->id}}">View</a></span>
+                                    <span><a class="btn btn-sm btn-primary deleteForm" href="/admin/service/{{$service->id}}/edit">Edit</a></span>
                                     <div class="deleteForm">
-                                        {{ Form::open(array('url' => '/admin/project/'.$project->id, 'id' => 'deleteForm')) }}
+                                        {{ Form::open(array('url' => '/admin/service/'.$service->id, 'id' => 'deleteForm')) }}
                                         {{ Form::hidden('_method', 'DELETE') }}
                                             <button class="btn btn-sm btn-danger formDeleteButton">Delete</button>
                                         {{ Form::close() }}
                                     </div>
                                 </td>
                             </tr>
-                            @endforeach--}}
+                            @endforeach
                             </tbody>
                             <tfoot>
                             <tr>
                                 <th>Image</th>
-                                <th>Title</th>
-                                <th>Created At</th>
+                                <th>Name</th>
+                                <th>Description</th>
                                 <th>Actions</th>
                             </tr>
                             </tfoot>

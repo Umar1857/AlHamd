@@ -24,11 +24,11 @@ class AlterTableBookingAddFields extends Migration
 
             $table->string('moving_from_address');
             $table->integer('moving_from')->unsigned();
-            $table->foreign('moving_from')->references('id')->on('cities');
+            $table->foreign('moving_from')->references('id')->on('cities')->onDelete('cascade');
 
             $table->string('moving_to_address');
             $table->integer('moving_to')->unsigned();
-            $table->foreign('moving_to')->references('id')->on('cities');
+            $table->foreign('moving_to')->references('id')->on('cities')->onDelete('cascade');
         });
     }
 

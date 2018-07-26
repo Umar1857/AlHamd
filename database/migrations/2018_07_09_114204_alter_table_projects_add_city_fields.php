@@ -17,10 +17,10 @@ class AlterTableProjectsAddCityFields extends Migration
             $table->dropColumn('city');
 
             $table->integer('from')->unsigned();
-            $table->foreign('from')->references('id')->on('cities');
+            $table->foreign('from')->references('id')->on('cities')->onDelete('cascade');
 
             $table->integer('to')->unsigned();
-            $table->foreign('to')->references('id')->on('cities');
+            $table->foreign('to')->references('id')->on('cities')->onDelete('cascade');
         });
     }
 

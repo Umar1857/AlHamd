@@ -43,7 +43,8 @@ class PostController extends Controller
         // Validate Form DATA
         $rules = array(
             'title' => 'required|string',
-            'body' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,bmp,png',
+            'body'  => 'required|string',
         );
 
         $validator = Validator::make(Input::all(), $rules);
@@ -56,12 +57,16 @@ class PostController extends Controller
         }
 
         else{
-            dd($request);
             $post = new Post();
             $post->title = $request->title;
             $post->slug = str_slug($request->title);
             $post->body = $request->body;
-            $post->image = $request->image;
+
+            $file = $request->file('image') ;
+
+            $fileName       = time().'.'.$file->getClientOriginalExtension() ;
+            $request->image->move(base_path('public/images/post'), $fileName);
+            $post->image = $fileName;
             $post->save();
 
             // redirect
@@ -95,7 +100,7 @@ class PostController extends Controller
     {
         $post = Post::find($id);
 
-        return view('posts/edit', ['post' => $post]);
+        return view('admin/posts/edit', ['post' => $post]);
     }
 
     /**
@@ -110,7 +115,8 @@ class PostController extends Controller
         // Validate Form DATA
         $rules = array(
             'title' => 'required|string',
-            'body' => 'required|string',
+            'image' => 'image|mimes:jpeg,bmp,png',
+            'body'  => 'required|string',
         );
 
         $validator = Validator::make(Input::all(), $rules);
@@ -127,7 +133,14 @@ class PostController extends Controller
             $post->title = $request->title;
             $post->slug = str_slug($request->title);
             $post->body = $request->body;
-            $post->image = $request->image;
+
+            if ($request->hasFile('image')) {
+                $file = $request->file('image');
+
+                $fileName = time() . '.' . $file->getClientOriginalExtension();
+                $request->image->move(base_path('public/images/post'), $fileName);
+                $post->image = $fileName;
+            }
             $post->update();
 
             // redirect
@@ -154,7 +167,8 @@ class PostController extends Controller
     }
 
     public function blog() {
-        return view('user/blog');
+        $posts = Post::paginate(5);
+        return view('user/blog', compact('posts'));
     }
 
     public function singlePost($id)
