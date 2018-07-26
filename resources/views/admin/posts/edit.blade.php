@@ -23,17 +23,21 @@
                     {{--Session Alert Ends--}}
                     <div class="row">
                         <div class="col-md-12">
-                            <form role="form" action="/admin/post/{{$post->id}}" method="PUT">
+                            <form role="form" enctype="multipart/form-data" action="/admin/post/{{$post->id}}" method="PUT">
                                 <div class="box-body">
                                     <div class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
                                         <label>Post Title</label>
-                                        <input type="text" name="title" class="form-control" placeholder="Enter Post Title Here" value="{{$post->title}}" required autofocus>
+                                        <input type="text" name="title" class="form-control" placeholder="Enter Post Title Here" value="{{$post->title}}" required>
 
                                         @if ($errors->has('title'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('title') }}</strong>
                                             </span>
                                         @endif
+                                    </div>
+                                    <div class="post_image">
+                                        <label>Previously Selected Image</label>
+                                        <img src="{{URL::to('images/post/'.$post->image)}}" alt="{{$post->title}}">
                                     </div>
                                     <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
                                         <label>Post Image</label>

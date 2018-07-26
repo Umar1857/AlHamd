@@ -24,7 +24,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <form role="form" action="/admin/service/{{$service->id}}" method="post">
+                            <form role="form" enctype="multipart/form-data" action="/admin/service/{{$service->id}}" method="post">
                                 <div class="box-body">
                                     <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                                         <label>Service Name</label>
@@ -36,9 +36,9 @@
                                             </span>
                                         @endif
                                     </div>
-                                    <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
+                                    <div class="post_image">
                                         <label>Previously Selected Image</label>
-                                        <img src="" class="service_image">
+                                        <img src="{{URL::to('images/service/'.$service->image)}}" alt="{{$service->name}}">
                                     </div>
                                     <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
                                         <label>Service Image</label>

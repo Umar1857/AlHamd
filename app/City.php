@@ -13,4 +13,8 @@ class City extends Model
     public function projects() {
         return $this->hasMany('App\Project');
     }
+
+    public function bookings() {
+        return $this->hasMany('App\Project');
+    }
 }

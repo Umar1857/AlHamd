@@ -18,6 +18,10 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\QuoteQueryEvent' => [
             'App\Listeners\QuoteQueryListener',
+        ],'App\Events\BookingEvent' => [
+            'App\Listeners\BookingListener',
+        ],'App\Events\ThankyouEvent' => [
+            'App\Listeners\ThankyouListener',
         ],
     ];
 

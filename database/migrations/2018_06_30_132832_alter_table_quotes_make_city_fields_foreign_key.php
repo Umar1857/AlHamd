@@ -15,10 +15,10 @@ class AlterTableQuotesMakeCityFieldsForeignKey extends Migration
     {
         Schema::table('quotes', function (Blueprint $table) {
             $table->integer('moving_from')->unsigned()->change();
-            $table->foreign('moving_from')->references('id')->on('cities');
+            $table->foreign('moving_from')->references('id')->on('cities')->onDelete('cascade');
 
             $table->integer('moving_to')->unsigned()->change();
-            $table->foreign('moving_to')->references('id')->on('cities');
+            $table->foreign('moving_to')->references('id')->on('cities')->onDelete('cascade');
         });
     }
 

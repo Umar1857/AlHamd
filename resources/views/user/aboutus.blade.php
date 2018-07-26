@@ -2,14 +2,14 @@
 <!---->
 @section('content')
 <div class="intro about_content">
-    <div class="main_banner">
+    {{--<div class="main_banner">
         <div class="hotel_description text-center">
             <h1>ABOUT US</h1>
 
             <p>We take pride in service with great<span class="white_txt">attention</span>to detail</p>
 
         </div>
-    </div>
+    </div>--}}
 </div>
 <div class="about_txt">
     <h3>About AlHamd</h3>
@@ -31,7 +31,7 @@
         </p>
     </div>
 </div>
-<div class="what_client_say packages text-center">
+{{--<div class="what_client_say packages text-center">
     <div class="container">
         <div class="row">
             <p class="view_popular">
@@ -41,6 +41,6 @@
             @include('includes/what_client_slider')
         </div>
     </div>
-</div>
+</div>--}}
 <!---->
 @endsection

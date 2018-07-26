@@ -11,7 +11,7 @@
 
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Booking Table</h3>
+                        <h3 class="box-title">{{$status}} Bookings</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -28,7 +28,20 @@
                             </tr>
                             </thead>
                             <tbody>
-
+                            @foreach($bookings as $booking)
+                                <tr>
+                                    <td>{{$booking->fname.' '.$booking->lname}}</td>
+                                    <td>{{$booking->email}}</td>
+                                    <td>{{$booking->number}}</td>
+                                    <td>{{$booking->from->name}}</td>
+                                    <td>{{$booking->to->name}}</td>
+                                    <td>{{str_limit($booking->description, 70)}}</td>
+                                    <td class="text-center">
+                                        <span><a class="btn btn-sm btn-default" href="/admin/booking/{{$booking->id}}"> View </a></span>
+                                        {{--<span><a class="btn btn-sm btn-primary" href="/admin/contact/reply/{{$booking->id}}"> Reply </a></span>--}}
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                             <tfoot>
                             <tr>

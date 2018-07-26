@@ -185,7 +185,7 @@
                                                     @elseif(snake_case(class_basename($notification->type )) == 'quote_query')
                                                         href="/admin/quote"
                                                     @else
-                                                        href="/admin/booking"
+                                                        href="/admin/booking/pending"
                                                     @endif>
                                                     <div class="notification_image">
                                                         @if(snake_case(class_basename($notification->type )) == 'contact_query')
@@ -195,7 +195,7 @@
                                                             {{--<i class="fa fa-users text-aqua fa-2x"></i>--}}
                                                             <img src="{{URL::to('/images/admin/quotation.png')}}">
                                                         @else
-                                                            <i class="fa fa-users text-aqua fa-2x"></i>
+                                                            <img src="{{URL::to('/images/admin/booking.png')}}">
                                                         @endif
                                                     </div>
                                                     <div class="notification_text">
@@ -427,11 +427,24 @@
                         <i class="fa fa-question"></i> <span>Quotes</span>
                     </a>
                 </li>
-                <li>
+                {{--<li>
                     <a href="{{route('bookings')}}">
                         <i class="fa fa-book"></i> <span>Bookings</span>
                     </a>
+                </li>--}}
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-book"></i>
+                        <span>Bookings</span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/admin/booking/pending"><i class="fa fa-circle-o"></i>Pending Bookings</a></li>
+                        <li><a href="/admin/booking/confirmed"><i class="fa fa-circle-o"></i>Confirmed Bookings</a></li>
+                        <li><a href="/admin/booking/completed"><i class="fa fa-circle-o"></i>Completed Bookings</a></li>
+                    </ul>
                 </li>
+
                 <li>
                     <a href="{{route('contacts')}}">
                         <i class="fa fa-envelope-square"></i> <span>Contact Mails</span>

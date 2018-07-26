@@ -43,7 +43,7 @@ class ContactQuery extends Notification implements ShouldQueue
     {
         return (new MailMessage)
                     ->subject('You have Got a New Contact Query from Customer.')
-                    ->view('emails.adminNotifyEmail', ['contact' => $this->contact]);
+                    ->view('emails.adminNotifyEmail',['quote' => null, 'contact' => $this->contact, 'booking' => null]);
     }
 
     /**

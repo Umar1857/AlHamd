@@ -94,7 +94,7 @@
                         @endif
                     </div>
                     <div class="form-group col-md-12 {{ $errors->has('message') ? ' has-error' : '' }}">
-                        <label for="message">Message</label>
+                        <label for="message">Additional Detail</label>
                         <textarea class="form-control" name="message" placeholder="Type your message here..." rows="3" required>{{old('message') }}</textarea>
 
                         @if ($errors->has('message'))

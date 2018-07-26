@@ -1,15 +1,15 @@
 @extends('layouts.app')
 <!---->
 @section('content')
-    {{--<div class="intro about_content">
-        <div class="main_banner">
+    <div class="intro about_content">
+        {{--<div class="main_banner">
             <div class="hotel_description text-center">
                 <h1>BOOK NOW!</h1>
 
                 <p>We take pride in serving our clients with great<span class="white_txt">passion</span>to detail</p>
             </div>
-        </div>
-    </div>--}}
+        </div>--}}
+    </div>
     <div class="about_txt">
         <h1>BOOK NOW!</h1>
     </div>
@@ -26,22 +26,25 @@
                 {{--Session Alert Ends--}}
 
                 <form method="post" action="{{route('booking.submit')}}">
-                    <div class="form-group col-md-12 {{ $errors->has('username') ? ' has-error' : '' }}">
+                    <div class="form-group col-md-12 {{ $errors->has('services') ? ' has-error' : '' }}">
                         <label for="services">What Services You Are Looking For!!</label>
                         {{--<input type="text" class="form-control fields" name="username" id="name" placeholder="Name" value="{{ old('username') }}" required>--}}
-                        <select class="chosen-select form-control fields" onchange="selectedService()" id="services" name="services[]" value="{{ old('services') }}" multiple required>
-                            <option value="">Select A City</option>
-                            @foreach($cities as $city)
-                                <option value="{{$city->id}}" {{ old("from") == $city->id ? "selected":""}}>{{ $city->name }}</option>
+                        <select class="form-control fields" onchange="selectedService()" id="services" name="services" required>
+                            <option value="">Select A Service</option>
+                            @foreach($services as $service)
+                                <option value="{{$service->id}}" {{ old("services") == $service->id ? "selected":""}}>{{ $service->name }}</option>
                             @endforeach
                         </select>
-                        <small>You can select multiple services if you want more than 1 service.</small>
 
-                        @if ($errors->has('username'))
+                        @if ($errors->has('services'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('username') }}</strong>
+                                <strong>{{ $errors->first('services') }}</strong>
                             </span>
                         @endif
+                    </div>
+
+                    <div id="itemsDiv" class="form-group col-md-12 {{ $errors->has('item') ? ' has-error' : '' }}">
+
                     </div>
                     <div class="booking_form_heading">DELIVERY INFORMATION</div>
                     <div class="form-group col-md-6 {{ $errors->has('from') ? ' has-error' : '' }}">
@@ -60,13 +63,13 @@
                         @endif
                     </div>
 
-                    <div class="form-group col-md-6 {{ $errors->has('from') ? ' has-error' : '' }}">
+                    <div class="form-group col-md-6 {{ $errors->has('from_address') ? ' has-error' : '' }}">
                         <label for="message">Moving From Address</label>
-                        <input type="text" name="from_address" class="form-control fields">
+                        <input type="text" name="from_address" class="form-control fields" value="{{ old('from_address') }}">
 
-                        @if ($errors->has('from'))
+                        @if ($errors->has('from_address'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('from') }}</strong>
+                                <strong>{{ $errors->first('from_address') }}</strong>
                             </span>
                         @endif
                     </div>
@@ -87,40 +90,81 @@
                         @endif
                     </div>
 
-                    <div class="form-group col-md-6 {{ $errors->has('to') ? ' has-error' : '' }}">
-                        <label for="message">Moving To</label>
-                        <input type="text" name="to_address" class="form-control fields">
+                    <div class="form-group col-md-6 {{ $errors->has('to_address') ? ' has-error' : '' }}">
+                        <label for="message">Moving To Address</label>
+                        <input type="text" name="to_address" class="form-control fields" value="{{ old('to_address') }}">
 
-                        @if ($errors->has('to'))
+                        @if ($errors->has('to_address'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('to') }}</strong>
+                                <strong>{{ $errors->first('to_address') }}</strong>
                             </span>
                         @endif
                     </div>
 
-                    <div class="form-group col-md-6 {{ $errors->has('to') ? ' has-error' : '' }}">
-                        <label for="message">Moving Date</label>
-                        <input type="text" name="to_address" class="form-control fields">
+                    <div class='col-sm-12'>
+                        <div class="form-group  {{ $errors->has('moving_date') ? ' has-error' : '' }}">
+                            <label for="message">Moving Date And Time</label>
+                            <div class='input-group date' id='datetimepicker1'>
+                                <input type="text" name="moving_date" id="moving_date" class="form-control fields" value="{{ old('moving_date') }}">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
 
-                        @if ($errors->has('to'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('to') }}</strong>
-                            </span>
-                        @endif
+                            @if ($errors->has('moving_date'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('moving_date') }}</strong>
+                                </span>
+                            @endif
+                        </div>
                     </div>
+                    <script type="text/javascript">
+                        $(function () {
+                            var dateToday  = new Date();
+                            $('#datetimepicker1').datetimepicker({
+                                minDate: dateToday,
+                            });
+                        });
+                    </script>
 
-                    <div class="form-group col-md-6 {{ $errors->has('to') ? ' has-error' : '' }}">
+                    {{--<div class="form-group col-md-6 {{ $errors->has('moving_time') ? ' has-error' : '' }}">
                         <label for="message">Moving Time</label>
-                        <input type="text" name="to_address" class="form-control fields">
+                        <input type="text" name="moving_time" id="moving_time" class="form-control fields" value="{{ old('moving_time') }}">
 
-                        @if ($errors->has('to'))
+                        @if ($errors->has('moving_time'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('to') }}</strong>
+                                <strong>{{ $errors->first('moving_time') }}</strong>
                             </span>
                         @endif
+                    </div>--}}
+
+                    {{--<div class='col-sm-6'>
+                        <div class="form-group {{ $errors->has('moving_time') ? ' has-error' : '' }}">
+                            <label for="message">Moving Time</label>
+                            <div class='input-group date' id='datetime'>
+                                <input type="text" name="moving_time" id="moving_time" class="form-control fields" value="{{ old('moving_time') }}">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-time"></span>
+                                </span>
+                            </div>
+
+                            @if ($errors->has('moving_time'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('moving_time') }}</strong>
+                                </span>
+                            @endif
+                        </div>
                     </div>
+                    <script type="text/javascript">
+                        $(function () {
+                            $('#datetime').datetimepicker({
+                                format: 'LT'
+                            });
+                        });
+                    </script>--}}
+
                     <div class="form-group col-md-12 {{ $errors->has('message') ? ' has-error' : '' }}">
-                        <label for="message">Message</label>
+                        <label for="message">Additional Detail</label>
                         <textarea class="form-control" name="message" placeholder="Type your message here..." rows="3" required>{{old('message') }}</textarea>
 
                         @if ($errors->has('message'))
@@ -130,23 +174,23 @@
                         @endif
                     </div>
                     <div class="booking_form_heading">PERSONAL INFORMATION</div>
-                    <div class="form-group col-md-6 {{ $errors->has('username') ? ' has-error' : '' }}">
+                    <div class="form-group col-md-6 {{ $errors->has('fname') ? ' has-error' : '' }}">
                         <label for="name">First Name</label>
-                        <input type="text" class="form-control fields" name="username" id="name" placeholder="Name" value="{{ old('username') }}" required>
+                        <input type="text" class="form-control fields" name="fname" id="name" placeholder="Name" value="{{ old('fname') }}" required>
 
-                        @if ($errors->has('username'))
+                        @if ($errors->has('fname'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('username') }}</strong>
+                                <strong>{{ $errors->first('fname') }}</strong>
                             </span>
                         @endif
                     </div>
-                    <div class="form-group col-md-6 {{ $errors->has('username') ? ' has-error' : '' }}">
+                    <div class="form-group col-md-6 {{ $errors->has('lname') ? ' has-error' : '' }}">
                         <label for="name">Last Name</label>
-                        <input type="text" class="form-control fields" name="username" id="name" placeholder="Name" value="{{ old('username') }}" required>
+                        <input type="text" class="form-control fields" name="lname" id="name" placeholder="Name" value="{{ old('lname') }}" required>
 
-                        @if ($errors->has('username'))
+                        @if ($errors->has('lname'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('username') }}</strong>
+                                <strong>{{ $errors->first('lname') }}</strong>
                             </span>
                         @endif
                     </div>

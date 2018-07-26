@@ -13,9 +13,7 @@
 
 /*/////////////////////////////////////*/
 /*//////////FRONTEND ROUTES///////////*/
-Route::get('/', function () {
-    return view('user/home');
-});
+Route::get('/', 'HomeController@home')->name('home');
 
 Route::get('/about', function () {
     return view('user/aboutus');
@@ -54,9 +52,11 @@ Route::get('/package_card', function () {
     return view('user/package_card');
 });
 
-Route::get('/services', function () {
-    return view('user/services');
-});
+Route::get('/services', 'ServiceController@getServices');
+
+Route::get('/service/{id}/{name}', 'ServiceController@getSingleService');
+
+Route::get('/getServiceItems', 'ServiceController@getServiceItems');
 
 Route::get('/wellness', function () {
     return view('user/wellness');
@@ -141,8 +141,11 @@ Route::prefix('/admin')->group(function (){
             // Resource Route For Item
             Route::resource('/item', 'ItemController');
 
-            Route::get('/booking', 'BookingController@bookings')->name('bookings');
+            Route::get('/booking/pending', 'BookingController@pendingBookings')->name('pending.bookings');
+            Route::get('/booking/confirmed', 'BookingController@confirmedBookings')->name('confirmed.bookings');
+            Route::get('/booking/completed', 'BookingController@completedBookings')->name('completed.bookings');
             Route::get('/booking/{id}', 'BookingController@show')->name('bookings.view');
+            Route::post('/booking/update/status', 'BookingController@updateStatus')->name('booking.update');
             Route::post('/booking/reply', 'BookingController@sendReply')->name('booking.reply');
 
             Route::get('/quote', 'QuoteController@quotes')->name('quotes');
@@ -165,8 +168,8 @@ Route::prefix('/admin')->group(function (){
         Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
 
         //Admin Register Routes
-        Route::get('/register', 'Auth\AdminRegisterController@showRegisterForm')->name('admin.register');
-        Route::post('/register', 'Auth\AdminRegisterController@register')->name('admin.register.submit');
+        /*Route::get('/register', 'Auth\AdminRegisterController@showRegisterForm')->name('admin.register');
+        Route::post('/register', 'Auth\AdminRegisterController@register')->name('admin.register.submit');*/
 
         //Admin Password Reset Routes
         Route::post('/password/email', 'Auth\AdminForgotPasswordController@sendResetLinkEmail')->name('admin.password.email');
@@ -184,4 +187,4 @@ Route::prefix('/admin')->group(function (){
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@home')->name('home');

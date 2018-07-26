@@ -11,7 +11,7 @@
     <!-- Main.css is the file that contain all Merged & Minified css -->
 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="/css/animate.css" rel="stylesheet">
     <link href="/css/font-awesome.min.css" rel="stylesheet">
@@ -71,7 +71,7 @@
                         </ul>
                         <div class="lang_list pull-right">
                             <span class="emailID"><i class="fa fa-envelope-square"></i> <a href="mailto:abc@gmail.com">abc@gmail.com </a></span>
-                            <span class="phoneNo"><i class="fa fa-phone-square"></i><a href="tel:971522049342"> +97152 2049342</a></span>
+                            <span class="phoneNo"><i class="fa fa-phone-square"></i><a href="tel:0522049342"> 0522049342</a></span>
                         </div>
                     </div>
 
@@ -144,28 +144,30 @@ page it will render here dynamically... -->
                         <li><a href="#" class="hvr-grow"><i class="fa fa-facebook-f"></i></a></li>
                         <li><a href="#" class="hvr-grow"><i class="fa fa-pinterest"></i></a></li>
                         <li><a href="#" class="hvr-grow"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="hvr-grow"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#" class="hvr-grow"><i class="fa fa-whatsapp"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2 hidden-xs">
                     <h4>Quicklinks</h4>
                     <ul class="footer_links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Get A Quote</a></li>
-                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/quote">Get A Quote</a></li>
+                        <li><a href="/sitemap">Sitemap</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2 hidden-xs">
                     <h4>Services</h4>
                     <ul class="footer_links">
-                        <li><a href="#">OFFICE RELOCATION</a></li>
-                        <li><a href="#">HOUSE RELOCATION</a></li>
-                        <li><a href="#">VILLA RELOCATION</a></li>
-                        <li><a href="#">STORAGE</a></li>
-                        <li><a href="#">PACKING & UNPACKING</a></li>
-                        <li><a href="#">FURNITURE ASSEMBLING / DISMANTLING​</a></li>
-                        <li><a href="#">LOADING & UNLOADING​</a></li>
+                        <li><a href="/services">OFFICE RELOCATION</a></li>
+                        <li><a href="/services">HOUSE RELOCATION</a></li>
+                        <li><a href="/services">VILLA RELOCATION</a></li>
+                        <li><a href="/services">STORAGE</a></li>
+                        <li><a href="/services">PACKING & UNPACKING</a></li>
+                        <li><a href="/services">FURNITURE ASSEMBLING / DISMANTLING​</a></li>
+                        <li><a href="/services">LOADING & UNLOADING​</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2 hidden-xs">
@@ -185,17 +187,18 @@ page it will render here dynamically... -->
                 </div>
                 <div class="col-sm-2 hidden-xs">
                     <h4>Working Hours</h4>
-                    <ul class="footer_links">
+                    <p class="text-center"><img src="/images/24hrs.png" width="99px" height="99px"></p>
+                    {{--<ul class="footer_links">
                         <li class="text-center"><b>Saturday-Thursday</b></li>
                         <li class="text-center">8am to 10pm</li><br>
                         <li class="text-center"><b>Friday</b></li>
                         <li class="text-center">2pm to 10pm</li>
-                    </ul>
+                    </ul>--}}
                 </div>
             </div>
             <div class="main_row">
                 <div class="copyrights text-center">
-                    <span>2018© AlHamd Movers. All rights reserved.</span>
+                    <span>2018© AlHamd Movers . All rights reserved.</span>
                 </div>
             </div>
         </div>
@@ -203,13 +206,17 @@ page it will render here dynamically... -->
 
     <!-- Main.js is the file that contain all Merged & Minified Js -->
     <script src="/js/main.js"></script>
-    <script src="/js/chosen.jquery.min.js"></script>
-
+    <script src="/js/moment.js"></script>
+    <script src="/js/bootstrap-datetimepicker.min.js"></script>
     <!--    -->
     @yield('scripts')
 
     {{--Success Message For Password Recovery Email Starts--}}
         <script>
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+
             @if (session('status'))
             $ (function () {
                 $('.password_recovery').modal('show');
@@ -222,8 +229,6 @@ page it will render here dynamically... -->
                 $('.reservations_btn').click(function () {
                     location.reload();
                 });
-
-                $("#services").chosen(".chosen-select");
             });
 
             function activeOrdersTab() {

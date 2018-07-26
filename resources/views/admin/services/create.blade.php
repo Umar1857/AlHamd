@@ -24,7 +24,7 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <form role="form" action="/admin/service" method="POST">
+                            <form role="form" enctype="multipart/form-data" action="/admin/service" method="POST">
                                 <div class="box-body">
                                     <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                                         <label>Service Name</label>

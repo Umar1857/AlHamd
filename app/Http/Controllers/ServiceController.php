@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Item;
 use App\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -43,7 +44,7 @@ class ServiceController extends Controller
         // Validate Form DATA
         $rules = array(
             'name' => 'required|string',
-            'image' => 'required',
+            'image' => 'required|image|mimes:jpeg,bmp,png',
             'description' => 'required|string',
         );
 
@@ -61,7 +62,12 @@ class ServiceController extends Controller
             $service = new Service();
             $service->name = $request->name;
             $service->description = $request->description;
-            $service->image = $request->image;
+
+            $file = $request->file('image') ;
+
+            $fileName       = time().'.'.$file->getClientOriginalExtension() ;
+            $request->image->move(base_path('public/images/service'), $fileName);
+            $service->image = $fileName;
             $service->save();
 
             // redirect
@@ -108,8 +114,9 @@ class ServiceController extends Controller
     {
         // Validate Form DATA
         $rules = array(
-            'name' => 'required|string',
-            'description' => 'required|string',
+            'name'          => 'required|string',
+            'image'         => 'image|mimes:jpeg,bmp,png',
+            'description'   => 'required|string',
         );
 
         $validator = Validator::make(Input::all(), $rules);
@@ -126,8 +133,13 @@ class ServiceController extends Controller
             $service = Service::find($id);
             $service->name = $request->name;
             $service->description = $request->description;
-            if ($request->image) {
-                $service->image = $request->image;
+
+            if ($request->hasFile('image')) {
+                $file = $request->file('image');
+
+                $fileName = time().'.' . $file->getClientOriginalExtension();
+                $request->image->move(base_path('public/images/service'), $fileName);
+                $service->image = $fileName;
             }
             $service->update();
 
@@ -152,5 +164,38 @@ class ServiceController extends Controller
         Session::flash('message', 'Service has been Successfully Deleted!');
         Session::flash('alert-class', 'alert-success');
         return Redirect::to('/admin/service');
+    }
+
+    public function getServiceItems() {
+        $items = Item::where('service_id', $_GET['serviceID'])->get();
+        $html = '';
+        $html .= "<div class=\"form-group\" id=\"item"."\">
+                            <label for=\"items\">Select Size</label>";
+        $html .= '<select class="form-control fields" name="item'.'" value="{{ old(\'item\') }}" required>
+                                <option value="">Select A Size</option>';
+        foreach ($items as $item) {
+            $html .= "<option value='$item->id' {{ old(\"item\") == $item->id ? \"selected\":\"\"}} >$item->name</option>";
+        }
+        $html .='</select>';
+        /*$html .= "@if
+                    ($errors->has('services'))
+                        <span class=\"help-block\">
+                            <strong>{{ $errors->first('services') }}</strong>
+                        </span>
+                @endif";*/
+        $html .= '</div>';
+
+        echo $html;
+    }
+
+    public function getServices() {
+        $services = Service::all();
+
+        return view('/user/services', compact('services'));
+    }
+
+    public function getSingleService($id, $name) {
+        $service = Service::find($id);
+        return view('user/service-detail', compact('service'));
     }
 }

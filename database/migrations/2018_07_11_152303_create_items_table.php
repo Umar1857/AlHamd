@@ -18,7 +18,7 @@ class CreateItemsTable extends Migration
             $table->string('name');
 
             $table->integer('service_id')->unsigned();
-            $table->foreign('service_id')->references('id')->on('services');
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
             $table->timestamps();
         });
     }
