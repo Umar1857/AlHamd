@@ -1,7 +1,7 @@
 <?php
 return [
     'sender' => [
-        'name' => 'AlHamd Movers ',
-        'email' => 'umar.farooq@gems.techverx.com'
+        'name' => 'AlHamd Movers And Packers',
+        'email' => 'alhamdmovers@gmail.com'
     ]
 ];

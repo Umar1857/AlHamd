@@ -47,7 +47,7 @@ $(document).ready(function () {
         slidesToShow: 5,
         slidesToScroll: 1,
         arrows: false,
-        autoplay: false,
+        autoplay: true,
         responsive: [
             {
                 breakpoint: 1599,
@@ -115,7 +115,7 @@ $(document).ready(function () {
         slidesToShow: 2,
         slidesToScroll: 1,
         arrows: false,
-        autoplay: false,
+        autoplay: true,
         responsive: [
             {
                 breakpoint: 767,
@@ -140,7 +140,7 @@ $(document).ready(function () {
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: false,
-        autoplay: false,
+        autoplay: true,
         responsive: [
             {
                 breakpoint: 1199,
@@ -197,7 +197,7 @@ $(document).ready(function () {
         slidesToShow: 2,
         slidesToScroll: 1,
         arrows: false,
-        autoplay: false,
+        autoplay: true,
         responsive: [
 
             {

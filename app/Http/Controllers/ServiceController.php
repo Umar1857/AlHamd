@@ -171,7 +171,7 @@ class ServiceController extends Controller
         $html = '';
         $html .= "<div class=\"form-group\" id=\"item"."\">
                             <label for=\"items\">Select Size</label>";
-        $html .= '<select class="form-control fields" name="item'.'" value="{{ old(\'item\') }}" required>
+        $html .= '<select class="form-control fields" name="item'.'" value="{{ old(\'item\') }}">
                                 <option value="">Select A Size</option>';
         foreach ($items as $item) {
             $html .= "<option value='$item->id' {{ old(\"item\") == $item->id ? \"selected\":\"\"}} >$item->name</option>";

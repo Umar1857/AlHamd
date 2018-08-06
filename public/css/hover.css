@@ -1454,7 +1454,7 @@
 .hvr-fade:hover,
 .hvr-fade:focus,
 .hvr-fade:active {
-    background-color: #ba9e76;
+    background-color: #333333;
     color: white;
 }
 
@@ -1500,8 +1500,8 @@
     animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
-    background-color: #ba9e76;
-    background-color: #ba9e76;
+    background-color: #333333;
+    background-color: #333333;
     color: white;
 }
 
@@ -1530,7 +1530,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #333333;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 0 50%;
@@ -1584,7 +1584,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #333333;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 100% 50%;
@@ -1638,7 +1638,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #333333;
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
     -webkit-transform-origin: 50% 0;
@@ -1692,7 +1692,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #333333;
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
     -webkit-transform-origin: 50% 100%;
@@ -1746,7 +1746,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #333333;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 0 50%;
@@ -1802,7 +1802,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #333333;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 100% 50%;
@@ -1858,7 +1858,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #333333;
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
     -webkit-transform-origin: 50% 0;
@@ -1914,7 +1914,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #333333;
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
     -webkit-transform-origin: 50% 100%;
@@ -1972,7 +1972,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #333333;
     border-radius: 100%;
     -webkit-transform: scale(0);
     transform: scale(0);
@@ -2012,7 +2012,7 @@
             box-shadow: 0 0 1px transparent;
     position: relative;
     overflow: hidden;
-    background: #ba9e76;
+    background: #333333;
     -webkit-transition-property: color;
     transition-property: color;
     -webkit-transition-duration: 0.3s;
@@ -2066,7 +2066,7 @@
     -webkit-box-shadow: 0 0 1px transparent;
             box-shadow: 0 0 1px transparent;
     position: relative;
-    background: #ba9e76;
+    background: #333333;
     -webkit-transition-property: color;
     transition-property: color;
     -webkit-transition-duration: 0.3s;
@@ -2134,7 +2134,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #333333;
     -webkit-transform: scale(0);
     transform: scale(0);
     -webkit-transition-property: transform;
@@ -2172,7 +2172,7 @@
     -webkit-box-shadow: 0 0 1px transparent;
             box-shadow: 0 0 1px transparent;
     position: relative;
-    background: #ba9e76;
+    background: #333333;
     -webkit-transition-property: color;
     transition-property: color;
     -webkit-transition-duration: 0.3s;
@@ -2242,7 +2242,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: #ba9e76;
+    background: #333333;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 50%;
@@ -2282,7 +2282,7 @@
     -webkit-box-shadow: 0 0 1px transparent;
             box-shadow: 0 0 1px transparent;
     position: relative;
-    background: #ba9e76;
+    background: #333333;
     -webkit-transition-property: color;
     transition-property: color;
     -webkit-transition-duration: 0.3s;
@@ -2352,7 +2352,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: #ba9e76;
+    background: #333333;
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
     -webkit-transform-origin: 50%;
@@ -2409,8 +2409,8 @@
 .hvr-border-fade:hover,
 .hvr-border-fade:focus,
 .hvr-border-fade:active {
-    -webkit-box-shadow: inset 0 0 0 4px #ba9e76, 0 0 1px transparent;
-            box-shadow: inset 0 0 0 4px #ba9e76, 0 0 1px transparent;
+    -webkit-box-shadow: inset 0 0 0 4px #333333, 0 0 1px transparent;
+            box-shadow: inset 0 0 0 4px #333333, 0 0 1px transparent;
     /* Hack to improve aliasing on mobile/tablet devices */
 }
 
@@ -2696,7 +2696,7 @@
     left: 0;
     right: 100%;
     bottom: 0;
-    background: #ba9e76;
+    background: #333333;
     height: 4px;
     -webkit-transition-property: right;
     transition-property: right;
@@ -2733,7 +2733,7 @@
     left: 50%;
     right: 50%;
     bottom: 0;
-    background: #ba9e76;
+    background: #333333;
     height: 4px;
     -webkit-transition-property: left, right;
     transition-property: left, right;
@@ -2771,7 +2771,7 @@
     left: 100%;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #333333;
     height: 4px;
     -webkit-transition-property: left;
     transition-property: left;
@@ -2808,7 +2808,7 @@
     left: 0;
     right: 100%;
     top: 0;
-    background: #ba9e76;
+    background: #333333;
     height: 4px;
     -webkit-transition-property: right;
     transition-property: right;
@@ -2845,7 +2845,7 @@
     left: 50%;
     right: 50%;
     top: 0;
-    background: #ba9e76;
+    background: #333333;
     height: 4px;
     -webkit-transition-property: left, right;
     transition-property: left, right;
@@ -2883,7 +2883,7 @@
     left: 100%;
     right: 0;
     top: 0;
-    background: #ba9e76;
+    background: #333333;
     height: 4px;
     -webkit-transition-property: left;
     transition-property: left;
@@ -2921,7 +2921,7 @@
     right: 0;
     top: 0;
     bottom: 0;
-    border-color: #ba9e76;
+    border-color: #333333;
     border-style: solid;
     border-width: 0;
     -webkit-transition-property: border-width;
@@ -2961,7 +2961,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #333333;
     height: 4px;
     -webkit-transform: translateY(4px);
     transform: translateY(4px);
@@ -3004,7 +3004,7 @@
     left: 0;
     right: 0;
     top: 0;
-    background: #ba9e76;
+    background: #333333;
     height: 4px;
     -webkit-transform: translateY(-4px);
     transform: translateY(-4px);

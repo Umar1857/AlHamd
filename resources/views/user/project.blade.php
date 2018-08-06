@@ -8,7 +8,7 @@
             </div>
             @if(!$projects->isEmpty())
                 @foreach($projects as $project)
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-6">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title">
@@ -26,7 +26,7 @@
                     </div>
                 @endforeach
             @else
-                <p>No Projects Till Now.</p>
+                <p class="text-center">No Projects Till Now.</p>
             @endif
         </div>
     </div>

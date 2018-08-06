@@ -119,24 +119,24 @@
                             <h3>Service Details</h3>
                             <div class="form-group col-md-6">
                                 <label>Service</label>
-                                <input type="text" name="service" class="form-control" value="{{$booking->service->name}}" readonly>
+                                <input type="text" name="service" class="form-control" value="{{$booking->services->name}}" readonly>
                             </div>
 
                             <div class="form-group col-md-6">
                                 <label>Item</label>
-                                <input type="text" name="item" class="form-control" value="{{$booking->item->name}}" readonly>
+                                <input type="text" name="item" class="form-control" value="{{$booking->items->name}}" readonly>
                             </div>
                         </div>
                         <hr>
                         <div class="col-md-12">
                             <h3 class="text-center">Admin Reply</h3>
 
-                            <form role="form" action="{{route('quote.reply')}}" method="POST">
+                            <form role="form" action="{{route('booking.reply')}}" method="POST">
                                 <div class="form-group" {{ $errors->has('subject') ? ' has-error' : '' }}>
                                     <label>Subject</label>
                                     <input type="text" name="subject" class="form-control" placeholder="Write Subject For Email" value={{old('subject')}}>
 
-                                    @if ($errors->has('reply'))
+                                    @if ($errors->has('subject'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('subject') }}</strong>
                                         </span>
@@ -154,7 +154,7 @@
                                     @endif
                                 </div>
 
-                                <input type="hidden" name="quoteID" value="{{$booking->id}}">
+                                <input type="hidden" name="bookingID" value="{{$booking->id}}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <button type="submit" class="btn btn-primary pull-right">Submit</button>
                             </form>

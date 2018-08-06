@@ -18,6 +18,7 @@
                         <table id="posts" class="table table-striped table-bordered" style="width:100%">
                             <thead>
                             <tr>
+                                <th>Image</th>
                                 <th>Title</th>
                                 <th>Actions</th>
                             </tr>
@@ -25,6 +26,7 @@
                             <tbody>
                             @foreach($posts as $post)
                             <tr>
+                                <td><img src="{{url('/images/post/'.$post->image)}}" alt="{{$post->title}}" width="40px" height="40px"></td>
                                 <td>{{$post->title}}</td>
                                 <td class="text-center">
                                     <span><a class="btn btn-sm btn-primary deleteForm" href="/admin/post/{{$post->id}}/edit">Edit</a></span>
@@ -40,6 +42,7 @@
                             </tbody>
                             <tfoot>
                             <tr>
+                                <th>Image</th>
                                 <th>Title</th>
                                 <th>Actions</th>
                             </tr>

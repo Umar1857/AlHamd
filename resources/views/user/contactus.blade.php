@@ -1,21 +1,15 @@
 @extends('layouts.app')
 <!---->
 @section('content')
-    {{--<div class="intro about_content">
-        <div class="main_banner">
-            <div class="hotel_description text-center">
-                <h1>CONTACT US</h1>
-
-                <p>We take pride in service with great<span class="white_txt">attention</span>to detail</p>
-            </div>
-        </div>
-    </div>--}}
     <div class="about_txt">
         <h1>Contact Us</h1>
+        <p id="quote">
+            "We are always there for you, contact us anytime and get your answers"
+        </p>
     </div>
     <div class="contact-form">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-8 col-md-offset-2">
 
                 {{--Session Alert Starts--}}
                 @if (session('message'))

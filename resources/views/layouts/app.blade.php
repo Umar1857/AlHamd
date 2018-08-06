@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @yield('tags')
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>AlHamd | Movers And Packers</title>
+    <title>Al-Hamd | Movers And Packers</title>
 
     <!-- Main.css is the file that contain all Merged & Minified css -->
 
@@ -51,27 +52,28 @@
                 <div class="main_row">
                     <div class="top_nav clearfix">
                         <div class="social-icons pull-left">
-                            <span><a href="#"><i class="fa fa-facebook"></i></a></span>
+                            <span><a href="https://www.facebook.com/AlHamd-Movers-407523639758513/"><i class="fa fa-facebook"></i></a></span>
                             <span><a href="#"><i class="fa fa-instagram"></i></a></span>
                             <span><a href="#"><i class="fa fa-twitter"></i></a></span>
                             <span><a href="#"><i class="fa fa-linkedin-square"></i></a></span>
-                            <span><a href="#"><i class="fa fa-whatsapp"></i></a></span>
+                            <span><a href="tel:0551040849"><i class="fa fa-whatsapp"></i></a></span>
                             <span><a href="#"><i class="fa fa-pinterest-square"></i></a></span>
                         </div>
-                        <ul>
-                            <li>
+                        {{--<ul>
+                            --}}{{--<li>
                                 <a href="/gifts">Testimonials</a>
-                            </li>
+                            </li>--}}{{--
                             <li>
                                 <a href="/about">About Us</a>
                             </li>
                             <li>
                                 <a href="/contact">Contact Us</a>
                             </li>
-                        </ul>
+                        </ul>--}}
                         <div class="lang_list pull-right">
-                            <span class="emailID"><i class="fa fa-envelope-square"></i> <a href="mailto:abc@gmail.com">abc@gmail.com </a></span>
+                            <span class="emailID"><i class="fa fa-envelope-square"></i> <a href="mailto:alhamdmovers@gmail.com">alhamdmovers@gmail.com</a></span>
                             <span class="phoneNo"><i class="fa fa-phone-square"></i><a href="tel:0522049342"> 0522049342</a></span>
+                            <span class="phoneNo"><i class="fa fa-phone-square"></i><a href="tel:0551040849"> 0551040849</a></span>
                         </div>
                     </div>
 
@@ -89,8 +91,8 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        {{--<a class="navbar-brand hidden-xs" href="/"><img src="/images/logo.png"></a>
-                        <a class="navbar-brand visible-xs" href="/"><img src="/images/logo_mobile.png"></a>--}}
+                        <a class="navbar-brand hidden-xs" href="/"><img src="/images/Logo-02.png" width="240px"></a>
+                        {{--<a class="navbar-brand visible-xs" href="/"><img src="/images/logo_mobile.png"></a>--}}
 
                     </div>
 
@@ -100,21 +102,16 @@
 
                             <li><a href="/" class="hvr-overline-from-center">HOME</a></li>
                             <li><a href="/services" class="hvr-overline-from-center">SERVICES</a></li>
-                            <li><a href="/meetings" class="hvr-overline-from-center">GALLERY</a></li>
-                            <li><a href="/projects" class="hvr-overline-from-center">PROJECTS</a></li>
                             <li><a href="/booking" class="hvr-overline-from-center">BOOKING</a></li>
+                            <li><a href="/about" class="hvr-overline-from-center">ABOUT</a></li>
+                            <li><a href="/contact" class="hvr-overline-from-center">CONTACT</a></li>
+                            <li><a href="/projects" class="hvr-overline-from-center">PROJECTS</a></li>
                             <li><a href="/blog" class="hvr-overline-from-center">BLOG</a></li>
                         </ul>
                     </div>
                     <ul class="nav navbar-nav navbar-right myreservations">
                         <li>
-
-                            @if (Auth::guest())
-                                <a href="/quote" class="hvr-sweep-to-right"><img src="/images/user.png"><span>GET A FREE QUOTE</span></a>
-                            @else
-                                <a href="/account#orders" class="reservations_btn hvr-sweep-to-right"><img src="/images/user.png"><span> My RESERVATIONS</span></a>
-                            @endif
-
+                            <a href="/quote" class="hvr-sweep-to-right"><span>GET A FREE QUOTE</span></a>
                         </li>
 
                     </ul>
@@ -126,7 +123,7 @@
         </div>
     </header>
     <div class="main_wrapper">
-        <!--    @yeild is the section for general content of the whole site... whenever there is a change in any 
+        <!--    @yeild is the section for general content of the whole site... whenever there is a change in any
 page it will render here dynamically... -->
         @yield('content')
 
@@ -136,19 +133,19 @@ page it will render here dynamically... -->
     <footer>
         <div class="clearfix container-fluid">
             <div class="row">
-                <div class="col-sm-2 col-xs-12">
+                <div class="col-md-2 col-xs-12">
                     {{--<a href="#" class="footer_logo"><img src="/images/footer_logo.png"></a>--}}
-                    <p class="footer_desc">AlHamd movers is a group of Professionals who makes relocation alot easier and Cheaper.</p>
+                    <p class="footer_desc">Al-Hamd movers and packers is a group of professionals who makes relocation alot easier, secure, relaible and much cost effective.</p>
                     <ul class="footer_social hidden-xs">
                         <li><a href="#" class="hvr-grow"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#" class="hvr-grow"><i class="fa fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.facebook.com/AlHamd-Movers-407523639758513/" class="hvr-grow"><i class="fa fa-facebook-f"></i></a></li>
                         <li><a href="#" class="hvr-grow"><i class="fa fa-pinterest"></i></a></li>
                         <li><a href="#" class="hvr-grow"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#" class="hvr-grow"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#" class="hvr-grow"><i class="fa fa-whatsapp"></i></a></li>
+                        <li><a href="tel:0551040849" class="hvr-grow"><i class="fa fa-whatsapp"></i></a></li>
                     </ul>
                 </div>
-                <div class="col-sm-2 hidden-xs">
+                <div class="col-md-2 col-xs-12">
                     <h4>Quicklinks</h4>
                     <ul class="footer_links">
                         <li><a href="/">Home</a></li>
@@ -158,7 +155,7 @@ page it will render here dynamically... -->
                         <li><a href="/sitemap">Sitemap</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-2 hidden-xs">
+                <div class="col-md-2 col-xs-12">
                     <h4>Services</h4>
                     <ul class="footer_links">
                         <li><a href="/services">OFFICE RELOCATION</a></li>
@@ -170,24 +167,28 @@ page it will render here dynamically... -->
                         <li><a href="/services">LOADING & UNLOADING​</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-2 hidden-xs">
+                <div class="col-md-2 col-xs-12">
                     <h4>Office Address</h4>
                     <ul class="footer_links">
-                        <p><i class="fa fa-map-marker"></i> 512-A Habibi Road, Dubai</p>
+                        <p><i class="fa fa-map-marker"></i>12-16 15 B St - Dubai - United Arab Emirates</p>
                     </ul>
                 </div>
-                <div class="col-sm-2 hidden-xs">
+                <div class="col-md-2 col-xs-12">
                     <h4>Contact</h4>
                     <ul class="footer_links">
-                        <li><a href="mailto:abc@gmail.com"><i class="fa fa-envelope-square"></i>  abc@gmail.com </a></li>
-                        <li><a href="mailto:abc@gmail.com"><i class="fa fa-envelope-square"></i> abc@gmail.com </a></li>
-                        <li><a href="tel:971522049342"><i class="fa fa-phone-square"></i> +97152 2049342</a></li>
-                        <li><a href="tel:971551040849"><i class="fa fa-phone-square"></i> +97155 1040849</a></li>
+                        <li><a href="mailto:alhamdmovers@gmail.com"><i class="fa fa-envelope-square"></i> alhamdmovers@gmail.com</a></li>
+                        <li><a href="tel:971522049342"><i class="fa fa-phone-square"></i> 0522049342</a></li>
+                        <li><a href="tel:971551040849"><i class="fa fa-phone-square"></i> 0551040849</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-2 hidden-xs">
+                <div class="col-md-2 col-xs-12">
                     <h4>Working Hours</h4>
-                    <p class="text-center"><img src="/images/24hrs.png" width="99px" height="99px"></p>
+                    <p>
+                        Al-Hamd Movers provide 24/7 delivery services across UAE region.
+                    </p>
+                    <p class="text-center">
+                        <img src="/images/24hrs.png" width="99px" height="99px">
+                    </p>
                     {{--<ul class="footer_links">
                         <li class="text-center"><b>Saturday-Thursday</b></li>
                         <li class="text-center">8am to 10pm</li><br>
@@ -198,7 +199,7 @@ page it will render here dynamically... -->
             </div>
             <div class="main_row">
                 <div class="copyrights text-center">
-                    <span>2018© AlHamd Movers . All rights reserved.</span>
+                    <span>2018© Al-Hamd Movers . All rights reserved.</span>
                 </div>
             </div>
         </div>

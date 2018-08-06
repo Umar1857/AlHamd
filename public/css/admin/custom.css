@@ -42,12 +42,12 @@
     padding-bottom: 5px;
 }
 .post_image{
-    max-height: 150px;
+    min-height: 150px;
     display: block;
     margin-bottom: 10px;
 }
 .post_image img{
     max-width: 150px;
-    max-height: 150px;
+    min-height: 150px;
     display: block;
 }

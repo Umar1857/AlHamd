@@ -52,7 +52,7 @@
                                     </div>
                                     <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
                                         <label>Service Description</label>
-                                        <textarea name="description" rows="15" class="form-control" placeholder="Enter Service Description Here" required>{{$service->description}}</textarea>
+                                        <textarea name="description" rows="15" class="form-control" id="ServiceBody" placeholder="Enter Service Description Here" required>{{$service->description}}</textarea>
 
                                         @if ($errors->has('description'))
                                             <span class="help-block">

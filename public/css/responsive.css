@@ -131,7 +131,8 @@
         padding-left: 40px;
     }
     footer h4 {
-        margin-bottom: 20px;
+        margin: 20px 0px;
+        text-align: center;
     }
     .footer_links li a {
         padding-bottom: 10px;
@@ -284,7 +285,7 @@
         width: 700px;
     }
     footer h4 {
-        font-size: 14px;
+        font-size: 18px;
     }
     .filter_inner {
         padding: 0 15px;

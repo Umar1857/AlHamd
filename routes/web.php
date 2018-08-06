@@ -32,7 +32,7 @@ Route::get('/booking', 'BookingController@index')->name('booking.index');
 Route::post('/booking', 'BookingController@create')->name('booking.submit');
 
 Route::get('/blog', 'PostController@blog')->name('blog.index');
-Route::get('/blog/{id}', 'PostController@singlePost')->name('blog.post');
+Route::get('/blog/{id}/{name}', 'PostController@singlePost')->name('blog.post');
 
 Route::get('/projects', 'ProjectController@projects')->name('projects.index');
 

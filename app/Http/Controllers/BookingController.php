@@ -6,10 +6,12 @@ use App\Booking;
 use App\City;
 use App\Events\BookingEvent;
 use App\Events\ThankyouEvent;
+use App\Mail\bookingReply;
 use App\Service;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
@@ -65,9 +67,7 @@ class BookingController extends Controller
             $booking->moving_to = $request->to;
             $booking->moving_from_address = $request->from_address;
             $booking->moving_to_address = $request->to_address;
-            $booking->moving_date = Carbon::parse($request->moving_date)->format('Y-m-d');
-//            $booking->moving_date = Carbon::now();
-            //$booking->moving_time = $request->moving_time;
+            $booking->moving_date = Carbon::parse($request->moving_datetime)->format('Y-m-d');
             $booking->moving_time = Carbon::parse($request->moving_date)->format('H:i:s');
             $booking->description = $request->message;
             $booking->status = 'Pending';
@@ -104,12 +104,39 @@ class BookingController extends Controller
 
     public function show($id) {
         $booking = Booking::find($id);
-
         return view('/admin/booking/view', compact('booking'));
     }
 
-    public function sendReply() {
+    public function sendReply(Request $request) {
 
+        $rules = array(
+            'subject' => 'required|string',
+            'reply' => 'required|string',
+        );
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->fails()) {
+            return redirect('/admin/booking/'.$request->bookingID)
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        else {
+            $booking = Booking::find($request->bookingID);
+            $dataMail = [
+                'subject'   =>  $request->subject,
+                'view'      =>  'emails.bookingMail',
+                'booking'     =>  $booking,
+                'msg'       =>  $request->reply,
+            ];
+            Mail::to($booking->email)->later(Carbon::now()->addMinutes(1), (new bookingReply($dataMail))->onQueue('emails'));
+
+            // redirect
+            Session::flash('message', 'Your Reply Has Been Sent Successfully!');
+            Session::flash('alert-class', 'alert-success');
+            return view('admin/booking/view', compact('booking'));
+        }
     }
 
     public function updateStatus(Request $request) {

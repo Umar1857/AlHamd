@@ -24,14 +24,18 @@
                                     <div class="form-group">
                                         <label>Service Name</label>
                                         <input type="text" name="name" class="form-control" value="{{$service->name}}" readonly>
-                                    </div>
-                                    <div class="form-group">
+                                    </div><br>
+                                    <div class="form-group post_image">
                                         <label>Service Image</label>
-                                        <input type="file" name="image" value="{{$service->image}}" readonly>
+                                        <img src="{{URL::to('images/service/'.$service->image)}}">
+                                        {{--<input type="file" name="image" value="{{$service->image}}" readonly>--}}
                                     </div>
                                     <div class="form-group">
                                         <label>Service Description</label>
-                                        <textarea name="description" rows="15" class="form-control" placeholder="Enter Service Description Here" readonly>{{$service->description}}</textarea>
+                                        {{--<textarea name="description" rows="15" class="form-control" placeholder="Enter Service Description Here" ></textarea>--}}
+                                        <div>
+                                            {!!html_entity_decode($service->description,ENT_COMPAT, 'UTF-8')!!}
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- /.box-body -->

@@ -32,7 +32,7 @@
 <div class="login-box">
     <div class="login-logo">
         {{--<a href="/admin/dashboard"><b>Admin</b>LTE</a>--}}
-        {{--<a href="/admin/dashboard"><img src="{{URL::to('images/logo.png')}}"></a>--}}
+        <a href="/admin/dashboard"><img src="{{URL::to('images/Logo-02.png')}}" width="240px"></a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">

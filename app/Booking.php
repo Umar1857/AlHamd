@@ -17,11 +17,11 @@ class Booking extends Model
         return $this->belongsTo('App\City','moving_to','id');
     }
 
-    public function service() {
-        return $this->belongsTo('App\Service');
+    public function services() {
+        return $this->belongsTo('App\Service','service');
     }
 
-    public function item() {
+    public function items() {
         return $this->belongsTo('App\Item','item');
     }
 }
