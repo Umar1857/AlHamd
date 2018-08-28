@@ -36,6 +36,16 @@ Route::get('/blog/{id}/{name}', 'PostController@singlePost')->name('blog.post');
 
 Route::get('/projects', 'ProjectController@projects')->name('projects.index');
 
+Route::get('/services', 'ServiceController@getServices');
+
+Route::get('/service/{id}/{name}', 'ServiceController@getSingleService');
+
+Route::get('/getServiceItems', 'ServiceController@getServiceItems');
+
+Route::get('/faqs', 'FaqsController@getFaqs');
+
+Route::get('/media', 'ImageController@media');
+
 Route::get('/our_hotels', function () {
     return view('user/our_hotels');
 });
@@ -51,12 +61,6 @@ Route::get('/vacancy_details', function () {
 Route::get('/package_card', function () {
     return view('user/package_card');
 });
-
-Route::get('/services', 'ServiceController@getServices');
-
-Route::get('/service/{id}/{name}', 'ServiceController@getSingleService');
-
-Route::get('/getServiceItems', 'ServiceController@getServiceItems');
 
 Route::get('/wellness', function () {
     return view('user/wellness');
@@ -121,7 +125,7 @@ Route::prefix('/admin')->group(function (){
             Route::get('/dashboard', 'AdminController@dashboard')->name('dashboard');
 
             // Resource Route For Customers
-            Route::resource('/customers', 'UsersController');
+            Route::resource('/customers', 'CustomerController');
 
             // Resource Route For Admins
             Route::resource('/administrators', 'AdminController');
@@ -137,6 +141,13 @@ Route::prefix('/admin')->group(function (){
 
             // Resource Route For Service
             Route::resource('/service', 'ServiceController');
+
+            // Resource Route For FAQ'S
+            Route::resource('/faqs', 'FaqsController');
+
+            // Resource Route For Images
+            Route::resource('/image', 'ImageController');
+            Route::get('/gallery', 'ImageController@gallery');
 
             // Resource Route For Item
             Route::resource('/item', 'ItemController');

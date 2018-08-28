@@ -27,7 +27,7 @@
                     <span><img src="images/icons/9.png"></span>
                 </div>
                 <div class="col-sm-6 join_content">
-                    <h3 class="hidden-xs text-uppercase">Welcome To Al-Hamd</h3>
+                    <h3 class="hidden-xs text-uppercase">Welcome To <br>Al-Hamd</h3>
                     <p id="quote">"If you are looking for professional, relaible and cost effective moving and packing services in UAE region, then you have come to the right place."</p>
                     <p>We're a team of professionals working 24/7 to fulfill the client requirements and expections and make the <strong>Al-Hamd movers and packers</strong> the best shifting company in UAE region. Al-Hamd movers and packers, provides <strong>fast, secure, reliable and cost effective</strong> moving services to help you relocate without stress. Apart from moving services, we're also providing other incredibly well services including office relocation, house relocation, villa relocation, packing and unpacking services, furniture assembling and dismantling services, storage services.</p><br>
                     <p>Our mission and values are to help people and businesses to relocate without stress throughout Dubai, UAE.</p>
@@ -45,8 +45,8 @@
     <div class="packages text-center">
         <h1>Why Choose Us</h1>
         <div class="featured_package container-fluid hidden-xs">
-            <div class="choose_us">
-                <div class="col-md-3">
+            <div class="choose_us clearfix">
+                <div class="col-md-3 col-xs-6">
                     <div class="choose_section">
                         {{--<span><i class="fa fa-clock-o fa-5x"></i></span>--}}
                         <span><img src="images/icons/mtr.png"></span>
@@ -57,7 +57,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 col-xs-6">
                     <div class="choose_section">
                         {{--<span><i class="fa fa-clock-o fa-5x"></i></span>--}}
                         <span><img src="images/icons/safe.png"></span>
@@ -68,7 +68,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 col-xs-6">
                     <div class="choose_section">
                         {{--<span><i class="fa fa-clock-o fa-5x"></i></span>--}}
                         <span><img src="images/icons/dollar.png"></span>
@@ -79,7 +79,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 col-xs-6">
                     <div class="choose_section">
                         {{--<span><i class="fa fa-clock-o fa-5x"></i></span>--}}
                         <span><img src="images/icons/on-time.png"></span>
@@ -118,12 +118,12 @@
             <li class="hidden-xs">
                 <p>Visit our profiles in social media:</p>
             </li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="https://www.facebook.com/AlHamd-Movers-407523639758513/"><i class="fa fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="tel:0551040849"><i class="fa fa-whatsapp"></i></a></li>
+            <li><a href="https://www.instagram.com/alhamdmovers/" class="instagram"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/AlHamd-Movers-407523639758513/" class="facebook"><i class="fa fa-facebook-f"></i></a></li>
+            {{--<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>--}}
+            <li><a href="https://www.linkedin.com/company/14433886/admin/overview/" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://api.whatsapp.com/send?phone=971551040849" class="whatsapp"><i class="fa fa-whatsapp"></i></a></li>
         </ul>
     </div>
 

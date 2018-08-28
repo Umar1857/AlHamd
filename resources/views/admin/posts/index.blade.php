@@ -8,7 +8,17 @@
             <div class="col-md-12">
                 <!-- general form elements -->
 
+                {{--Session Alert Starts--}}
+                @if (session('message'))
+                    <div class="alert alert-success alert-notification">
+                        {{ session('message') }}
+                    </div>
+                @endif
+                {{--Session Alert Ends--}}
 
+                <div>
+                    <a href="/admin/post/create" class="btn btn-md btn-primary addNewService">Add New Post</a>
+                </div>
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Posts Table</h3>

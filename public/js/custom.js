@@ -102,6 +102,7 @@ $(document).ready(function () {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
+                    adaptiveHeight: true
                 }
     }
   ]
@@ -296,3 +297,30 @@ $(document).ready(function () {
 $(document).load(function () {
     $(window).trigger("#freewall_new,#freewall");
 });
+
+
+/*Faq's Page Script Start*/
+$(document).ready(function() {
+
+    $(".toggle-accordion").on("click", function() {
+        var accordionId = $(this).attr("accordion-id"),
+            numPanelOpen = $(accordionId + ' .collapse.in').length;
+
+        $(this).toggleClass("active");
+
+        if (numPanelOpen == 0) {
+            openAllPanels(accordionId);
+        } else {
+            closeAllPanels(accordionId);
+        }
+    });
+
+    openAllPanels = function(aId) {
+        $(aId + ' .panel-collapse:not(".in")').collapse('show');
+    };
+    closeAllPanels = function(aId) {
+        $(aId + ' .panel-collapse.in').collapse('hide');
+    }
+
+});
+/*Faq's Page Script Ends*/

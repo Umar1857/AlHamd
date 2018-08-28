@@ -11,40 +11,46 @@
                     <div class="alert alert-success alert-notification">
                         {{ session('message') }}
                     </div>
-            @endif
+                @endif
             {{--Session Alert Ends--}}
 
             <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Edit An FAQ</h3>
+                        <h3 class="box-title">Edit An Image</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
 
                     <div class="row">
                         <div class="col-md-12">
-                            <form role="form" action="/admin/faqs/{{$faq->id}}" method="post">
+                            <form role="form" action="/admin/image/{{$image->id}}" method="post">
                                 <div class="box-body">
-                                    <div class="form-group {{ $errors->has('question') ? ' has-error' : '' }}">
-                                        <label>FAQ</label>
-                                        <input type="text" name="question" class="form-control" placeholder="Enter FAQ" value="{{ $faq->question }}" required autofocus>
+                                    <div class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
+                                        <label>Image Title</label>
+                                        <input type="text" name="title" class="form-control" placeholder="Please Enter Image Title"value="{{ $image->title }}" required autofocus>
 
-                                        @if ($errors->has('question'))
+                                        @if ($errors->has('title'))
                                             <span class="help-block">
-                                                <strong>{{ $errors->first('question') }}</strong>
+                                                <strong>{{ $errors->first('title') }}</strong>
                                             </span>
                                         @endif
                                     </div>
-                                    <div class="form-group {{ $errors->has('answer') ? ' has-error' : '' }}">
-                                        <label>Answer</label>
-                                        <textarea class="form-control" name="answer" placeholder="Enter a Suitable Answer" rows="5">{{ $faq->answer }}</textarea>
 
-                                        @if ($errors->has('answer'))
+                                    <div class="form-group {{ $errors->has('caption') ? ' has-error' : '' }}">
+                                        <label>Image Caption</label>
+                                        <input type="text" name="caption" class="form-control" placeholder="Please Enter Image Caption" value="{{ $image->caption }}" required>
+
+                                        @if ($errors->has('caption'))
                                             <span class="help-block">
-                                                <strong>{{ $errors->first('answer') }}</strong>
+                                                <strong>{{ $errors->first('caption') }}</strong>
                                             </span>
                                         @endif
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Image</label><br>
+                                        <img src="{{url('/images/gallery/media/'.$image->name)}}" width="150px" height="150px">
                                     </div>
                                 </div>
                                 <!-- /.box-body -->

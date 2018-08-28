@@ -8,6 +8,7 @@
             <div class="col-md-12">
                 <!-- general form elements -->
                 <div>
+                    <a href="/admin/service" class="btn btn-md btn-success addNewService"><i class="fa fa-arrow-left"></i> Back</a>
                     <a href="/admin/item/create" class="btn btn-md btn-primary addNewService">Add New Item</a>
                 </div>
                 <div class="box box-primary">

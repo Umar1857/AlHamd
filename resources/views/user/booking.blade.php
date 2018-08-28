@@ -14,8 +14,7 @@
         <h1>BOOK NOW!</h1>
     </div>
     <div class="contact-form">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+
 
                 {{--Session Alert Starts--}}
                 @if (session('message'))
@@ -220,13 +219,12 @@
                         @endif
                     </div>
 
-                    <div class="col-md-12">
+                    <div class="form-group col-md-12 text-right">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <button type="submit" class="hvr-shutter-out-horizontal submit_button pull-right">Book</button>
                     </div>
                 </form>
-            </div>
-        </div>
+
     </div>
     <!---->
 @endsection

@@ -26,10 +26,10 @@
 
 @media all and (max-width:1399px) {
     .main_nav .main_custom_nav > li > a {
-        padding: 17px;
+        padding: 17px 15px;
     }
     .navbar-brand {
-        margin-right: 40px;
+        margin-right: 10px;
     }
     .book_now a:first-child {
         width: 155px;
@@ -66,6 +66,7 @@
     .navbar-brand {
         margin-right: 0;
         padding-right: 5px;
+        max-width: 225px;
     }
     .main_nav .main_custom_nav > li > a {
         padding: 17px 10px;
@@ -91,6 +92,9 @@
     .packages {
         margin: 40px auto;
         padding: 0 15px;
+    }
+    .join_sheets h3{
+        font-size: 30px;
     }
     .what_client_say {
         margin-bottom: 0;
@@ -201,21 +205,18 @@
 @media all and (max-width:991px) {
 
     .main_hd {
-        margin: 40px auto;
+        margin: 30px auto;
+        font-size: 36px;
+    }
+    .packages h1{
+        font-size: 36px;
     }
     .main_nav .myreservations a img {
         display: block;
         padding-right: 0;
     }
-    .main_nav .myreservations a {
-        border: none;
-        height: auto !important;
-    }
     .main_nav .myreservations a:before {
         content: none;
-    }
-    .main_nav .myreservations a span {
-        display: none;
     }
     .main_nav .myreservations a {
         padding-right: 0;
@@ -272,20 +273,32 @@
     }
     .myreservations {
         position: absolute;
-        right: 50px;
-        top: 15px;
+        right: 60px;
+        top: 4px;
     }
     .main_nav {
         padding: 15px 0;
         background-color: rgba(255, 255, 255, .9);
-        position: fixed;
+    }
+    .join_sheets h3{
+        font-size: 28px;
+    }
+    .join_sheets h3 br{
+        display: block;
+    }
+    .choose_us{
+        padding:0;
     }
     .hotel_filter {
         padding: 10px;
         width: 700px;
     }
+    .footer_logo {
+        max-width: 200px;
+    }
     footer h4 {
         font-size: 18px;
+        text-align: left;
     }
     .filter_inner {
         padding: 0 15px;
@@ -307,9 +320,15 @@
         width: calc(100% - 50px);
         padding: 0;
     }
-    .main_slider .slider_inner .slider_img,
-    .package_img {
+    .main_slider .slider_inner .slider_img{
         height: 150px;
+    }
+    .package_img {
+        height: auto;
+    }
+
+    .slider_txt h3{
+        font-size:18px;
     }
     .slider_txt > span {
         margin-bottom: 10px;
@@ -338,6 +357,8 @@
         height: 45px;
         line-height: 43px;
     }
+
+
     .events_at_sheetz h1 {
         margin-bottom: 40px;
     }
@@ -355,7 +376,6 @@
         padding: 25px;
     }
     .join_sheets h2 {
-        font-size: 36px;
         margin-bottom: 20px;
     }
     .join_content form {
@@ -370,7 +390,7 @@
     }
     .footer_links li a,
     .footer_desc {
-        font-size: 12px;
+        font-size: 14px;
     }
     .footer_social li a {
         padding-right: 10px;
@@ -380,23 +400,28 @@
         width: 45px;
         height: 45px;
         line-height: 45px;
-        margin: 0 5px;
+        margin: 0 3px;
     }
     .social_links li p {
         font-size: 14px;
         padding-right: 10px;
     }
     .gallery_slider {
-        padding: 30px 15px 20px;
+        padding: 30px 15px 0;
     }
     .packages_wrapper .package_desc,
     .hotel_meetings_wrapper .package_desc {
         padding: 20px 0;
     }
+    .packages_wrapper .package_desc h3{
+        font-size:18px;
+    }
     .hotel_description h2 {
         font-size: 36px !important;
     }
-
+    .post_date .date {
+        font-size: 20px;
+    }
     .about_txt h3 {
         margin-bottom: 30px;
     }
@@ -540,10 +565,19 @@
 }
 
 @media all and (max-width:767px) {
+    .floating_links{
+        top: 150px;
+    }
+    .floating_links a i {
+        width: 40px;
+        line-height: 40px;
+    }
     .toggle_up {
         background-image: url(../images/toggle_up.png) !important;
     }
-
+    .slider_txt{
+        padding: 15px;
+    }
     .hotel_description h1,
     .main_hd,
     .packages > h1 {
@@ -551,6 +585,9 @@
     }
     .packages > h1 {
         margin-bottom: 30px;
+    }
+    .blog_content{
+        height: auto;
     }
     .responsive3 .package_desc h3,
     .event_slider .package_desc h3,
@@ -564,8 +601,8 @@
         width: 10px;
     }
     .slick-dots {
-        bottom: -5px;
-        padding: 10px 0 0;
+        bottom: 0;
+        padding: 0;
         left: 0;
         right: 0;
         position: relative;
@@ -574,14 +611,28 @@
         font-size: 10px;
     }
     .navbar-brand {
-        padding: 0 15px;
+        padding: 0 0 0 15px;
+        max-width: 170px;
     }
     .main_nav .navbar-toggle {
         margin-right: 5px;
         margin-top: 0;
     }
-    .myreservations {
+    .main_nav .myreservations {
         top: 0;
+        position: relative;
+        right: 0;
+        margin: 20px auto 0;
+        text-align: center;
+    }
+    .main_nav .myreservations a{
+        height:auto;
+        line-height: normal;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        margin:0 5px;
+        padding:5px 10px !important;
     }
     .main_banner {
         height: 420px;
@@ -592,8 +643,8 @@
         border-bottom: none;
     }
     .home_content {
-        padding-bottom: 30px;
-        border-bottom: 1px solid #e7e7e7;
+        padding-bottom: 0;
+        border-bottom: none;
     }
     .hotel_filter {
         padding: 10px;
@@ -627,9 +678,8 @@
         min-height: 100%;
         line-height: normal;
     }
-    .main_slider .slider_inner .slider_img,
-    .package_img {
-        min-height: 100%;
+    .main_slider .slider_inner{
+        min-height: auto;
         height: auto;
     }
     .events_at_sheetz {
@@ -667,7 +717,8 @@
         margin-bottom: 10px;
     }
     .join_sheets h2 {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
+        font-size:24px;
     }
     .join_content {
         padding: 0;
@@ -675,6 +726,14 @@
     }
     footer {
         padding-top: 30px;
+    }
+    footer .row > div:not(:first-of-type){
+        display: inline-block;
+        vertical-align: top;
+        float: none;
+        clear: both;
+        margin:0 -2px;
+        width: 50%;
     }
     .join_content form input {
         margin-right: 10px;
@@ -701,9 +760,7 @@
     .about_txt {
         margin: 30px auto;
     }
-    .about_txt p {
-        text-align: left;
-    }
+
     .our_hotels_content .main_slider .slider_wrapper {
         width: 100%;
         padding: 0 10px;
@@ -1125,24 +1182,30 @@
     .account_wrapper > h1 {
         font-size: 30px;
     }
+    .packages_wrapper, .hotel_meetings_wrapper{
+        padding:0 15px;
+    }
+    .packages_wrapper > div{
+        padding: 0;
+    }
 }
 
 @media all and (max-width:480px) {
     .responsive .slider_txt > p:first-of-type {
         display: none;
     }
+    .hotel_description h2,.hotel_description h1, .main_hd, .packages > h1 {
+        font-size: 26px !important;
+        margin-bottom:15px;
+    }
     .packages_wrapper .package_desc {
         text-align: center;
         border: none;
         padding: 20px 15px;
+        min-height: auto;
     }
     .tab-pane .packages_wrapper > div {
         width: 100%;
-    }
-    .responsive3 .slick-track > div,
-    .tab-pane .packages_wrapper > div {
-        border: 3px solid #424242;
-        padding: 0;
     }
     .package_desc_inline > div .readmore {
         width: 150px;
@@ -1270,5 +1333,20 @@
         width: 100%;
         padding: 5px 0 5px 0;
     }
-
+    footer .row > div:not(:first-of-type){
+        display: block;
+        margin:0;
+        width: 100%;
+    }
+    .main_slider .slider_inner .slider_img,
+    .package_img {
+        min-height: 100%;
+        height:auto;
+    }
+    .main_slider .slider_inner .slider_img a,.package_img a{
+        height:300px;
+    }
+    .blog_body{
+        text-align: left !important;
+    }
 }

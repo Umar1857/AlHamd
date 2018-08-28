@@ -10,7 +10,7 @@
         </div>
         <div class="packages_wrapper clearfix">
             @foreach($services as $service)
-                <div class="col-md-4 col-xs-12">
+                <div class="col-sm-4 col-xs-12">
                     <div class="package_img">
                         <a href="/service/{{$service->id}}/{{str_slug($service->name)}}">
                             <img src="{{url('images/service/'.$service->image)}}">

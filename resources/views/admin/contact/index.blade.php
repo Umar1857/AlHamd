@@ -5,7 +5,7 @@
     <section class="content">
         <div class="row">
             <!-- left column -->
-            <div class="col-md-12">
+            <div class="col-md-12 col-sm-12 col-xs-12">
                 <!-- general form elements -->
 
 

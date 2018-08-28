@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dashboard</title>
+    <title>Dashboard | Al-Hamd</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -30,10 +30,13 @@
 {{--Custom Admin Panel Stylesheet--}}
 <!-- Daterange picker -->
     <link rel="stylesheet" href="/css/admin/daterangepicker.css">
+
+    <link rel="stylesheet" href="/css/lightgallery.css">
+    <link rel="stylesheet" href="/css/gallery.css">
+
     <link rel="stylesheet" href="/css/admin/custom.css">
     {{--<script  src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>--}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
-
     {{--Tiny MCE Editor--}}
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
     <script>tinymce.init({
@@ -359,8 +362,8 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i>Create New Gallery</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>View Galleries</a></li>
+                        <li><a href="/admin/image/create"><i class="fa fa-circle-o"></i>Add New Images</a></li>
+                        <li><a href="/admin/image"><i class="fa fa-circle-o"></i>View Images</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -372,8 +375,8 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#"><i class="fa fa-circle-o"></i>Create New FAQ</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i>View FAQs</a></li>
+                        <li><a href="/admin/faqs/create"><i class="fa fa-circle-o"></i>Create New FAQ</a></li>
+                        <li><a href="/admin/faqs/"><i class="fa fa-circle-o"></i>View FAQs</a></li>
                     </ul>
                 </li>
             </ul>
@@ -439,6 +442,12 @@
 <script src="/js/admin/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/js/admin/demo.js"></script>
+<script src="/js/lightgallery-all.min.js"></script>
+
+<!-- lightgallery plugins -->
+{{--<script src="/js/lg-thumbnail.min.js"></script>
+<script src="/js/lg-fullscreen.min.js"></script>--}}
+
 <script src="/js/admin/custom.js"></script>
 
 <script>
@@ -450,6 +459,14 @@
         $('#quotes').DataTable();
         $('#notifications').DataTable();
         $('#booking').DataTable();
+        $('#customer').DataTable();
+        $('#images').DataTable();
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#lightgallery").lightGallery();
     });
 </script>
 

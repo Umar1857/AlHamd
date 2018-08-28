@@ -81,7 +81,7 @@ li {
     height: auto;
     line-height: normal;
     margin-right: 50px;
-    padding: 0 15px;
+    padding: 4px 15px;
 }
 
 .navbar-brand > img {
@@ -243,6 +243,33 @@ textarea .form-control {
 /* custom bootstrap ends here */
 
 /** top header **/
+.floating_links{
+    position: fixed;
+    right: 0;
+    top:200px;
+    z-index: 100;
+}
+.floating_links a{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 24px;
+    text-align: center;
+
+}
+.floating_links a i{
+    display: block;
+    /*background-color: #424242;*/
+    width: 50px;
+    line-height:50px;
+    color: #fff;
+}
+
+.floating_links #whatsapp {
+    background-color:#00A532 !important;
+}
+.floating_links #phone{
+    background-color:#890000 !important;
+}
 
 header{
     position: relative;
@@ -353,7 +380,9 @@ header{
     line-height: 48px;
     letter-spacing: 2px;
 }
-
+.main_nav .myreservations a span{
+    display: block;
+}
 .main_nav .navbar-default .myreservations > li > a:hover,
 .main_nav .navbar-default .myreservations > li > a:focus,
 .main_nav .navbar-default .myreservations > li > a:active,
@@ -598,10 +627,18 @@ header{
     height: 205px;
     position: relative;
 }
+.main_slider .slider_inner .slider_img a{
+    display: block;
+}
 
-.main_slider .slider_inner .slider_img img:first-child {
-    height: 100%;
+.main_slider .slider_inner .slider_img img{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin:0 auto;
+    min-height: 205px;
+    max-height: 205px;
 }
 
 .mapicon {
@@ -716,6 +753,10 @@ header{
     padding: 50px 15px 0 80px;
 }
 
+.blog_body{
+min-height: 112px !important;
+}
+
 .package_desc > span {
     display: block;
     font-size: 12px;
@@ -735,13 +776,22 @@ header{
 
 .package_img {
     height: 270px;
+    position: relative;
 }
-
-.package_img img {
+.package_img a {
+    display: flex;
     height: 100%;
-    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
-
+.package_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin:0 auto;
+}
 .package_desc > a,
 .release_content > .readmore,
 .readmore {
@@ -785,7 +835,9 @@ header{
     margin: 60px auto;
     padding: 0 25px;
 }
-
+.packages_wrapper > div{
+    margin-bottom: 20px;
+}
 #PACKAGES .packages_wrapper {
     margin: 0 auto 60px;
 }
@@ -1019,13 +1071,53 @@ header{
     padding-right: 20px
 }
 
-.social_links li a {
+.social_links li .facebook {
     display: block;
     width: 55px;
     height: 55px;
     line-height: 55px;
     color: #fff !important;
-    background-color: #424242;
+    background-color: #4D5FA5;
+    border: 1px solid #424242;
+    margin: 0 10px;
+    font-size: 18px;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}.social_links li .instagram {
+    display: block;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    color: #fff !important;
+    background-image: url("../images/Instagram-colors-768x768.jpg");
+     background-size:     cover;
+     background-repeat:   no-repeat;
+     background-position: center center;
+    border: 1px solid #424242;
+    margin: 0 10px;
+    font-size: 18px;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}.social_links li .linkedin {
+    display: block;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    color: #fff !important;
+    background-color: #485DAD;
+    border: 1px solid #424242;
+    margin: 0 10px;
+    font-size: 18px;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+.social_links li .whatsapp {
+    display: block;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    color: #fff !important;
+    background-color: #00A532;
     border: 1px solid #424242;
     margin: 0 10px;
     font-size: 18px;
@@ -1038,6 +1130,12 @@ header{
 .social_links li a:active {
     color: #424242 !important;
     background-color: #fff;
+}
+.social_links li a.instagram:hover,
+.social_links li a.instagram:focus,
+.social_links li a.instagram:active {
+    color: #424242 !important;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0) 80%, rgba(0,0,0,0) 20%) !important;
 }
 
 .join_sheets {
@@ -1138,7 +1236,9 @@ header{
     margin-bottom: 30px;
     letter-spacing: 3px;
 }
-
+.join_sheets h3 br{
+    display: none;
+}
 .join_content form,
 .blog_content form {
     margin: 40px 0;
@@ -1160,7 +1260,7 @@ footer {
 
 .footer_desc {
     line-height: normal;
-    margin: 30px 0;
+    margin: 20px 0;
     font-family: 'pt_serifregular';
 }
 
@@ -3322,10 +3422,10 @@ footer h4 {
 .text-logo{
     font-size: 32px;
 }*/
-.contact-form form{
-    margin-top: 20px;
+.contact-form form {
+    margin: 20px auto;
+    max-width: 900px;
 }
-
 .contact-form .fields {
      border-radius: 5px;
      border: 1px solid #333333;
@@ -3343,6 +3443,8 @@ footer h4 {
     -webkit-box-shadow: none;}
 .contact-form button {
     margin: 20px 0px;
+    clear: both;
+    float: none !important;
 }
 .choose_us{
     padding: 40px 0px;
@@ -3352,9 +3454,6 @@ footer h4 {
 }
 .choose_section h3{
     margin-top: 20px;
-}
-.package_img{
-    position: relative;
 }
 .post_date{
     display: inline-block;
@@ -3437,3 +3536,133 @@ footer h4 {
     margin: 0 0 10px 0;
     padding: 0 15px !important;
 }
+
+/*FAQs Page Styles Start*/
+/*body {
+    color: #6a6c6f;
+    background-color: #f1f3f6;
+    margin-top: 30px;
+}*/
+.faqs{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.faqs h3{
+    margin-bottom: 20px;
+}
+
+#faq_intro{
+    max-width: 960px !important;
+    text-align: center;
+}
+
+.faq_section{
+    text-align: left;
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+.faq_box {
+    max-width: 960px;
+}
+.each_faq{
+    margin-bottom: 10px !important;
+}
+
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: #fff;
+    border-color: #e4e5e7;
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.panel-default>.panel-heading a {
+    display: block;
+    padding: 15px 15px;
+    font-size: 20px !important;
+}
+
+.panel-default>.panel-heading a:after {
+    content: "";
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    float: right;
+    transition: transform .25s linear;
+    -webkit-transition: -webkit-transform .25s linear;
+}
+
+.panel-default>.panel-heading a[aria-expanded="true"] {
+    background-color: #eee;
+}
+
+.panel-default>.panel-heading a[aria-expanded="true"]:after {
+    content: "\2212";
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.panel-default>.panel-heading a[aria-expanded="false"]:after {
+    content: "\002b";
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.accordion-option {
+    width: 100%;
+    float: left;
+    clear: both;
+    margin: 15px 0;
+}
+
+.accordion-option .title {
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+.accordion-option .toggle-accordion {
+    float: right;
+    font-size: 16px;
+    color: #6a6c6f;
+}
+
+.accordion-option .toggle-accordion:before {
+    content: "Expand All";
+}
+
+.accordion-option .toggle-accordion.active:before {
+    content: "Collapse All";
+}
+/*FAQs Page Styles Ends*/
+
+/*
+.facebook {
+    background-color: #4D5FA5 !important;
+}
+
+#whatsapp {
+    background-color:#00A532 !important;
+}
+
+.linkedin {
+    background-color:#0072B2 !important;
+}
+
+.instagram {
+    background-color:#485DAD !important;
+}
+*/

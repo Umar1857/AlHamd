@@ -8,8 +8,7 @@
         </p>
     </div>
     <div class="contact-form">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+
 
                 {{--Session Alert Starts--}}
                 @if (session('message'))
@@ -20,7 +19,7 @@
                 {{--Session Alert Ends--}}
 
                 <form method="post" action="{{route('contact.submit')}}">
-                    <div class="form-group {{ $errors->has('username') ? ' has-error' : '' }}">
+                    <div class="form-group col-xs-12{{ $errors->has('username') ? ' has-error' : '' }}">
                         <label for="name">Name</label>
                         <input type="text" class="form-control fields" name="username" id="name" placeholder="Name" value="{{ old('username') }}" required>
 
@@ -30,7 +29,7 @@
                             </span>
                         @endif
                     </div>
-                    <div class="form-group {{ $errors->has('phone') ? ' has-error' : '' }}">
+                    <div class="form-group col-xs-12{{ $errors->has('phone') ? ' has-error' : '' }}">
                         <label for="number">Number</label>
                         <input type="text" class="form-control fields" name="phone" id="number" placeholder="Number" value="{{ old('phone') }}" required>
 
@@ -40,7 +39,7 @@
                             </span>
                         @endif
                     </div>
-                    <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
+                    <div class="form-group col-xs-12 {{ $errors->has('email') ? ' has-error' : '' }}">
                         <label for="email">Email address</label>
                         <input type="email" class="form-control fields" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required>
 
@@ -50,7 +49,7 @@
                             </span>
                         @endif
                     </div>
-                    <div class="form-group {{ $errors->has('message') ? ' has-error' : '' }}">
+                    <div class="form-group col-xs-12 {{ $errors->has('message') ? ' has-error' : '' }}">
                         <label for="message">Message</label>
                         <textarea class="form-control" name="message" placeholder="Type your message here..." rows="3" required>{{ old('message') }}</textarea>
 
@@ -60,11 +59,12 @@
                             </span>
                         @endif
                     </div>
+                    <div class="form-group col-md-12 text-right">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <button type="submit" class="hvr-shutter-out-horizontal submit_button pull-right">Submit</button>
+                    </div>
                 </form>
-            </div>
-        </div>
+
     </div>
     <!---->
 @endsection

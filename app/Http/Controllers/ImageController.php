@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
-use Illuminate\Support\Facades\Redirect;
-use Session;
+use App\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
-class PostController extends Controller
+class ImageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('admin/posts/index' , ['posts'=>$posts]);
+        $images = Image::all();
+        
+        return view('admin.gallery.index', compact('images'));
     }
 
     /**
@@ -29,7 +30,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin/posts/create');
+        return view('admin.gallery.create');
     }
 
     /**
@@ -42,39 +43,38 @@ class PostController extends Controller
     {
         // Validate Form DATA
         $rules = array(
-            'title' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,bmp,png',
-            'body'  => 'required|string',
+            'title' => 'required|string|max:255',
+            'caption' => 'required|string|max:255',
+            'image' => 'required|mimes:jpeg,jpg,bmp,png',
         );
 
         $validator = Validator::make(Input::all(), $rules);
 
         if ($validator->fails()) {
 
-            return redirect('/admin/post/create')
+            return redirect('/admin/image/create')
                 ->withErrors($validator)
                 ->withInput();
         }
 
         else{
-            $post = new Post();
-            $post->title = $request->title;
-            $post->slug = str_slug($request->title);
-            $post->body = $request->body;
+            $image = new Image();
+
+            $image->title = $request->title;
+            $image->caption = $request->caption;
 
             $file = $request->file('image') ;
 
             $fileName       = time().'.'.$file->getClientOriginalExtension() ;
-            $request->image->move(base_path('public/images/post'), $fileName);
-            $post->image = $fileName;
-            $post->save();
+            $request->image->move(base_path('public/images/gallery/media'), $fileName);
+            $image->name = $fileName;
+
+            $image->save();
 
             // redirect
-            Session::flash('message', 'A Post Has Been Successfully Created!');
+            Session::flash('message', 'Image Has Been Successfully Added!');
             Session::flash('alert-class', 'alert-success');
-            return redirect('/admin/post');
-
-            //OUTPUT IT WITH {!!html_entity_decode($text)!!}
+            return redirect('/admin/image');
         }
     }
 
@@ -86,8 +86,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        return view('user/blog-detail', compact('post'));
+        $image = Image::find($id);
+
+        return view('admin/gallery/show', compact('image'));
     }
 
     /**
@@ -98,9 +99,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::find($id);
+        $image = Image::find($id);
 
-        return view('admin/posts/edit', ['post' => $post]);
+        return view('admin/gallery/edit', compact('image'));
     }
 
     /**
@@ -114,39 +115,30 @@ class PostController extends Controller
     {
         // Validate Form DATA
         $rules = array(
-            'title' => 'required|string',
-            'image' => 'image|mimes:jpeg,bmp,png',
-            'body'  => 'required|string',
+            'title' => 'required|string|max:255',
+            'caption' => 'required|string|max:255',
         );
 
         $validator = Validator::make(Input::all(), $rules);
 
         if ($validator->fails()) {
 
-            return redirect('/admin/post/create')
+            return redirect('/admin/image/'.$id.'/edit')
                 ->withErrors($validator)
                 ->withInput();
         }
 
         else{
-            $post = Post::find($id);
-            $post->title = $request->title;
-            $post->slug = str_slug($request->title);
-            $post->body = $request->body;
+            $image = Image::find($id);
 
-            if ($request->hasFile('image')) {
-                $file = $request->file('image');
-
-                $fileName = time() . '.' . $file->getClientOriginalExtension();
-                $request->image->move(base_path('public/images/post'), $fileName);
-                $post->image = $fileName;
-            }
-            $post->update();
+            $image->title = $request->title;
+            $image->caption = $request->caption;
+            $image->update();
 
             // redirect
-            Session::flash('message', 'A Post Has Been Successfully updated!');
+            Session::flash('message', 'Image Has Been Successfully Updated!');
             Session::flash('alert-class', 'alert-success');
-            return redirect('/admin/post');
+            return redirect('/admin/image');
         }
     }
 
@@ -158,22 +150,33 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::find($id);
-        $post->delete();
+        $image = Image::find($id);
+
+        $image_path = public_path('/images/gallery/media/'.$image->name);
+
+        if(File::exists($image_path)) {
+            @unlink($image_path);
+        }
+
+        $image->delete();
+
         // redirect
-        Session::flash('message', 'Post has been Successfully Deleted!');
+        Session::flash('message', 'Image Has Been Successfully Deleted!');
         Session::flash('alert-class', 'alert-success');
-        return Redirect::to('/admin/post');
+        return redirect('/admin/image');
     }
 
-    public function blog() {
-        $posts = Post::paginate(12);
-        return view('user/blog', compact('posts'));
-    }
-
-    public function singlePost($id, $name)
+    public function gallery()
     {
-        $post = Post::find($id);
-        return view('user/blog-detail', ['post' => $post]);
+        $images = Image::all();
+
+        return view('/admin/gallery/view', compact('images'));
+    }
+
+    public function media()
+    {
+        $images = Image::all();
+
+        return view('/user/gallery', compact('images'));
     }
 }
