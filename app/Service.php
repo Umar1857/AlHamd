@@ -11,6 +11,6 @@ class Service extends Model
     }
 
     public function booking() {
-        return $this->hasMany('App\Booking','service');
+        return $this->hasMany('App\Booking');
     }
 }

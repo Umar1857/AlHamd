@@ -7,6 +7,11 @@
             <!-- left column -->
             <div class="col-md-12">
                 <!-- general form elements -->
+
+                <div>
+                    <a href="/admin/item/create" class="btn btn-md btn-primary addNewService">Add New Item</a>
+                </div>
+
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Service Items Table</h3>

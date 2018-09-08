@@ -11046,7 +11046,7 @@ button.close {
 .hvr-fade:hover,
 .hvr-fade:focus,
 .hvr-fade:active {
-    background-color: #ba9e76;
+    background-color: #444444;
     color: white;
 }
 
@@ -11092,8 +11092,8 @@ button.close {
     animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
-    background-color: #ba9e76;
-    background-color: #ba9e76;
+    background-color: #444444;
+    background-color: #444444;
     color: white;
 }
 
@@ -11122,7 +11122,7 @@ button.close {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #444444;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 0 50%;
@@ -11176,7 +11176,7 @@ button.close {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #444444;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 100% 50%;
@@ -11230,7 +11230,7 @@ button.close {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #444444;
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
     -webkit-transform-origin: 50% 0;
@@ -11284,7 +11284,7 @@ button.close {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #444444;
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
     -webkit-transform-origin: 50% 100%;
@@ -11338,7 +11338,7 @@ button.close {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #444444;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 0 50%;
@@ -11394,7 +11394,7 @@ button.close {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #444444;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 100% 50%;
@@ -11450,7 +11450,7 @@ button.close {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #444444;
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
     -webkit-transform-origin: 50% 0;
@@ -11506,7 +11506,7 @@ button.close {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #444444;
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
     -webkit-transform-origin: 50% 100%;
@@ -11564,7 +11564,7 @@ button.close {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #444444;
     border-radius: 100%;
     -webkit-transform: scale(0);
     transform: scale(0);
@@ -11604,7 +11604,7 @@ button.close {
             box-shadow: 0 0 1px transparent;
     position: relative;
     overflow: hidden;
-    background: #ba9e76;
+    background: #444444;
     -webkit-transition-property: color;
     transition-property: color;
     -webkit-transition-duration: 0.3s;
@@ -11658,7 +11658,7 @@ button.close {
     -webkit-box-shadow: 0 0 1px transparent;
             box-shadow: 0 0 1px transparent;
     position: relative;
-    background: #ba9e76;
+    background: #444444;
     -webkit-transition-property: color;
     transition-property: color;
     -webkit-transition-duration: 0.3s;
@@ -11726,7 +11726,7 @@ button.close {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #444444;
     -webkit-transform: scale(0);
     transform: scale(0);
     -webkit-transition-property: transform;
@@ -11764,7 +11764,7 @@ button.close {
     -webkit-box-shadow: 0 0 1px transparent;
             box-shadow: 0 0 1px transparent;
     position: relative;
-    background: #ba9e76;
+    background: #444444;
     -webkit-transition-property: color;
     transition-property: color;
     -webkit-transition-duration: 0.3s;
@@ -11834,7 +11834,7 @@ button.close {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #ba9e76;
+    background: #444444;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
     -webkit-transform-origin: 50%;
@@ -11874,7 +11874,7 @@ button.close {
     -webkit-box-shadow: 0 0 1px transparent;
             box-shadow: 0 0 1px transparent;
     position: relative;
-    background: #ba9e76;
+    background: #444444;
     -webkit-transition-property: color;
     transition-property: color;
     -webkit-transition-duration: 0.3s;
@@ -11944,7 +11944,7 @@ button.close {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #ba9e76;
+    background: #444444;
     -webkit-transform: scaleY(0);
     transform: scaleY(0);
     -webkit-transform-origin: 50%;
@@ -12001,8 +12001,8 @@ button.close {
 .hvr-border-fade:hover,
 .hvr-border-fade:focus,
 .hvr-border-fade:active {
-    -webkit-box-shadow: inset 0 0 0 4px #ba9e76, 0 0 1px transparent;
-            box-shadow: inset 0 0 0 4px #ba9e76, 0 0 1px transparent;
+    -webkit-box-shadow: inset 0 0 0 4px #444444, 0 0 1px transparent;
+            box-shadow: inset 0 0 0 4px #444444, 0 0 1px transparent;
     /* Hack to improve aliasing on mobile/tablet devices */
 }
 
@@ -12288,7 +12288,7 @@ button.close {
     left: 0;
     right: 100%;
     bottom: 0;
-    background: #ba9e76;
+    background: #444444;
     height: 4px;
     -webkit-transition-property: right;
     transition-property: right;
@@ -12325,7 +12325,7 @@ button.close {
     left: 50%;
     right: 50%;
     bottom: 0;
-    background: #ba9e76;
+    background: #444444;
     height: 4px;
     -webkit-transition-property: left, right;
     transition-property: left, right;
@@ -12363,7 +12363,7 @@ button.close {
     left: 100%;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #444444;
     height: 4px;
     -webkit-transition-property: left;
     transition-property: left;
@@ -12400,7 +12400,7 @@ button.close {
     left: 0;
     right: 100%;
     top: 0;
-    background: #ba9e76;
+    background: #444444;
     height: 4px;
     -webkit-transition-property: right;
     transition-property: right;
@@ -12437,7 +12437,7 @@ button.close {
     left: 50%;
     right: 50%;
     top: 0;
-    background: #ba9e76;
+    background: #444444;
     height: 4px;
     -webkit-transition-property: left, right;
     transition-property: left, right;
@@ -12475,7 +12475,7 @@ button.close {
     left: 100%;
     right: 0;
     top: 0;
-    background: #ba9e76;
+    background: #444444;
     height: 4px;
     -webkit-transition-property: left;
     transition-property: left;
@@ -12513,7 +12513,7 @@ button.close {
     right: 0;
     top: 0;
     bottom: 0;
-    border-color: #ba9e76;
+    border-color: #444444;
     border-style: solid;
     border-width: 0;
     -webkit-transition-property: border-width;
@@ -12553,7 +12553,7 @@ button.close {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #ba9e76;
+    background: #444444;
     height: 4px;
     -webkit-transform: translateY(4px);
     transform: translateY(4px);
@@ -12596,7 +12596,7 @@ button.close {
     left: 0;
     right: 0;
     top: 0;
-    background: #ba9e76;
+    background: #444444;
     height: 4px;
     -webkit-transform: translateY(-4px);
     transform: translateY(-4px);
@@ -16273,7 +16273,7 @@ button {
 
 .form-control:focus {
 
-    border-bottom-color: #ba9e76;
+    border-bottom-color: #444444;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
@@ -16327,7 +16327,7 @@ textarea .form-control {
 }
 
 .nav-tabs > li > a:hover {
-    border-color: #ba9e76;
+    border-color: #444444;
     background: transparent;
     outline: none;
     -webkit-box-shadow: none;
@@ -16338,7 +16338,7 @@ textarea .form-control {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
     border: none;
-    border-bottom: 3px solid #ba9e76;
+    border-bottom: 3px solid #444444;
     font-weight: 600;
     color: inherit !important;
     background-color: transparent;
@@ -16387,7 +16387,7 @@ header .main_nav {
 }
 
 .gold {
-    color: #ba9e76 !important;
+    color: #444444 !important;
 }
 
 .top_nav {
@@ -16475,7 +16475,7 @@ header .main_nav {
     font-size: 12px;
     font-weight: 500;
     padding: 0 25px !important;
-    border: 2px solid #ba9e76;
+    border: 2px solid #444444;
     text-transform: uppercase;
     height: 50px;
     line-height: 48px;
@@ -16639,7 +16639,7 @@ header .main_nav {
     justify-content: center;
     width: 80px;
     height: 80px;
-    background-color: #ba9e76;
+    background-color: #444444;
     position: absolute;
     top: 0;
     right: 0;
@@ -16767,7 +16767,7 @@ header .main_nav {
 }
 
 .from span {
-    color: #ba9e76;
+    color: #444444;
 }
 
 .book_now {
@@ -16820,7 +16820,7 @@ header .main_nav {
 }
 
 .view_popular span {
-    color: #ba9e76;
+    color: #444444;
 }
 
 .featured_package div > img {
@@ -16949,7 +16949,7 @@ header .main_nav {
 .events_at_sheetz h1 span {
     padding: 10px 50px;
     display: inline-block;
-    background-color: #ba9e76;
+    background-color: #444444;
 }
 
 .responsive1 .slick-track {
@@ -17104,7 +17104,7 @@ header .main_nav {
 }
 
 .img_likes i {
-    color: #ba9e76;
+    color: #444444;
 }
 
 .gallery_slider .slider_inner:hover .slider_img {
@@ -17415,14 +17415,14 @@ footer h4 {
 .release_content a {
     display: block;
     font-weight: 600;
-    color: #ba9e76 !important;
+    color: #444444 !important;
     height: 50px;
     line-height: 50px;
     margin: 10px auto 0 !important;
 }
 
 .release_content:hover {
-    border-color: #ba9e76;
+    border-color: #444444;
 }
 
 .release_content .book_order {
@@ -17486,7 +17486,7 @@ footer h4 {
     margin-bottom: 10px;
     padding: 10px 40px;
     display: inline-block;
-    background-color: #ba9e76;
+    background-color: #444444;
 }
 
 .our_hotels_content h1 {
@@ -17558,7 +17558,7 @@ footer h4 {
 }
 
 .vacnacy_list ul li a:hover {
-    border-color: #ba9e76;
+    border-color: #444444;
 }
 
 /* vacncy details */
@@ -17617,7 +17617,7 @@ footer h4 {
     width: 4px;
     height: 4px;
     border-radius: 100%;
-    background-color: #ba9e76;
+    background-color: #444444;
     left: 2px;
     top: 8px;
 }
@@ -17702,7 +17702,7 @@ footer h4 {
 .testimonials h1 span {
     position: relative;
     letter-spacing: 3px;
-    border-bottom: 4px solid #ba9e76;
+    border-bottom: 4px solid #444444;
     line-height: 60px;
 }
 
@@ -17716,7 +17716,7 @@ footer h4 {
     bottom: -3px;
     height: 4px;
     width: 100%;
-    background-color: #ba9e76;
+    background-color: #444444;
     margin: 0 auto;
 }
 */
@@ -17730,7 +17730,7 @@ footer h4 {
 
 .hotel_description p strong {
     color: #424242;
-    background-color: #ba9e76;
+    background-color: #444444;
     padding: 2px 10px;
 }
 
@@ -17838,7 +17838,7 @@ footer h4 {
     display: inline-block;
     margin-bottom: 30px;
     background-color: #424242;
-    color: #ba9e76;
+    color: #444444;
     padding: 10px 30px;
 }
 
@@ -17922,7 +17922,7 @@ footer h4 {
 
 .gift_wrapper > p {
     color: #fff;
-    background-color: #ba9e76;
+    background-color: #444444;
     display: inline-block;
     padding: 3px 20px;
     margin: 0 15px;
@@ -18005,7 +18005,7 @@ footer h4 {
 
 .meetings_content > span {
     color: inherit;
-    background-color: #ba9e76;
+    background-color: #444444;
     display: inline-block;
     padding: 5px 20px;
     margin-bottom: 10px;
@@ -18036,7 +18036,7 @@ footer h4 {
 }
 
 .meetings_packages .packages_wrapper .package_desc {
-    border-bottom: 3px solid #ba9e76;
+    border-bottom: 3px solid #444444;
 }
 
 .meetings_packages .readmore {
@@ -18224,7 +18224,7 @@ footer h4 {
 */
 
 .form-control:focus {
-    border-bottom-color: #ba9e76;
+    border-bottom-color: #444444;
 }
 
 .wedding_form_wrapper > div {
@@ -18483,7 +18483,7 @@ footer h4 {
 
 .our_locations > span {
     color: #fff;
-    background-color: #ba9e76;
+    background-color: #444444;
     font-family: 'pt_serifregular';
     font-size: 24px;
     padding: 5px 20px;
@@ -18631,7 +18631,7 @@ footer h4 {
 }
 
 .progress-bar {
-    background-color: #ba9e76;
+    background-color: #444444;
     height: 7px;
     float: none;
     -webkit-box-shadow: none;
@@ -18804,7 +18804,7 @@ footer h4 {
 }
 
 .room_features > h4 span {
-    background-color: #ba9e76;
+    background-color: #444444;
 }
 
 .hotel_features > h4 span {
@@ -18950,7 +18950,7 @@ footer h4 {
     font-weight: 600;
     padding: 0 20px !important;
     width: 175px;
-    border: 2px solid #ba9e76;
+    border: 2px solid #444444;
     text-transform: uppercase;
     height: 50px;
     line-height: 48px;
@@ -19288,7 +19288,7 @@ footer h4 {
 }
 
 .payment_info h1 {
-    color: #ba9e76;
+    color: #444444;
     font-family: 'pt_serifregular';
     font-weight: 600;
 }
@@ -19314,7 +19314,7 @@ footer h4 {
 }
 
 .your_rewards h1 {
-    color: #ba9e76;
+    color: #444444;
     font-weight: 600;
     margin-bottom: 20px;
 }

@@ -23,7 +23,7 @@
                     {{--Session Alert Ends--}}
                     <div class="row">
                         <div class="col-md-12">
-                            <form role="form" enctype="multipart/form-data" action="/admin/post/{{$post->id}}" method="PUT">
+                            <form role="form" enctype="multipart/form-data" action="/admin/post/{{$post->id}}" method="post">
                                 <div class="box-body">
                                     <div class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
                                         <label>Post Title</label>
@@ -41,7 +41,7 @@
                                     </div>
                                     <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}">
                                         <label>Post Image</label>
-                                        <input type="file" name="image" value="{{$post->image}}" required>
+                                        <input type="file" name="image" value="{{$post->image}}">
 
                                         @if ($errors->has('image'))
                                             <span class="help-block">

@@ -12,9 +12,8 @@
                     <a href="#">#alhamd</a>
                     <a href="#">#electronics</a>
                     <a href="#">#loading</a>
-
                 </div>
-                <a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>
+                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
@@ -31,7 +30,7 @@
                     <a href="#">#shifting</a>
 
                 </div>
-                <a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>
+                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
@@ -48,7 +47,7 @@
                     <a href="#">#shifting</a>
 
                 </div>
-                <a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>
+                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
@@ -65,7 +64,7 @@
                     <a href="#">#shifting</a>
 
                 </div>
-                <a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>
+                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
@@ -81,9 +80,8 @@
                     <a href="#">#home </a>
                     <a href="#">#furniture</a>
                     <a href="#">#shifting</a>
-
                 </div>
-                <a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>
+                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
@@ -99,9 +97,8 @@
                     <a href="#">#house</a>
                     <a href="#">#furniture</a>
                     <a href="#">#moving</a>
-
                 </div>
-                <a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>
+                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
@@ -117,9 +114,8 @@
                     <a href="#">#house</a>
                     <a href="#">#furniture</a>
                     <a href="#">#shifting</a>
-
                 </div>
-                <a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>
+                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
@@ -134,9 +130,8 @@
                     <a href="#">#alhamd</a>
                     <a href="#">#house</a>
                     <a href="#">#relocation</a>
-
                 </div>
-                <a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>
+                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
@@ -152,9 +147,8 @@
                     <a href="#">#packed</a>
                     <a href="#">#ready</a>
                     <a href="#">#move</a>
-
                 </div>
-                <a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>
+                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
@@ -169,9 +163,8 @@
                     <a href="#">#alhamd</a>
                     <a href="#">#loading</a>
                     <a href="#">#shifting</a>
-
                 </div>
-                <a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>
+                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
@@ -186,11 +179,9 @@
                     <a href="#">#alhamd</a>
                     <a href="#">#furniture</a>
                     <a href="#">#shifting</a>
-
                 </div>
-                <a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>
+                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
-
     </div>
 </div>

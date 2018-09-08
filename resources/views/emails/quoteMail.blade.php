@@ -6,11 +6,10 @@
 <body>
 
 <div>
-    <h3>{{$subject}}</h3>
-    <p>Your Message For Quotation on Alhamd Movers was:</p>
+    <h4>Your Message For Quotation on Alhamd Movers was:</h4>
     <p>{{$quote->message}}</p>
     <br>
-    <p>Reply By Admin is: </p>
+    <h4>Reply By Admin is: </h4>
     <p>{{$msg}}</p>
 </div>
 </body>

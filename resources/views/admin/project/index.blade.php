@@ -8,7 +8,9 @@
             <div class="col-md-12">
                 <!-- general form elements -->
 
-
+                <div>
+                    <a href="/admin/project/create" class="btn btn-md btn-primary addNewService">Add New Project</a>
+                </div>
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Projects Table</h3>

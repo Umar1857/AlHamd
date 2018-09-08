@@ -72,7 +72,7 @@ class PostController extends Controller
             // redirect
             Session::flash('message', 'A Post Has Been Successfully Created!');
             Session::flash('alert-class', 'alert-success');
-            return redirect('/admin/post/create');
+            return redirect('/admin/post');
 
             //OUTPUT IT WITH {!!html_entity_decode($text)!!}
         }
@@ -144,7 +144,7 @@ class PostController extends Controller
             $post->update();
 
             // redirect
-            Session::flash('message', 'A Post Has Been Successfully Created!');
+            Session::flash('message', 'A Post Has Been Successfully updated!');
             Session::flash('alert-class', 'alert-success');
             return redirect('/admin/post');
         }
@@ -167,11 +167,11 @@ class PostController extends Controller
     }
 
     public function blog() {
-        $posts = Post::paginate(5);
+        $posts = Post::paginate(12);
         return view('user/blog', compact('posts'));
     }
 
-    public function singlePost($id)
+    public function singlePost($id, $name)
     {
         $post = Post::find($id);
         return view('user/blog-detail', ['post' => $post]);

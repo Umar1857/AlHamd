@@ -6,11 +6,10 @@
 <body>
 
 <div>
-    <h3>{{$subject}}</h3>
-    <p>Your Message was:</p>
+    <h4>Your Message was:</h4>
     <p>{{$contact->message}}</p>
     <br>
-    <p>Reply: </p>
+    <h4>Reply: </h4>
     <p>{{$msg}}</p>
 </div>
 </body>

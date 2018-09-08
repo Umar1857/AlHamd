@@ -7,6 +7,12 @@
             <!-- left column -->
             <div class="col-md-12">
                 <!-- general form elements -->
+                @if (session('message'))
+                    <div class="alert alert-success alert-notification">
+                        {{ session('message') }}
+                    </div>
+                @endif
+
                 <div>
                     <a href="/admin/service/create" class="btn btn-md btn-primary addNewService">Add New Service</a>
                 </div>
@@ -28,9 +34,9 @@
                             <tbody>
                             @foreach($services as $service)
                             <tr>
-                                <td></td>
+                                <td><img src="{{url('/images/service/'.$service->image)}}" alt="{{$service->name}}" width="40px" height="40px"></td>
                                 <td>{{$service->name}}</td>
-                                <td>{{str_limit($service->description, 70)}}</td>
+                                <td>{!!html_entity_decode(str_limit($service->description, 70),ENT_COMPAT, 'UTF-8')!!}</td>
                                 <td class="text-center">
                                     <span><a class="btn btn-sm btn-default deleteForm" href="/admin/service/{{$service->id}}">View</a></span>
                                     <span><a class="btn btn-sm btn-primary deleteForm" href="/admin/service/{{$service->id}}/edit">Edit</a></span>

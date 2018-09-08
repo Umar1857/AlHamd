@@ -24,11 +24,11 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <form role="form" enctype="multipart/form-data" action="/admin/service" method="POST">
+                            <form role="form" name="createService" enctype="multipart/form-data" action="/admin/service" method="POST">
                                 <div class="box-body">
                                     <div class="form-group {{ $errors->has('name') ? ' has-error' : '' }}">
                                         <label>Service Name</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Enter Service Name Here" value="{{ old('name') }}" required autofocus>
+                                        <input type="text" name="name" class="form-control" placeholder="Enter Service Name Here" value="{{ old('name') }}">
 
                                         @if ($errors->has('name'))
                                             <span class="help-block">
@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="form-group {{ $errors->has('description') ? ' has-error' : '' }}">
                                         <label>Service Description</label>
-                                        <textarea name="description" rows="15" class="form-control" placeholder="Enter Service Description Here" required>{{ old('description') }}</textarea>
+                                        <textarea name="description" rows="15" class="form-control" id="ServiceBody" placeholder="Enter Service Description Here">{{ old('description') }}</textarea>
 
                                         @if ($errors->has('description'))
                                             <span class="help-block">

@@ -1,46 +1,32 @@
 @extends('layouts.app')
 <!---->
 @section('content')
-<div class="intro about_content">
-    {{--<div class="main_banner">
-        <div class="hotel_description text-center">
-            <h1>ABOUT US</h1>
-
-            <p>We take pride in service with great<span class="white_txt">attention</span>to detail</p>
-
-        </div>
-    </div>--}}
-</div>
-<div class="about_txt">
-    <h3>About AlHamd</h3>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
-</div>
-<div class="about_ceo">
-    <img src="images/banner.jpg">
-    <div class="ceo_message clearfix">
-        <div class="ceo_img"><img src="images/client.png"></div>
-        <div class="ceo_txt">
-            <em>“Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"</em>
-            <h5>William Dawson</h5>
-            <span>Sheetz CEO</span>
-        </div>
-    </div>
-    <div class="general_txt text-center">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
-        </p>
-    </div>
-</div>
-{{--<div class="what_client_say packages text-center">
-    <div class="container">
+    <div class="about_txt">
+        <h3>About Al-Hamd Movers and Packers</h3>
         <div class="row">
-            <p class="view_popular">
-                What <span>our</span>
-            </p>
-            <h1>Partners say</h1>
-            @include('includes/what_client_slider')
+            <div class="about_body col-md-8 col-md-offset-2">
+                <p id="quote">
+                    "If you are looking for professional, relaible and cost effective moving and packing services in UAE region, then you have come to the right place."
+                </p>
+                <p>
+                    Al-Hamd Movers and packers, the company which started from a bunch of professional moving experts has grown upto the extent that now its one of leading company dealing as movers and packers in Al Ain, Abu Dhabi, Ajaman, Fujairah, Ras Al Khaima, Sharjah, Jebel Ali, Dubai, UAE. We have a highly experienced team of professionals who work to provide a most reliable and cost effective services for residential as well as commercial moving services. We undertake complete responsibility of relocation services in Al Ain, Abu Dhabi, Ajaman, Fujairah, Ras Al Khaima, Sharjah, Jebel Ali and Dubai by offering end to end solutions so that our clients are free to relocate without any stress.
+                </p>
+                <p>
+                    Today, Al-Hamd movers and packers has a strength of 40 plus members, a fleet of 25 trucks and 30,000 sq.ft. storage facility making us one of the leading relocation companies in UAE.
+                </p>
+                <p>
+                    For the past few years, Al-Hamd movers and packers is providing services to its valuable clients in Al Ain, Abu Dhabi, Ajaman, Fujairah, Ras Al Khaima, Sharjah, Jebel Ali, Dubai, UAE. Whether you are moving house, office or villa, we have extensive experience in relocations and offer a full range of services to suit everyone, from individuals and families to businesses and corporations.
+                </p>
+                <p>
+                    Our efficiency and reliability has helped us to earn a niche name for movers and packers in Dubai as well as moving companies in Abu Dhabi, UAE. Apart from moving services, we're also providing other incredibly well services including office relocation, house relocation, villa relocation, packing and unpacking services, furniture assembling and dismantling services, storage services.
+                </p>
+                <p>
+                    We are always there for you and just a call away for all your requirements of movers and packers in Al Ain, Abu Dhabi, Ajaman, Fujairah, Ras Al Khaima, Sharjah, Jebel Ali and Dubai.
+                </p>
+                <p>
+                    Our mission and values are to help people and businesses to relocate without stress throughout UAE.
+                </p>
+            </div>
         </div>
     </div>
-</div>--}}
-<!---->
 @endsection

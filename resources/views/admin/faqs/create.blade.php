@@ -11,48 +11,41 @@
                     <div class="alert alert-success alert-notification">
                         {{ session('message') }}
                     </div>
-            @endif
-            {{--Session Alert Ends--}}
+                @endif
+                {{--Session Alert Ends--}}
 
             <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Create New Post</h3>
+                        <h3 class="box-title">Create New FAQ</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
 
                     <div class="row">
                         <div class="col-md-12">
-                            <form role="form" action="/admin/project" method="POST">
+                            <form role="form" action="/admin/faqs" method="POST">
                                 <div class="box-body">
-                                    <div class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
-                                        <label>Project Title</label>
-                                        <input type="text" name="title" class="form-control" placeholder="Enter Project Title Here" value="{{ old('title') }}" required autofocus>
+                                    <div class="form-group {{ $errors->has('question') ? ' has-error' : '' }}">
+                                        <label>FAQ</label>
+                                        <input type="text" name="question" class="form-control" placeholder="Enter FAQ" value="{{ old('question') }}" required autofocus>
 
-                                        @if ($errors->has('title'))
+                                        @if ($errors->has('question'))
                                             <span class="help-block">
-                                                <strong>{{ $errors->first('title') }}</strong>
+                                                <strong>{{ $errors->first('question') }}</strong>
                                             </span>
                                         @endif
                                     </div>
-                                    <div class="form-group {{ $errors->has('city') ? ' has-error' : '' }}">
-                                        <label>Project City</label>
-                                        <select name="city">
-                                            <option>Select A City</option>
-                                            <option value="dera ismail khan">Dera Ismail Khan</option>
-                                            <option value="peshawar">Peshawar</option>
-                                            <option value="multan">Multan</option>
-                                            <option value="islamabad">Islamabad</option>
-                                        </select>
+                                    <div class="form-group {{ $errors->has('answer') ? ' has-error' : '' }}">
+                                        <label>Answer</label>
+                                        <textarea class="form-control" name="answer" placeholder="Enter a Suitable Answer" rows="5">{{ old('answer') }}</textarea>
 
-                                        @if ($errors->has('city'))
+                                        @if ($errors->has('answer'))
                                             <span class="help-block">
-                                                <strong>{{ $errors->first('city') }}</strong>
+                                                <strong>{{ $errors->first('answer') }}</strong>
                                             </span>
                                         @endif
                                     </div>
-
                                 </div>
                                 <!-- /.box-body -->
 
