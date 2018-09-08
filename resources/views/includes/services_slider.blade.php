@@ -5,7 +5,7 @@
                 <div class="slider_inner">
                     <div class="slider_img">
                         <a href="/service/{{$service->id}}/{{str_slug($service->name)}}">
-                            <img src="{{url('images/service/'.$service->image)}}">
+                            <img src="{{url('images/service/'.$service->image)}}" alt="{{$service->name}}">
                         </a>
                     </div>
                     <div class="slider_txt">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Item;
 use App\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -159,6 +160,14 @@ class ServiceController extends Controller
     public function destroy($id)
     {
         $service = Service::find($id);
+
+//        Delete Image before deleting service
+        $image_path = public_path('/images/service/'.$service->image);
+
+        if(File::exists($image_path)) {
+            @unlink($image_path);
+        }
+
         $service->delete();
         // redirect
         Session::flash('message', 'Service has been Successfully Deleted!');

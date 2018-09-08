@@ -16,15 +16,15 @@
             <div class="row">
                 <h2 class="visible-xs text-center text-uppercase">Welcome To Al-Hamd Movers and Packers</h2>
                 <div class="col-sm-6 icon_set">
-                    <span><img src="images/icons/1.png"></span>
-                    <span><img src="images/icons/2.png"></span>
-                    <span><img src="images/icons/3.png"></span>
-                    <span><img src="images/icons/4.png"></span>
-                    <span><img src="images/icons/5.png"></span>
-                    <span><img src="images/icons/6.png"></span>
-                    <span><img src="images/icons/7.png"></span>
-                    <span><img src="images/icons/8.png"></span>
-                    <span><img src="images/icons/9.png"></span>
+                    <span><img src="images/icons/1.png" alt="Customer Support"></span>
+                    <span><img src="images/icons/2.png" alt="Loaders and Trucks"></span>
+                    <span><img src="images/icons/3.png" alt="Assembling and Dismantling"></span>
+                    <span><img src="images/icons/4.png" alt="Packing and Unpacking"></span>
+                    <span><img src="images/icons/5.png" alt="Packing and Unpacking"></span>
+                    <span><img src="images/icons/6.png" alt="Loading and Unloading"></span>
+                    <span><img src="images/icons/7.png" alt="Box Listing"></span>
+                    <span><img src="images/icons/8.png" alt="Loading and Unloading"></span>
+                    <span><img src="images/icons/9.png" alt="Store Warehouse"></span>
                 </div>
                 <div class="col-sm-6 join_content">
                     <h3 class="hidden-xs text-uppercase">Welcome To <br>Al-Hamd</h3>
@@ -48,8 +48,7 @@
             <div class="choose_us clearfix">
                 <div class="col-md-3 col-xs-6">
                     <div class="choose_section">
-                        {{--<span><i class="fa fa-clock-o fa-5x"></i></span>--}}
-                        <span><img src="images/icons/mtr.png"></span>
+                        <span><img src="images/icons/mtr.png" alt="Fast and Easy Shifting"></span>
                         <h3>Fast And Easy Steps</h3>
                         <div class="separator"></div>
                         <p>
@@ -59,8 +58,7 @@
                 </div>
                 <div class="col-md-3 col-xs-6">
                     <div class="choose_section">
-                        {{--<span><i class="fa fa-clock-o fa-5x"></i></span>--}}
-                        <span><img src="images/icons/safe.png"></span>
+                        <span><img src="images/icons/safe.png" alt="Safe and Relaible Shifting"></span>
                         <h3>Secure And Reliable</h3>
                         <div class="separator"></div>
                         <p>
@@ -70,8 +68,7 @@
                 </div>
                 <div class="col-md-3 col-xs-6">
                     <div class="choose_section">
-                        {{--<span><i class="fa fa-clock-o fa-5x"></i></span>--}}
-                        <span><img src="images/icons/dollar.png"></span>
+                        <span><img src="images/icons/dollar.png" alt="Cost Effective Shifting"></span>
                         <h3>Cost Effective</h3>
                         <div class="separator"></div>
                         <p>
@@ -81,8 +78,7 @@
                 </div>
                 <div class="col-md-3 col-xs-6">
                     <div class="choose_section">
-                        {{--<span><i class="fa fa-clock-o fa-5x"></i></span>--}}
-                        <span><img src="images/icons/on-time.png"></span>
+                        <span><img src="images/icons/on-time.png" alt="On Time Delivery"></span>
                         <h3>On Time Delivery</h3>
                         <div class="separator"></div>
                         <p>
@@ -106,9 +102,6 @@
             <p>Discover more about #Al-Hamd</p>
         </h1>
         <span>from our customers and members</span>
-        {{--<div class="container-fluid">
-            <div id="freewall" class="free-wall hidden-xs"></div>
-        </div>--}}
     </div>
 
     @include('includes/gallery_slider')

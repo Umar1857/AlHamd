@@ -8,6 +8,14 @@
             <div class="col-md-12">
                 <!-- general form elements -->
 
+                {{--Session Alert Starts--}}
+                @if (session('message'))
+                    <div class="alert alert-success alert-notification">
+                        {{ session('message') }}
+                    </div>
+                @endif
+                {{--Session Alert Ends--}}
+
                 <div>
                     <a href="/admin/project/create" class="btn btn-md btn-primary addNewService">Add New Project</a>
                 </div>

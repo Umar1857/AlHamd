@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\Service;
 use Illuminate\Http\Request;
+use Spatie\Sitemap\SitemapGenerator;
 
 class HomeController extends Controller
 {
@@ -31,6 +32,8 @@ class HomeController extends Controller
     public function home() {
         $posts = Post::orderBy('created_at','desc')->take(10)->get();
         $services = Service::all();
+
+        //SitemapGenerator::create('http://alhamdmovers.com')->writeToFile(public_path('sitemap.xml'));
         return view('user/home', compact('posts', 'services'));
     }
 }
