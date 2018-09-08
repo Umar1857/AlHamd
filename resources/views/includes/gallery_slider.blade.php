@@ -4,7 +4,7 @@
             <div class="slider_inner clearfix">
                 <div class="slider_img">
                     <a href="#">
-                        <img src="images/gallery/home/gallery_1.jpeg">
+                        <img src="images/gallery/home/gallery_1.jpeg" alt="Villa Shifting">
                     </a>
                 </div>
                 <div class="slider_txt">
@@ -13,14 +13,13 @@
                     <a href="#">#electronics</a>
                     <a href="#">#loading</a>
                 </div>
-                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
             <div class="slider_inner clearfix">
                 <div class="slider_img">
                     <a href="#">
-                        <img src="images/gallery/home/gallery_2.jpeg">
+                        <img src="images/gallery/home/gallery_2.jpeg" alt="Villa Relocation">
                     </a>
                 </div>
                 <div class="slider_txt">
@@ -28,16 +27,14 @@
                     <a href="#">#alhamd</a>
                     <a href="#">#furniture</a>
                     <a href="#">#shifting</a>
-
                 </div>
-                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
             <div class="slider_inner clearfix">
                 <div class="slider_img">
                     <a href="#">
-                        <img src="images/gallery/home/gallery_3.jpeg">
+                        <img src="images/gallery/home/gallery_3.jpeg" alt="Villa Moving">
                     </a>
                 </div>
                 <div class="slider_txt">
@@ -45,16 +42,14 @@
                     <a href="#">#alhamd</a>
                     <a href="#">#furniture</a>
                     <a href="#">#shifting</a>
-
                 </div>
-                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
             <div class="slider_inner clearfix">
                 <div class="slider_img">
                     <a href="#">
-                        <img src="images/gallery/home/gallery_4.jpeg">
+                        <img src="images/gallery/home/gallery_4.jpeg" alt="House Relocation">
                     </a>
                 </div>
                 <div class="slider_txt">
@@ -64,14 +59,13 @@
                     <a href="#">#shifting</a>
 
                 </div>
-                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
             <div class="slider_inner clearfix">
                 <div class="slider_img">
                     <a href="#">
-                        <img src="images/gallery/home/gallery_5.jpeg">
+                        <img src="images/gallery/home/gallery_5.jpeg" alt="House Relocation">
                     </a>
                 </div>
                 <div class="slider_txt">
@@ -81,14 +75,13 @@
                     <a href="#">#furniture</a>
                     <a href="#">#shifting</a>
                 </div>
-                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
             <div class="slider_inner clearfix">
                 <div class="slider_img">
                     <a href="#">
-                        <img src="images/gallery/home/gallery_10.jpeg">
+                        <img src="images/gallery/home/gallery_10.jpeg" alt="Furniture Moving">
                     </a>
                 </div>
                 <div class="slider_txt">
@@ -98,14 +91,13 @@
                     <a href="#">#furniture</a>
                     <a href="#">#moving</a>
                 </div>
-                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
             <div class="slider_inner clearfix">
                 <div class="slider_img">
                     <a href="#">
-                        <img src="images/gallery/home/gallery_11.jpeg">
+                        <img src="images/gallery/home/gallery_11.jpeg" alt="Furniture Loading">
                     </a>
                 </div>
                 <div class="slider_txt">
@@ -115,14 +107,13 @@
                     <a href="#">#furniture</a>
                     <a href="#">#shifting</a>
                 </div>
-                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
             <div class="slider_inner clearfix">
                 <div class="slider_img">
                     <a href="#">
-                        <img src="images/gallery/home/gallery_6.jpeg">
+                        <img src="images/gallery/home/gallery_6.jpeg" alt="House Items Packed">
                     </a>
                 </div>
                 <div class="slider_txt">
@@ -131,14 +122,13 @@
                     <a href="#">#house</a>
                     <a href="#">#relocation</a>
                 </div>
-                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
             <div class="slider_inner clearfix">
                 <div class="slider_img">
                     <a href="#">
-                        <img src="images/gallery/home/gallery_7.jpeg">
+                        <img src="images/gallery/home/gallery_7.jpeg" alt="Packed Boxes">
                     </a>
                 </div>
                 <div class="slider_txt">
@@ -148,14 +138,13 @@
                     <a href="#">#ready</a>
                     <a href="#">#move</a>
                 </div>
-                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
             <div class="slider_inner clearfix">
                 <div class="slider_img">
                     <a href="#">
-                        <img src="images/gallery/home/gallery_8.jpeg">
+                        <img src="images/gallery/home/gallery_8.jpeg" alt="Ready to Load">
                     </a>
                 </div>
                 <div class="slider_txt">
@@ -164,14 +153,13 @@
                     <a href="#">#loading</a>
                     <a href="#">#shifting</a>
                 </div>
-                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
         <div class="slider_wrapper">
             <div class="slider_inner clearfix">
                 <div class="slider_img">
                     <a href="#">
-                        <img src="images/gallery/home/gallery_9.jpeg">
+                        <img src="images/gallery/home/gallery_9.jpeg" alt="House Furniture">
                     </a>
                 </div>
                 <div class="slider_txt">
@@ -180,7 +168,6 @@
                     <a href="#">#furniture</a>
                     <a href="#">#shifting</a>
                 </div>
-                {{--<a href="#" class="img_likes"><i class="fa fa-heart-o"></i> <span>250</span></a>--}}
             </div>
         </div>
     </div>

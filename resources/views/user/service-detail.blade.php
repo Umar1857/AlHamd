@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-6 blog_post_head">
                 <div class="text-center serviceImage">
-                    <img src="{{url('images/service/'.$service->image)}}">
+                    <img src="{{url('images/service/'.$service->image)}}" alt="{{$service->name}}">
                 </div>
             </div>
             <div class="col-md-6 post_content">

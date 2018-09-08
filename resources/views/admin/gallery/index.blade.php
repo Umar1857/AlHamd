@@ -38,7 +38,7 @@
                             <tbody>
                             @foreach($images as $image)
                             <tr>
-                                <td class="text-center middle"><img src="{{url('/images/gallery/media/'.$image->name)}}" width="70px" height="70px"></td>
+                                <td class="text-center middle"><img src="{{url('/images/gallery/media/'.$image->name)}}" width="70px" height="70px" alt="{{$image->title}}"></td>
                                 <td class="middle">{{str_limit($image->title, 40)}}</td>
                                 <td class="middle">{{str_limit($image->caption, 60)}}</td>
                                 <td class="text-center middle">

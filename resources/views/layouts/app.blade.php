@@ -2,15 +2,32 @@
 <html lang="en">
 
 <head>
+    {{--Google Analytics Tracking Code For Website Analytics Starts--}}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125446800-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-125446800-1');
+        </script>
+        {{--Google Analytics Tracking Code For Website Analytics Ends--}}
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-@yield('tags')
+
+    <meta name="author" content="AlHamd Movers and Packers">
+    <meta name="description" content="Alhamd movers are one of the best and experienced packers and movers in Dubai. Providing superior packing service and secured relocation has rated us high as one of the best movers and packers in Dubai. Our team takes entire responsibility of the delivery of your articles from delicate items of glassware to the heaviest machinery is undertaken to their respective destinations. We are capable to provide you professional packers and movers services, cargo packer’s mover’s services from all major cities in UAE to any destination with door to door delivery of your valuable goods.">
+    <meta name="keywords" content="Movers and packers in dubai , Best Movers and Packers in Dubai , Professional movers and packers in Dubai , cheap movers and packers , movers and packers in UAE , movers companies in UAE , movers and packers companies in dubai , movers in dubai , Experienced movers and packers in dubai , Pakers in dubai , Movers in dubai , Pakers and movers , carpenter. ">
+
+    @yield('tags')
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Al-Hamd | Movers And Packers</title>
 
     <!-- Main.css is the file that contain all Merged & Minified css -->
-
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="/css/bootstrap-select.min.css" rel="stylesheet">
@@ -18,10 +35,10 @@
     <link href="/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/hover.css" rel="stylesheet">
     <link href="/css/jquery.fancybox.css" rel="stylesheet">
-    <link href="/css/mansory.css" rel="stylesheet">
+    {{--<link href="/css/mansory.css" rel="stylesheet">--}}
     <link href="/css/slick.css" rel="stylesheet">
     <link href="/css/slick-theme.css" rel="stylesheet">
-    <link href="/css/rateit.css" rel="stylesheet">
+    {{--<link href="/css/rateit.css" rel="stylesheet">--}}
     <link href="/css/slick-theme.css" rel="stylesheet">
     <link href="/css/slick-theme.css" rel="stylesheet">
     <link href="/css/chosen.min.css" rel="stylesheet">
@@ -95,7 +112,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><img src="/images/Logo-02.png" width="240px"></a>
+                    <a class="navbar-brand" href="/"><img src="/images/Logo-02.png" width="240px" alt="AlHamd Movers Logo"></a>
                     {{--<a class="navbar-brand visible-xs" href="/"><img src="/images/logo_mobile.png"></a>--}}
 
                 </div>
@@ -116,7 +133,9 @@
                         <li><a href="/about" class="hvr-overline-from-center">ABOUT</a></li>
                         <li><a href="/contact" class="hvr-overline-from-center">CONTACT</a></li>
                         <li><a href="/projects" class="hvr-overline-from-center">PROJECTS</a></li>
+                        <li><a href="/media" class="hvr-overline-from-center visible-xs visible-sm">MEDIA</a></li>
                         <li><a href="/blog" class="hvr-overline-from-center">BLOG</a></li>
+                        <li><a href="/faqs" class="hvr-overline-from-center visible-xs visible-sm">FAQ's</a></li>
                     </ul>
                 </div>
                 <ul class="hidden-xs nav navbar-nav navbar-right myreservations">
@@ -139,7 +158,8 @@
     </div>
     <!--    @yeild is the section for general content of the whole site... whenever there is a change in any
 page it will render here dynamically... -->
-@yield('content')
+
+    @yield('content')
 
 <!--    @yeilds ends here -->
 </div>
@@ -148,9 +168,9 @@ page it will render here dynamically... -->
     <div class="clearfix container-fluid">
         <div class="row">
             <div class="col-md-2 col-xs-12">
-                <a href="#" class="footer_logo"><img src="/images/Logo-02.png"></a>
+                <a href="#" class="footer_logo"><img src="/images/Logo-02.png" alt="AlHamd Movers Logo"></a>
                 <p class="footer_desc">Al-Hamd movers and packers is a group of professionals who makes relocation alot easier, secure, relaible and much cost effective.</p>
-                <ul class="footer_social hidden-xs">
+                <ul class="footer_social text-center">
                     <li><a href="https://www.instagram.com/alhamdmovers/" class="hvr-grow"><i class="fa fa-instagram"></i></a></li>
                     <li><a href="https://www.facebook.com/AlHamd-Movers-407523639758513/" class="hvr-grow"><i class="fa fa-facebook-f"></i></a></li>
                     {{--<li><a href="#" class="hvr-grow"><i class="fa fa-pinterest"></i></a></li>
@@ -166,6 +186,7 @@ page it will render here dynamically... -->
                     <li><a href="/about">About Us</a></li>
                     <li><a href="/contact">Contact Us</a></li>
                     <li><a href="/quote">Get A Quote</a></li>
+                    <li><a href="/faqs">FAQ's</a></li>
                     {{--<li><a href="/sitemap">Sitemap</a></li>--}}
                 </ul>
             </div>
@@ -201,7 +222,7 @@ page it will render here dynamically... -->
                     Al-Hamd Movers provide 24/7 delivery services across UAE region.
                 </p>
                 <p class="text-center">
-                    <img src="/images/24hrs.png" width="99px" height="99px">
+                    <img src="/images/24hrs.png" width="99px" height="99px" alt="24 hours shifting services">
                 </p>
                 {{--<ul class="footer_links">
                     <li class="text-center"><b>Saturday-Thursday</b></li>

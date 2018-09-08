@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
 use Session;
 use Illuminate\Http\Request;
@@ -144,7 +145,7 @@ class PostController extends Controller
             $post->update();
 
             // redirect
-            Session::flash('message', 'A Post Has Been Successfully updated!');
+            Session::flash('message', 'A Post Has Been Successfully Updated!');
             Session::flash('alert-class', 'alert-success');
             return redirect('/admin/post');
         }
@@ -159,6 +160,14 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+
+//        Delete Image before deleting post
+        $image_path = public_path('/images/post/'.$post->image);
+
+        if(File::exists($image_path)) {
+            @unlink($image_path);
+        }
+
         $post->delete();
         // redirect
         Session::flash('message', 'Post has been Successfully Deleted!');

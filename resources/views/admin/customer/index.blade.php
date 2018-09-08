@@ -16,7 +16,7 @@
                 {{--Session Alert Ends--}}
 
                 <div>
-                    <a href="/admin/customer/create" class="btn btn-md btn-primary addNewService">Add New Customer</a>
+                    <a href="/admin/customers/create" class="btn btn-md btn-primary addNewService">Add New Customer</a>
                 </div>
                 <div class="box">
                     <div class="box-header">

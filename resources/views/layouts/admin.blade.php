@@ -116,12 +116,12 @@
                                                     <div class="notification_image">
                                                         @if(snake_case(class_basename($notification->type )) == 'contact_query')
                                                             {{--<i class="fa fa-users text-aqua fa-2x"></i>--}}
-                                                            <img src="{{URL::to('/images/admin/envelope.png')}}">
+                                                            <img src="{{URL::to('/images/admin/envelope.png')}}" alt="New Message Notification">
                                                         @elseif(snake_case(class_basename($notification->type )) == 'quote_query')
                                                             {{--<i class="fa fa-users text-aqua fa-2x"></i>--}}
-                                                            <img src="{{URL::to('/images/admin/quotation.png')}}">
+                                                            <img src="{{URL::to('/images/admin/quotation.png')}}" alt="New Quotation Notification">
                                                         @else
-                                                            <img src="{{URL::to('/images/admin/booking.png')}}">
+                                                            <img src="{{URL::to('/images/admin/booking.png')}}" alt="New Booking Notification">
                                                         @endif
                                                     </div>
                                                     <div class="notification_text">

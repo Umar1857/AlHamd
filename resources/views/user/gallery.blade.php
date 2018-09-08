@@ -16,7 +16,7 @@
                             @foreach($images as $image)
                                 <li class="col-xs-6 col-sm-4 col-md-3" data-src="{{url('/images/gallery/media/'.$image->name)}}" data-sub-html="<h4>{{$image->title}}</h4><p>{{$image->caption}}.</p>">
                                     <a href="">
-                                        <img class="img-responsive" src="{{url('/images/gallery/media/'.$image->name)}}">
+                                        <img class="img-responsive" src="{{url('/images/gallery/media/'.$image->name)}}" alt="{{$image->title}}">
                                     </a>
                                 </li>
                             @endforeach
