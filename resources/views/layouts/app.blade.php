@@ -114,7 +114,6 @@
                     </button>
                     <a class="navbar-brand" href="/"><img src="/images/Logo-02.png" width="240px" alt="AlHamd Movers Logo"></a>
                     {{--<a class="navbar-brand visible-xs" href="/"><img src="/images/logo_mobile.png"></a>--}}
-
                 </div>
                 <ul class="visible-xs nav navbar-nav navbar-right myreservations">
                     <li>
@@ -169,7 +168,7 @@ page it will render here dynamically... -->
         <div class="row">
             <div class="col-md-2 col-xs-12">
                 <a href="#" class="footer_logo"><img src="/images/Logo-02.png" alt="AlHamd Movers Logo"></a>
-                <p class="footer_desc">Al-Hamd movers and packers is a group of professionals who makes relocation alot easier, secure, relaible and much cost effective.</p>
+                <p class="footer_desc">Al-Hamd is a Professional movers and packers company in Dubai, providing a wide range of moving and packing services in a very cheap price.</p>
                 <ul class="footer_social text-center">
                     <li><a href="https://www.instagram.com/alhamdmovers/" class="hvr-grow"><i class="fa fa-instagram"></i></a></li>
                     <li><a href="https://www.facebook.com/AlHamd-Movers-407523639758513/" class="hvr-grow"><i class="fa fa-facebook-f"></i></a></li>
@@ -234,7 +233,7 @@ page it will render here dynamically... -->
         </div>
         <div class="main_row">
             <div class="copyrights text-center">
-                <span>2018© Al-Hamd Movers . All rights reserved.</span>
+                <span>2018© Al-Hamd Movers and Packers. All rights reserved.</span>
             </div>
         </div>
     </div>

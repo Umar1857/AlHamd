@@ -6,7 +6,7 @@
             <div class="hotel_description text-center">
                 <h1>Welcome to Al-Hamd</h1>
                 <h2>Movers And Packers In Dubai</h2>
-                <p>Al-Hamd movers and packers make your move alot easier, simple and stress-free.</p>
+                <p>Al-Hamd movers and packers makes your move alot easier, simple, hassle and stress free.</p>
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@
                 <div class="col-sm-6 join_content">
                     <h3 class="hidden-xs text-uppercase">Welcome To <br>Al-Hamd</h3>
                     <p id="quote">"If you are looking for professional, relaible and cost effective moving and packing services in UAE region, then you have come to the right place."</p>
-                    <p>We're a team of professionals working 24/7 to fulfill the client requirements and expections and make the <strong>Al-Hamd movers and packers</strong> the best shifting company in UAE region. Al-Hamd movers and packers, provides <strong>fast, secure, reliable and cost effective</strong> moving services to help you relocate without stress. Apart from moving services, we're also providing other incredibly well services including office relocation, house relocation, villa relocation, packing and unpacking services, furniture assembling and dismantling services, storage services.</p><br>
+                    <p>We're a team of professional movers and packers in Dubai, working 24/7 to fulfill the client requirements and expectations and make the <strong>Al-Hamd movers and packers</strong> the best shifting company in UAE region. Al-Hamd movers and packers, provides <strong>fast, secure, reliable and cost effective</strong> moving and packing services to help you relocate without any stress. Apart from moving services, we're also providing other incredibly well services including office relocation, house relocation, villa relocation, packing and unpacking services, furniture assembling and dismantling services, storage services.</p><br>
                     <p>Our mission and values are to help people and businesses to relocate without stress throughout Dubai, UAE.</p>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                         <h3>Fast And Easy Steps</h3>
                         <div class="separator"></div>
                         <p>
-                            Contact us right now. Request a Quote, Book services and Move, this is as simple as it sounds when you are moving with Al-Hamd movers and packers.
+                            Contact us right Now!. Request a Quote, Book services and Move, this is as simple as it sounds when you are moving with Al-Hamd the best Movers and Packers in Dubai.
                         </p>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                         <h3>Secure And Reliable</h3>
                         <div class="separator"></div>
                         <p>
-                            Our carefully selected team of professionals movers offers you the most reliable service for your relocation plan. We deal your stuff with great care as its our own.
+                            Our carefully selected team of Professional movers and packers offers you the most reliable services for your relocation plan. We deal your stuff with great care as its our own.
                         </p>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                         <h3>Cost Effective</h3>
                         <div class="separator"></div>
                         <p>
-                            Our goal is to help people in shifting and make this whole shifting process stress-free for our customers. Al-Hamd movers offers you all this and much more in a very affordable price.
+                            Our Experts have planned and optimized the whole shifting process. Al-Hamd movers and packers offers you all the moving and packing services in a very cheap price.
                         </p>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                         <h3>On Time Delivery</h3>
                         <div class="separator"></div>
                         <p>
-                            We understand that your time is much valuable. Its been our top priority to complete our deliveries on time.
+                            We understand that your time is much valuable. Al-Hamd is one of the best movers and packers company in dubai completing all its deliveries on time.
                         </p>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
         <h1 class="text-uppercase">
             <p>Discover more about #Al-Hamd</p>
         </h1>
-        <span>from our customers and members</span>
+        <span>Some clicks from our daily services for our customers.</span>
     </div>
 
     @include('includes/gallery_slider')

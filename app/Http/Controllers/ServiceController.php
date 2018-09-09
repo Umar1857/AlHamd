@@ -178,22 +178,24 @@ class ServiceController extends Controller
     public function getServiceItems() {
         $items = Item::where('service_id', $_GET['serviceID'])->get();
         $html = '';
-        $html .= "<div class=\"form-group\" id=\"item"."\">
-                            <label for=\"items\">Select Size</label>";
-        $html .= '<select class="form-control fields" name="item'.'" value="{{ old(\'item\') }}">
-                                <option value="">Select A Size</option>';
-        foreach ($items as $item) {
-            $html .= "<option value='$item->id' {{ old(\"item\") == $item->id ? \"selected\":\"\"}} >$item->name</option>";
-        }
-        $html .='</select>';
-        /*$html .= "@if
-                    ($errors->has('services'))
-                        <span class=\"help-block\">
-                            <strong>{{ $errors->first('services') }}</strong>
-                        </span>
-                @endif";*/
-        $html .= '</div>';
+        if ($items->count()) {
 
+            $html .= "<div class=\"form-group\" id=\"item" . "\">
+                            <label for=\"items\">Select Size</label>";
+            $html .= '<select class="form-control fields" name="item' . '" value="{{ old(\'item\') }}">
+                                <option value="">Select A Size</option>';
+            foreach ($items as $item) {
+                $html .= "<option value='$item->id' {{ old(\"item\") == $item->id ? \"selected\":\"\"}} >$item->name</option>";
+            }
+            $html .= '</select>';
+            /*$html .= "@if
+                        ($errors->has('services'))
+                            <span class=\"help-block\">
+                                <strong>{{ $errors->first('services') }}</strong>
+                            </span>
+                    @endif";*/
+            $html .= '</div>';
+        }
         echo $html;
     }
 

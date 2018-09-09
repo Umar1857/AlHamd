@@ -9,9 +9,10 @@
                 </div>
                 <div class="slider_txt">
                     <h3>Villa Shifting</h3>
-                    <a href="#">#alhamd</a>
+                    <a href="#">#Al-Hamd</a>
                     <a href="#">#electronics</a>
                     <a href="#">#loading</a>
+                    <a href="#">#movers in dubai</a>
                 </div>
             </div>
         </div>
@@ -24,9 +25,10 @@
                 </div>
                 <div class="slider_txt">
                     <h3>Villa Relocation</h3>
-                    <a href="#">#alhamd</a>
+                    <a href="#">#Al-Hamd</a>
                     <a href="#">#furniture</a>
                     <a href="#">#shifting</a>
+                    <a href="#">#packers in dubai</a>
                 </div>
             </div>
         </div>
@@ -39,9 +41,10 @@
                 </div>
                 <div class="slider_txt">
                     <h3>Villa Moving</h3>
-                    <a href="#">#alhamd</a>
+                    <a href="#">#Al-Hamd</a>
                     <a href="#">#furniture</a>
                     <a href="#">#shifting</a>
+                    <a href="#">#movers and packers</a>
                 </div>
             </div>
         </div>
@@ -54,10 +57,10 @@
                 </div>
                 <div class="slider_txt">
                     <h3>House Relocation</h3>
-                    <a href="#">#alhamd</a>
+                    <a href="#">#Al-Hamd</a>
                     <a href="#">#bed</a>
                     <a href="#">#shifting</a>
-
+                    <a href="#">#Best Movers and Packers</a>
                 </div>
             </div>
         </div>
@@ -70,10 +73,10 @@
                 </div>
                 <div class="slider_txt">
                     <h3>House Relocation</h3>
-                    <a href="#">#alhamd</a>
-                    <a href="#">#home </a>
-                    <a href="#">#furniture</a>
+                    <a href="#">#Al-Hamd</a>
+                    <a href="#">#home furniture</a>
                     <a href="#">#shifting</a>
+                    <a href="#">#Experienced movers and packers</a>
                 </div>
             </div>
         </div>
@@ -86,10 +89,10 @@
                 </div>
                 <div class="slider_txt">
                     <h3>Furniture Moving</h3>
-                    <a href="#">#alhamd</a>
-                    <a href="#">#house</a>
-                    <a href="#">#furniture</a>
+                    <a href="#">#Al-Hamd</a>
+                    <a href="#">#house furniture</a>
                     <a href="#">#moving</a>
+                    <a href="#">#Professional movers and packers</a>
                 </div>
             </div>
         </div>
@@ -102,10 +105,10 @@
                 </div>
                 <div class="slider_txt">
                     <h3>Furniture Loading</h3>
-                    <a href="#">#alhamd</a>
-                    <a href="#">#house</a>
-                    <a href="#">#furniture</a>
+                    <a href="#">#Al-Hamd</a>
+                    <a href="#">#house furniture</a>
                     <a href="#">#shifting</a>
+                    <a href="#">#cheap movers and packers</a>
                 </div>
             </div>
         </div>
@@ -118,9 +121,10 @@
                 </div>
                 <div class="slider_txt">
                     <h3>House Items Packed</h3>
-                    <a href="#">#alhamd</a>
-                    <a href="#">#house</a>
-                    <a href="#">#relocation</a>
+                    <a href="#">#Al-Hamd</a>
+                    <a href="#">#house furniture</a>
+                    <a href="#">#movers and packers</a>
+                    <a href="#">#UAE</a>
                 </div>
             </div>
         </div>
@@ -133,10 +137,10 @@
                 </div>
                 <div class="slider_txt">
                     <h3>Packed Boxes</h3>
-                    <a href="#">#alhamd</a>
+                    <a href="#">#Al-Hamd</a>
                     <a href="#">#packed</a>
                     <a href="#">#ready</a>
-                    <a href="#">#move</a>
+                    <a href="#">#Professional movers and packers in Dubai</a>
                 </div>
             </div>
         </div>
@@ -149,9 +153,10 @@
                 </div>
                 <div class="slider_txt">
                     <h3>Ready to Load</h3>
-                    <a href="#">#alhamd</a>
+                    <a href="#">#Al-Hamd</a>
                     <a href="#">#loading</a>
                     <a href="#">#shifting</a>
+                    <a href="#">#Movers and packers in dubai</a>
                 </div>
             </div>
         </div>
@@ -164,7 +169,7 @@
                 </div>
                 <div class="slider_txt">
                     <h3>House Furniture</h3>
-                    <a href="#">#alhamd</a>
+                    <a href="#">#Al-Hamd</a>
                     <a href="#">#furniture</a>
                     <a href="#">#shifting</a>
                 </div>

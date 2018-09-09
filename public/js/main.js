@@ -4078,12 +4078,15 @@ function selectedService() {
                url: '/getServiceItems',
                data: {serviceID: services[i]},
                 success: function (data) {
-                   if (data.length> 0){
-                       $('#itemsDiv').html(data)
+                   if (data){
+                       $("#itemsDiv").show();
+                       $('#itemsDiv').html(data);
+                   }
+                   else {
+                       $("#itemsDiv").hide();
                    }
                 }
             });
         }
     }
-    console.log(services);
 }
